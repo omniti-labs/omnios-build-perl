@@ -1,3 +1,3 @@
 # Package server URL and publisher
-PKGPUBLISHER=custom
-PKGSRVR=http://custom-server:10000/
+PKGPUBLISHER=omnios-perl
+PKGSRVR=http://pkg-internal.omniti.com:10008/
