@@ -30,7 +30,7 @@
 PROG=perl-5142-incorporation
 VER=5.14.2
 VERHUMAN=$VER
-PKG=incorporation/perl-5142-incorporation
+PKG=omniti/incorporation/perl-5142-incorporation
 SUMMARY="Constrains omniti/runtime/perl to version $VER"
 DESC="$SUMMARY"
 
