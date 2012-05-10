@@ -33,11 +33,12 @@ MODNAME=Module::Name         # Module name for testing
 VER=1.0                      # Module version
 VERHUMAN=$VER                # Human-readable version
 #PVER=                       # Branch (set in config.sh, override here if needed)
-PKG=perl-$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
+PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
 SUMMARY=""                   # Change this
 DESC=""                      # Change this
 
-PREFIX=/usr/perl5
+BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
@@ -51,7 +52,7 @@ PERLVERLIST="5.14.2"
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14.2)
-        DEPENDS_IPS="$DEPENDS_IPS runtime/perl-5142"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

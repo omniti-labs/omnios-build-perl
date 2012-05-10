@@ -716,7 +716,7 @@ make_pure_install() {
 }
 
 make_param() {
-    logmsg "--- make $@"
+    logmsg "--- make $@ ($ISALIST)"
     logcmd $MAKE "$@" || \
         logerr "--- $MAKE $1 failed"
 }
