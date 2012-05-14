@@ -1,0 +1,41 @@
+
+BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+PREFIX=/opt/OMNIperl
+reset_configure_opts
+
+NO_PARALLEL_MAKE=1
+
+# Only 5.14.2 and later will get individual module builds
+PERLVERLIST="5.14.2"
+
+# Add any additional deps here; OMNIperl added below
+#DEPENDS_IPS=
+
+# We require a Perl version to use for this build and there is no default
+case $DEPVER in
+    5.14.2)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
+        ;;
+    "")
+        logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
+        ;;
+esac
+
+# Uncomment and set PREFIX if any modules install site binaries
+#save_function make_isa_stub make_isa_stub_orig
+#make_isa_stub() {
+#    PREFIX=/usr make_isa_stub_orig
+#}
+
+init
+test_if_core
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
+patch_source
+prep_build
+buildperl
+fix_permissions
+make_package
+clean_up
+
+# Vim hints
+# vim:ts=4:sw=4:et:
