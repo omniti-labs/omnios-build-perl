@@ -11,6 +11,9 @@ my $PKGSEND     = "/usr/bin/pkgsend";
 my $PKGMOG      = "/usr/bin/pkgmogrify";
 my $PKGFMT      = "/usr/bin/pkgfmt";
 
+my $GLOBALMOG   = "lib/global-transforms.mog";
+my $CPPMOG      = "lib/cpanplus.mog";
+
 (my $PERLVER = $^V) =~ s/[v\.]//g;
 
 sub format_available {
@@ -70,25 +73,26 @@ sub create {
 
     $dist->SUPER::create( @_ ) or return;
 
-    return $dist->status->created(1);
+    my $package = $mod_obj->package_name();
+    my $mog     = "$package.mog";
+    my $p5m_int = "$package.p5m.int";
+    my $p5m     = "$package.p5m";
+    my $blib    = $dist->status()->dist()."/blib";
+
+    my $cmd = "$PKGSEND generate $blib > $p5m_int";
+    system($cmd);
+    $cmd = "$PKGMOG $p5m_int $mog $GLOBALMOG $CPPMOG | $PKGFMT -u > $p5m";
+    system($cmd);
+
+    #system($PKGSEND, "publish", blah blah blah);
+
+    return $dist->status->created(0);
 }
 
 sub install {
     my $dist = shift;
 
-    $dist->SUPER::install( @_ ) or return;
-
-    # TODO
-    # I think in theory here we would tell cpanplus where to install the module (tmp dir somewhere)
-    # and then we can create a manifest from that.  I have yet to find where I can tell it where
-    # to install to though.
-
-    #my $package = $mod_obj->package_name();
-    #system($PKGSEND, "generate", SOME_DIRECTORY, ">", "$package.p5m.int");
-    #system($PKGMOG something something something something);
-    #system($PKGSEND, "publish", blah blah blah);
-    
-    return $dist->status->installed(1);
+    return $dist->status->installed(0);
 }
 
 sub uninstall {
