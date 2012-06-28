@@ -20,25 +20,38 @@ sub create_buildsh {
     die "need summary" if ( ! $args{'summary'} );
     die "need a build_root dir" if ( ! $args{'build_root'} );
 
-    $tmpl_header = read_file("$args{'build_root'}/template/perl/header");
-    $tmpl_footer = read_file("$args{'build_root'}/template/perl/footer");
+    my $tmpl_header = read_file("$args{'build_root'}/template/perl/header");
+    my $tmpl_footer = read_file("$args{'build_root'}/template/perl/footer");
 
-    if ( ! -d "$args{'build_root'}/build/$dist" ) {
-        mkdir "$args{'build_root'}/build/$dist" or die "could not make dist build dir $args{'build_root'}/build/$dist $!\n";
-        mkdir "$args{'build_root'}/build/$dist/patches" or die "could not make patches dir $args{'build_root'}/build/$dist/patches $!\n";
+    if ( ! -d "$args{'build_root'}/build/$args{'dist'}" ) {
+        mkdir "$args{'build_root'}/build/$args{'dist'}" or die "could not make dist build dir $args{'build_root'}/build/$args{'dist'} $!\n";
+        mkdir "$args{'build_root'}/build/$args{'dist'}/patches" or die "could not make patches dir $args{'build_root'}/build/$args{'dist'}/patches $!\n";
     }
 
-    open BUILDSH, ">$args{'build_root'}/build/$dist/build.sh" or die "could not open $args{'build_root'}/build/$dist/build.sh $!\n";
+    if ( $args{'dependencies'} ) {
+        my @deps;
+        foreach my $dep ( @{$args{'dependencies'}} ) {
+            $dep = 'omniti/perl/'.$dep if ( $dep !~ /^omniti\/perl/ );
+            push @deps, $dep;
+        }
+        my $depends = "DEPENDS_IPS=" . join(" ", @deps);
+
+        $tmpl_footer =~ s/#DEPENDS_IPS=/$depends/;
+    }
+
+    open BUILDSH, ">$args{'build_root'}/build/$args{'dist'}/build.sh" or die "could not open $args{'build_root'}/build/$args{'dist'}/build.sh $!\n";
     print BUILDSH $tmpl_header;
-    print BUILDSH "AUTHORID=$author\n";
-    print BUILDSH "PROG=$dist\n";
-    print BUILDSH "MODNAME=$module\n";
-    print BUILDSH "VER=$ver\n";
+    print BUILDSH "AUTHORID=$args{'author'}\n";
+    print BUILDSH "PROG=$args{'dist'}\n";
+    print BUILDSH "MODNAME=$args{'module'}\n";
+    print BUILDSH "VER=$args{'version'}\n";
     print BUILDSH "VERHUMAN=\$VER\n";
     print BUILDSH "PKG=omniti/perl/\$(echo \$PROG | tr '[A-Z]' '[a-z]')\n";
-    print BUILDSH "SUMMARY=\"$summary\"\n";
-    print BUILDSH "DESC=\"$summary\"\n";
+    print BUILDSH "SUMMARY=\"$args{'summary'}\"\n";
+    print BUILDSH "DESC=\"$args{'summary'}\"\n";
     print BUILDSH $tmpl_footer;
     close BUILDSH;
-    chmod 0755, "$args{'build_root'}/build/$dist/build.sh";
+    chmod 0755, "$args{'build_root'}/build/$args{'dist'}/build.sh";
 }
+
+1;
