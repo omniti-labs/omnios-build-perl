@@ -32,9 +32,9 @@ sub create_buildsh {
         my @deps;
         foreach my $dep ( @{$args{'dependencies'}} ) {
             $dep = 'omniti/perl/'.$dep if ( $dep !~ /^omniti\/perl/ );
-            push @deps, $dep;
+            push @deps, lc $dep;
         }
-        my $depends = "DEPENDS_IPS=" . join(" ", @deps);
+        my $depends = "DEPENDS_IPS=\"" . join(" ", @deps) . "\"";
 
         $tmpl_footer =~ s/#DEPENDS_IPS=/$depends/;
     }
