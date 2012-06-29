@@ -65,6 +65,7 @@ sub deps {
 
     my @deps;
     foreach my $dep ( @{$self->{'_data'}{'dependency'}} ) {
+        next if $dep->{'phase'} ne 'runtime';
         next if $dep->{'module'} eq 'perl';
         next if $dep->{'relationship'} eq 'recommends';
 
