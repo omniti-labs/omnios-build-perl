@@ -32,6 +32,7 @@ my %dist_cache = ();
 my %dependencies = ();
 my @install = ();
 my @dep_list = ($module);
+my @unknown_licenses = ();
 
 my $p_obj = OmniTI::Packaging::Packages->new();
 while (scalar(@dep_list)) {
@@ -60,13 +61,28 @@ while (scalar(@dep_list)) {
         summary         => $m_obj->summary(),
         dependencies    => [map { $_->{'dist'} } @{$dependencies{$mod}}]
     );
+
+    my $license;
+    eval {
+        $license = $d_obj->license_for_mog();
+        OmniTI::Packaging::IPS::write_license(
+            build_root      => '/home/bclapper/build/',
+            dist            => $m_obj->dist(),
+            contents        => $license
+        );
+    };
+    if ( $@ || ! $license ) {
+        push @unknown_licenses, $m_obj->dist();
+    }
+}
+
+if ( scalar(@unknown_licenses) ) {
+    print "Unknown Licenses, you will need to fix these manually:\n";
+    map { print "\t$_\n"; } @unknown_licenses;
 }
 
 push @install, $module_cache{$module}->dist();
-
 print "Installation order:\n";
-foreach (@install) {
-    print "\t$_\n";
-}
+map { print "$_\n"; } @install;
 
 exit 0;

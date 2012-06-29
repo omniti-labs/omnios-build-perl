@@ -39,7 +39,7 @@ sub create_buildsh {
         $tmpl_footer =~ s/#DEPENDS_IPS=/$depends/;
     }
 
-    open BUILDSH, ">$args{'build_root'}/build/$args{'dist'}/build.sh" or die "could not open $args{'build_root'}/build/$args{'dist'}/build.sh $!\n";
+    open BUILDSH, ">$args{'build_root'}/build/$args{'dist'}/build.sh" or die "could not open $args{'build_root'}/build/$args{'dist'}/build.sh $!";
     print BUILDSH $tmpl_header;
     print BUILDSH "AUTHORID=$args{'author'}\n";
     print BUILDSH "PROG=$args{'dist'}\n";
@@ -52,6 +52,18 @@ sub create_buildsh {
     print BUILDSH $tmpl_footer;
     close BUILDSH;
     chmod 0755, "$args{'build_root'}/build/$args{'dist'}/build.sh";
+}
+
+sub write_license {
+    my %args = @_;
+
+    die "need dist" if ( ! $args{'dist'} );
+    die "need contents" if ( ! $args{'contents'} );
+    die "need a build_root dir" if ( ! $args{'build_root'} );
+
+    open LICENSE, ">$args{'build_root'}/build/$args{'dist'}/local.mog" or die "could not open $args{'build_root'}/build/$args{'dist'}/local.mog $!";
+    print LICENSE $args{'contents'};
+    close LICENSE;
 }
 
 1;

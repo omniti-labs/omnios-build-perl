@@ -5,6 +5,12 @@ use warnings;
 use Scalar::Util qw(blessed);
 use base 'OmniTI::Packaging::MetaCPAN';
 
+# A lot of commonly used things will be unknown, instead of fixing them manually each time
+# do so once here
+our %licenses = (
+    'JSON-XS'   => ['perl_5']
+);
+
 sub new {
     my $class = shift;
     my %args = @_;
@@ -23,6 +29,10 @@ sub lookup {
 
     my $ref = $self->_request( api => 'release', target => $args{'dist'} );
     die "Not found" if ( ! $ref || ($ref->{'message'} && $ref->{'message'} =~ /Not found/ ) );
+
+    if ( (! scalar(@{$ref->{'license'}}) || $ref->{'license'}[0] eq 'unknown') && $licenses{$args{'dist'}} ) {
+        $ref->{'license'} = $licenses{$args{'dist'}};
+    }
 
     $self->{'_data'} = $ref;
     return $ref;

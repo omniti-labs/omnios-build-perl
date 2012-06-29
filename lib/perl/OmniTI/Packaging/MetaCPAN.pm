@@ -57,7 +57,7 @@ sub deal_with_fucktards {
     elsif ( $type eq 'dist' ) {
         if ( $target eq 'common-sense' ) {
             $self->{'_data'} = {
-                license     => 'perl_5',
+                license     => ['perl_5'],
                 dependency  => []
             };
         }
