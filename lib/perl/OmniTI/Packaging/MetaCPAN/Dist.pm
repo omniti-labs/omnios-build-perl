@@ -65,6 +65,9 @@ sub deps {
 
     my @deps;
     foreach my $dep ( @{$self->{'_data'}{'dependency'}} ) {
+        next if $dep->{'module'} eq 'perl';
+        next if $dep->{'relationship'} eq 'recommends';
+
         $args{'module_cache'}{$dep->{'module'}} = OmniTI::Packaging::MetaCPAN::Module->new( module => $dep->{'module'} );
         if ( ! $args{'pkg_obj'}->is_perlcore( module => $dep->{'module'}, dist => $args{'module_cache'}{$dep->{'module'}}->dist() ) ) {
             push @deps, {
