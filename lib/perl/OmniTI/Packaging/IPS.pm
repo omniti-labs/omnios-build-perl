@@ -37,6 +37,17 @@ sub create_buildsh {
         my $depends = "DEPENDS_IPS=\"" . join(" ", @deps) . "\"";
 
         $tmpl_footer =~ s/#DEPENDS_IPS=/$depends/;
+    } 
+    if ( $args{'builddeps'} ) {
+	my $defdeps = "developer/build/gnu-make system/header system/library/math/header-math ";
+	my @builddeps;
+	foreach my $builddep ( @{$args{'builddeps'}} ) {
+	    $builddep = 'omniti/perl/'.$builddep if ( $builddep !~ /^omniti\/perl/ );
+	    push @builddeps, lc $builddep;
+	}
+	my $builddepends = "BUILD_DEPENDS_IPS=\"" . $defdeps . join(" ", @builddeps) . "\"";
+
+	$tmpl_footer =~ s/#BUILD_DEPENDS_IPS=/$builddepends/;
     }
 
     open BUILDSH, ">$args{'build_root'}/build/$args{'dist'}/build.sh" or die "could not open $args{'build_root'}/build/$args{'dist'}/build.sh $!";
@@ -47,8 +58,8 @@ sub create_buildsh {
     print BUILDSH "VER=$args{'version'}\n";
     print BUILDSH "VERHUMAN=\$VER\n";
     print BUILDSH "PKG=omniti/perl/\$(echo \$PROG | tr '[A-Z]' '[a-z]')\n";
-    print BUILDSH "SUMMARY=\"$args{'summary'}\"\n";
-    print BUILDSH "DESC=\"$args{'summary'}\"\n";
+    print BUILDSH "SUMMARY=\"$args{'summary'} (Perl \$DEPVER)\"\n";
+    print BUILDSH "DESC=\"\$SUMMARY\"\n";
     print BUILDSH $tmpl_footer;
     close BUILDSH;
     chmod 0755, "$args{'build_root'}/build/$args{'dist'}/build.sh";

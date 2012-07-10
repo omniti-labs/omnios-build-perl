@@ -47,7 +47,9 @@ sub license_for_mog {
         if ( $l eq 'perl_5' ) {
             $mog .= "license perl-artistic-1 license=Artistic\n";
             $mog .= "license perl-gpl-v1 license=GPLv1\n";
-        }
+        } elsif ( $l eq 'artistic_2' ) {
+	    $mog .= "license perl-artistic-2 license=Artistic2\n";
+	}
     }
     return $mog;
 }
@@ -65,15 +67,17 @@ sub deps {
 
     my @deps;
     foreach my $dep ( @{$self->{'_data'}{'dependency'}} ) {
-        next if $dep->{'phase'} ne 'runtime';
+        next if $dep->{'phase'} ne 'runtime' && $dep->{'phase'} ne 'test';
         next if $dep->{'module'} eq 'perl';
         next if $dep->{'relationship'} eq 'recommends';
+        next if $dep->{'relationship'} eq 'conflicts';
 
         $args{'module_cache'}{$dep->{'module'}} = OmniTI::Packaging::MetaCPAN::Module->new( module => $dep->{'module'} );
         if ( ! $args{'pkg_obj'}->is_perlcore( module => $dep->{'module'}, dist => $args{'module_cache'}{$dep->{'module'}}->dist() ) ) {
             push @deps, {
                 module  => $dep->{'module'},
-                dist    => $args{'module_cache'}{$dep->{'module'}}->dist()
+                dist    => $args{'module_cache'}{$dep->{'module'}}->dist(),
+		phase => $dep->{'phase'}
             };
         }
     }

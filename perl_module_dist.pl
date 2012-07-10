@@ -11,6 +11,8 @@ use Getopt::Long;
 use File::Slurp qw(read_file);
 use Data::Dumper;
 use JSON;
+use Cwd;
+use Module::CoreList;
 
 my ($module, $help) = (undef,0);
 my ($tmpl_header, $tmpl_footer);
@@ -27,12 +29,20 @@ if ( $help || ! $module ) {
     exit 0;
 }
 
+if ( Module::CoreList::first_release($module) ) {
+    print "$module is in core for this version of Perl ($^V)\n";
+    exit 1;
+}
+
 my %module_cache = ();
 my %dist_cache = ();
 my %dependencies = ();
 my @install = ();
 my @dep_list = ($module);
+my @run_deps = ();
+my @build_deps = ();
 my @unknown_licenses = ();
+my $rootdir = cwd();
 
 my $p_obj = OmniTI::Packaging::Packages->new();
 while (scalar(@dep_list)) {
@@ -50,23 +60,29 @@ while (scalar(@dep_list)) {
             unshift @install, $dep->{'dist'};
             push @dep_list, $dep->{'module'};
         }
+	if ( $dep->{'phase'} eq 'runtime' ) {
+	    push @run_deps, $dep->{'dist'};
+	} elsif ( $dep->{'phase'} eq 'test' ) {
+	    push @build_deps, $dep->{'dist'};
+	}
     }
 
     OmniTI::Packaging::IPS::create_buildsh(
-        build_root      => '/home/bclapper/build/',
+        build_root      => $rootdir,
         dist            => $m_obj->dist(),
         author          => $d_obj->author() || $m_obj->author(),
         version         => $d_obj->version() || $m_obj->version(),
         module          => $mod,
         summary         => $d_obj->summary() || $m_obj->summary(),
-        dependencies    => [map { $_->{'dist'} } @{$dependencies{$mod}}]
+        dependencies    => \@run_deps,
+        builddeps       => \@build_deps
     );
 
     my $license;
     eval {
         $license = $d_obj->license_for_mog();
         OmniTI::Packaging::IPS::write_license(
-            build_root      => '/home/bclapper/build/',
+            build_root      => $rootdir,
             dist            => $m_obj->dist(),
             contents        => $license
         );
