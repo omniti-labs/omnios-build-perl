@@ -55,10 +55,10 @@ while (scalar(@dep_list)) {
     OmniTI::Packaging::IPS::create_buildsh(
         build_root      => '/home/bclapper/build/',
         dist            => $m_obj->dist(),
-        author          => $m_obj->author(),
-        version         => $m_obj->version(),
+        author          => $d_obj->author() || $m_obj->author(),
+        version         => $d_obj->version() || $m_obj->version(),
         module          => $mod,
-        summary         => $m_obj->summary(),
+        summary         => $d_obj->summary() || $m_obj->summary(),
         dependencies    => [map { $_->{'dist'} } @{$dependencies{$mod}}]
     );
 
