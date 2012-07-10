@@ -49,7 +49,7 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 author              => 'MLEHMANN',
                 abstract            => 'save a tree AND a kitten, use common::sense!',
-                version_numified    => 3.6,
+                version             => 3.6,
                 distribution        => 'common-sense'
             };
         }

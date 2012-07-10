@@ -87,6 +87,6 @@ sub deps {
 
 sub author  { my $self = shift; return $self->{'_data'}{'author'}; }
 sub summary { my $self = shift; return $self->{'_data'}{'abstract'}; }
-sub version { my $self = shift; return $self->{'_data'}{'version_numified'}; }
+sub version { my $self = shift; return $self->{'_data'}{'version'}; }
 
 1;
