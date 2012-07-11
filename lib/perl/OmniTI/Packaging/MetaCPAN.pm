@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense)) {
+        foreach (qw(common::sense Devel::Leak)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense)) {
+        foreach (qw(common-sense Devel-Leak)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -53,9 +53,17 @@ sub deal_with_fucktards {
                 distribution        => 'common-sense'
             };
         }
+        if ( $target eq 'Devel::Leak' ) {
+            $self->{'_data'} = {
+                author              => 'NI-S',
+                abstract            => 'Utility for looking for perl objects that are not reclaimed.',
+                version             => 0.03,
+                distribution        => 'Devel-Leak'
+            };
+        }
     }
     elsif ( $type eq 'dist' ) {
-        if ( $target eq 'common-sense' ) {
+        if ( $target eq 'common-sense' || $target eq 'Devel-Leak' ) {
             $self->{'_data'} = {
                 license     => ['perl_5'],
                 dependency  => []
