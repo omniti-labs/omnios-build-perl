@@ -39,13 +39,14 @@ my %dist_cache = ();
 my %dependencies = ();
 my @install = ();
 my @dep_list = ($module);
-my @run_deps = ();
-my @build_deps = ();
 my @unknown_licenses = ();
 my $rootdir = cwd();
 
 my $p_obj = OmniTI::Packaging::Packages->new();
 while (scalar(@dep_list)) {
+    my @run_deps;
+    my @build_deps;
+
     my $mod = pop @dep_list;
 
     my $m_obj = $module_cache{$mod} || OmniTI::Packaging::MetaCPAN::Module->new( module => $mod );
