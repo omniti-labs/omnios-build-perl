@@ -68,6 +68,10 @@ while (scalar(@dep_list)) {
 	}
     }
 
+    # De-dupe and sort the dep lists
+    @run_deps = sort keys %{{  map { $_ => 1 } @run_deps }};
+    @build_deps = sort keys %{{  map { $_ => 1 } @build_deps }};
+
     OmniTI::Packaging::IPS::create_buildsh(
         build_root      => $rootdir,
         dist            => $m_obj->dist(),
