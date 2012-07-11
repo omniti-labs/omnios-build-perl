@@ -20,6 +20,8 @@ sub create_buildsh {
     die "need summary" if ( ! $args{'summary'} );
     die "need a build_root dir" if ( ! $args{'build_root'} );
 
+    return if ( -f "$args{'build_root'}/build/$args{'dist'}/build.sh" );
+
     my $tmpl_header = read_file("$args{'build_root'}/template/perl/header");
     my $tmpl_footer = read_file("$args{'build_root'}/template/perl/footer");
 
