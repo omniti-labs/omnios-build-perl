@@ -136,14 +136,14 @@ PERL32=/opt/OMNIperl/bin/$ISAPART/perl
 PERL64=/opt/OMNIperl/bin/$ISAPART64/perl
 
 # Default Makefile.PL options
-NOPERL_MAKEFILE_OPTS="INSTALLSITEBIN=$PREFIX/bin/_ARCHBIN_ \
+PERL_MAKEFILE_OPTS="INSTALLSITEBIN=$PREFIX/bin/_ARCHBIN_ \
                     INSTALLSITESCRIPT=$PREFIX/bin/_ARCHBIN_ \
                     INSTALLSITEMAN1DIR=$PREFIX/share/man/man1 \
                     INSTALLSITEMAN3DIR=$PREFIX/share/man/man3 \
                     INSTALLDIRS=site"
 
 # Accept MakeMaker defaults so as not to stall build scripts
-export NOPERL_MM_USE_DEFAULT=true
+export PERL_MM_USE_DEFAULT=true
 
 # When building perl modules, run make test
 # Unset in a build script to skip tests
