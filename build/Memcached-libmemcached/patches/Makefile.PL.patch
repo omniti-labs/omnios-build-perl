@@ -1,0 +1,20 @@
+--- Memcached-libmemcached-0.4406/Makefile.PL.orig	Thu Oct 21 13:43:36 2010
++++ Memcached-libmemcached-0.4406/Makefile.PL	Thu Jul 12 18:06:57 2012
+@@ -26,7 +26,7 @@
+ ) or exit 1;
+ 
+ my $lmcd_inst = getcwd()."/src_inst";
+-my $lmcd_built_lib = "$lmcd_inst/lib/libmemcached$Config{lib_ext}";
++my $lmcd_built_lib = "$lmcd_inst/lib/amd64/libmemcached$Config{lib_ext}";
+ my @lmcd_pod = sort <$lmcd_src/docs/memcached_*.pod>;
+ my $is_developer = (-d ".svn" || -d ".git");
+ 
+@@ -179,7 +179,7 @@
+     return if -d "$lmcd_inst/lib"; # XXX assume it built ok. use 'make realclean' to rm
+     mkdir $lmcd_inst, 0775 unless -d $lmcd_inst;
+     run("cd $lmcd_src && make distclean") if -f "$lmcd_src/Makefile";
+-    my $configure_args = '--disable-sasl --with-pic --disable-shared';
++    my $configure_args = '--disable-sasl --with-pic --disable-shared --disable-dtrace';
+     $configure_args .= ' --enable-debug' if $opt_g;
+     $configure_args .= ' CFLAGS=-pg LDFLAGS=-pg' if $opt_pg;
+     if ($is_developer) {    # XXX make a Makefile.PL argument/option
