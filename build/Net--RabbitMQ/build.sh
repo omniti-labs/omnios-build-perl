@@ -30,7 +30,7 @@
 AUTHORID=JESUS
 PROG=Net--RabbitMQ
 MODNAME=Net::RabbitMQ
-VER=0.2.5
+VER=0.2.6
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="interface with RabbitMQ over AMQP (Perl $DEPVER)"
