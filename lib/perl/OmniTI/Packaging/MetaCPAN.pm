@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense DBIx-Safe Devel-Leak)) {
+        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -67,6 +67,14 @@ sub deal_with_fucktards {
                 abstract            => 'Utility for looking for perl objects that are not reclaimed.',
                 version             => 0.03,
                 distribution        => 'Devel-Leak'
+            };
+        }
+        if ( $target eq 'Statistics::Basic' ) {
+            $self->{'_data'} = {
+                author              => 'JETTERO',
+                abstract            => 'A collection of very basic statistics modules',
+                version             => 1.6607,
+                distribution        => 'Statistics-Basic'
             };
         }
     }
