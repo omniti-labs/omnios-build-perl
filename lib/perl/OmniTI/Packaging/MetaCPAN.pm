@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense Devel::Leak)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense Devel-Leak)) {
+        foreach (qw(common-sense DBIx-Safe Devel-Leak)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -51,6 +51,14 @@ sub deal_with_fucktards {
                 abstract            => 'save a tree AND a kitten, use common::sense!',
                 version             => 3.6,
                 distribution        => 'common-sense'
+            };
+        }
+        if ( $target eq 'DBIx::Safe' ) {
+            $self->{'_data'} = {
+                author              => 'TURNSTEP',
+                abstract            => 'Safer access to your database through a DBI database handle',
+                version             => 1.2.5,
+                distribution        => 'DBIx-Safe'
             };
         }
         if ( $target eq 'Devel::Leak' ) {
