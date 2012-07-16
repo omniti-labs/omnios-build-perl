@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic Test::TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic)) {
+        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic Test-TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -49,7 +49,7 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 author              => 'MLEHMANN',
                 abstract            => 'save a tree AND a kitten, use common::sense!',
-                version             => 3.6,
+                version             => '3.6',
                 distribution        => 'common-sense'
             };
         }
@@ -57,7 +57,7 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 author              => 'TURNSTEP',
                 abstract            => 'Safer access to your database through a DBI database handle',
-                version             => 1.2.5,
+                version             => '1.2.5',
                 distribution        => 'DBIx-Safe'
             };
         }
@@ -65,7 +65,7 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 author              => 'NI-S',
                 abstract            => 'Utility for looking for perl objects that are not reclaimed.',
-                version             => 0.03,
+                version             => '0.03',
                 distribution        => 'Devel-Leak'
             };
         }
@@ -73,8 +73,16 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 author              => 'JETTERO',
                 abstract            => 'A collection of very basic statistics modules',
-                version             => 1.6607,
+                version             => '1.6607',
                 distribution        => 'Statistics-Basic'
+            };
+        }
+        if ( $target eq 'Test::TCP' ) {
+            $self->{'_data'} = {
+                author              => 'TOKUHIROM',
+                abstract            => 'testing TCP program',
+                version             => '1.16',
+                distribution        => 'Test-TCP'
             };
         }
     }
@@ -83,6 +91,19 @@ sub deal_with_fucktards {
             $self->{'_data'} = {
                 license     => ['perl_5'],
                 dependency  => []
+            };
+        }
+        if ( $target eq 'Test-TCP' ) {
+            $self->{'_data'} = {
+                license     => ['perl_5'],
+                dependency  => [
+			{
+				module  => 'Test::SharedFork',
+				version => '0',
+				phase => 'test',
+				relationship => 'requires'
+			}
+		]
             };
         }
     }

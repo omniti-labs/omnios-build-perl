@@ -67,7 +67,7 @@ sub deps {
 
     my @deps;
     foreach my $dep ( @{$self->{'_data'}{'dependency'}} ) {
-        next if $dep->{'phase'} ne 'runtime' && $dep->{'phase'} ne 'test';
+        next if $dep->{'phase'} ne 'runtime' && $dep->{'phase'} ne 'test' && $dep->{'phase'} ne 'build';
         next if $dep->{'module'} eq 'perl';
         next if $dep->{'relationship'} eq 'recommends';
         next if $dep->{'relationship'} eq 'conflicts';

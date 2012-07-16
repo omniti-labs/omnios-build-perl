@@ -63,7 +63,7 @@ while (scalar(@dep_list)) {
         }
 	if ( $dep->{'phase'} eq 'runtime' ) {
 	    push @run_deps, $dep->{'dist'};
-	} elsif ( $dep->{'phase'} eq 'test' ) {
+	} elsif ( $dep->{'phase'} eq 'test' || $dep->{'phase'} eq 'build' ) {
 	    push @build_deps, $dep->{'dist'};
 	}
     }
