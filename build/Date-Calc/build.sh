@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ADIE
-PROG=Test-Exception
-MODNAME=Test::Exception
-VER=0.31
+AUTHORID=STBEY
+PROG=Date-Calc
+MODNAME=Date::Calc
+VER=6.3
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Test exception based code (Perl $DEPVER)"
+SUMMARY="Gregorian calendar date calculations (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/sub-uplevel"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14.2 5.16.0"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/sub-uplevel"
+DEPENDS_IPS="omniti/perl/bit-vector omniti/perl/carp-clan"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
