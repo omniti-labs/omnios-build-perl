@@ -1,0 +1,2 @@
+MCRYPT_LDFLAGS="-L/opt/omni/lib -R/opt/omni/lib"
+export MCRYPT_LDFLAGS
