@@ -32,7 +32,7 @@ PROG=Net--RabbitMQ
 MODNAME=Net::RabbitMQ
 VER=0.2.6
 VERHUMAN=$VER
-PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
+PKG=omniti/perl/net-rabbitmq    # Hard coded to remove the extra '-'
 SUMMARY="interface with RabbitMQ over AMQP (Perl $DEPVER)"
 DESC="$SUMMARY"
 
