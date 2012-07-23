@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic Test::TCP)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic String::CRC32 Test::TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic Test-TCP)) {
+        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic String-CRC32 Test-TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -75,6 +75,14 @@ sub deal_with_fucktards {
                 abstract            => 'A collection of very basic statistics modules',
                 version             => '1.6607',
                 distribution        => 'Statistics-Basic'
+            };
+        }
+        if ( $target eq 'String::CRC32' ) {
+            $self->{'_data'} = {
+                author              => 'SOENKE',
+                abstract            => 'Perl interface for cyclic redundency check generation',
+                version             => '1.4',
+                distribution        => 'String-CRC32'
             };
         }
         if ( $target eq 'Test::TCP' ) {
