@@ -1,0 +1,1 @@
+MAKEFILE_OPTS="LIBS=-L/opt/omni/lib/amd64 INC=-I/opt/omni/include"
