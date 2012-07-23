@@ -33,7 +33,7 @@ MODNAME=Lingua::EN::Numbers
 VER=1.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="turn '407' into 'four hundred and seven' etc. (Perl $DEPVER)"
+SUMMARY="turn '407' into 'four hundred and seven', etc. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "

@@ -52,6 +52,10 @@ sub create_buildsh {
 	$tmpl_footer =~ s/#BUILD_DEPENDS_IPS=/$builddepends/;
     }
 
+    # Double-quotes are verboten in summaries
+    my $clean_summary = $args{'summary'};
+    $clean_summary =~ s/"/'/g;
+
     open BUILDSH, ">$args{'build_root'}/build/$args{'dist'}/build.sh" or die "could not open $args{'build_root'}/build/$args{'dist'}/build.sh $!";
     print BUILDSH $tmpl_header;
     print BUILDSH "AUTHORID=$args{'author'}\n";
@@ -60,7 +64,7 @@ sub create_buildsh {
     print BUILDSH "VER=$args{'version'}\n";
     print BUILDSH "VERHUMAN=\$VER\n";
     print BUILDSH "PKG=omniti/perl/\$(echo \$PROG | tr '[A-Z]' '[a-z]')\n";
-    print BUILDSH "SUMMARY=\"$args{'summary'} (Perl \$DEPVER)\"\n";
+    print BUILDSH "SUMMARY=\"$clean_summary (Perl \$DEPVER)\"\n";
     print BUILDSH "DESC=\"\$SUMMARY\"\n";
     print BUILDSH $tmpl_footer;
     close BUILDSH;
