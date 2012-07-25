@@ -31,10 +31,10 @@ PROG=perl-5142-incorporation
 VER=5.14.2
 VERHUMAN=$VER
 PKG=omniti/incorporation/perl-5142-incorporation
-SUMMARY="Constrains omniti/runtime/perl to version $VER"
+SUMMARY="This is the old 5.14 incorporation, superseded by perl-514-incorporation"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="=omniti/runtime/perl@5.14.2"
+#DEPENDS_IPS="=omniti/runtime/perl@5.14.2"
 
 init
 prep_build

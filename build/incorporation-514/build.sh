@@ -27,14 +27,14 @@
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=perl-5160-incorporation
-VER=5.16.0
+PROG=perl-514-incorporation
+VER=5.14
 VERHUMAN=$VER
-PKG=omniti/incorporation/perl-5160-incorporation
-SUMMARY="This is the old 5.16 incorporation, superseded by perl-516-incorporation"
+PKG=omniti/incorporation/$PROG
+SUMMARY="Constrains omniti/runtime/perl to version ${VER}.x"
 DESC="$SUMMARY"
 
-#DEPENDS_IPS="=omniti/runtime/perl@5.16.0"
+DEPENDS_IPS="=omniti/runtime/perl@$VER"
 
 init
 prep_build
