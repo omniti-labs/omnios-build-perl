@@ -892,25 +892,25 @@ buildperl64() {
 
 makefilepl32() {
     logmsg "--- Makefile.PL 32-bit"
-    logcmd $PERL32 Makefile.PL PREFIX=$PREFIX $@ ||
+    logcmd $PERL32 Makefile.PL PREFIX=$PREFIX INSTALLDIRS=vendor $@ ||
         logerr "Failed to run Makefile.PL"
 }
 
 makefilepl64() {
     logmsg "--- Makefile.PL 64-bit"
-    logcmd $PERL64 Makefile.PL PREFIX=$PREFIX $@ ||
+    logcmd $PERL64 Makefile.PL PREFIX=$PREFIX INSTALLDIRS=vendor $@ ||
         logerr "Failed to run Makefile.PL"
 }
 
 buildpl32() {
     logmsg "--- Build.PL 32-bit"
-    logcmd $PERL32 Build.PL prefix=$PREFIX $@ ||
+    logcmd $PERL32 Build.PL --installdirs vendor prefix=$PREFIX $@ ||
         logerr "Failed to run Build.PL"
 }
 
 buildpl64() {
     logmsg "--- Build.PL 64-bit"
-    logcmd $PERL64 Build.PL prefix=$PREFIX $@ ||
+    logcmd $PERL64 Build.PL --installdirs vendor prefix=$PREFIX $@ ||
         logerr "Failed to run Build.PL"
 }
 
@@ -935,7 +935,7 @@ build_test() {
 
 build_install() {
     logmsg "--- Build install"
-    logcmd ./Build pure_install --destdir=$DESTDIR || \
+    logcmd ./Build pure_install --destdir=$DESTDIR --installdirs vendor || \
         logmsg "Build install failed"
 }
 
