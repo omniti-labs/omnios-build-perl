@@ -30,32 +30,32 @@
 AUTHORID=DROLSKY
 PROG=DateTime-TimeZone
 MODNAME=DateTime::TimeZone
-VER=1.46
+VER=1.47
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Time zone object base class and factory (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-output"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-load omniti/perl/class-singleton omniti/perl/params-validate omniti/perl/test-output"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
-# Only 5.14.2 and later will get individual module builds
-PERLVERLIST="5.14.2 5.16.0"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16"
 
-# Add any additional deps here; OMNIperl added below
+# Add any additional deps here; omniti/runtime/perl added below
 DEPENDS_IPS="omniti/perl/class-load omniti/perl/class-singleton omniti/perl/params-validate"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
-    5.14.2)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
-    5.16.0)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5160-incorporation"
+    5.16)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

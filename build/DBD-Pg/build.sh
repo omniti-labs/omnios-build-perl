@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DBI PostgreSQL interface (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math/header-math omniti/perl/dbi omniti/library/libpq5"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math/header-math omniti/library/libpq5 omniti/perl/dbi"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,19 +46,19 @@ NO_PARALLEL_MAKE=1
 POSTGRES_HOME=/opt/omni
 export POSTGRES_HOME
 
-# Only 5.14.2 and later will get individual module builds
-PERLVERLIST="5.14.2 5.16.0"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/dbi omniti/library/libpq5 system/library/gcc-4-runtime"
+DEPENDS_IPS="omniti/library/libpq5 system/library/gcc-4-runtime omniti/perl/dbi"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
-    5.14.2)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
-    5.16.0)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5160-incorporation"
+    5.16)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

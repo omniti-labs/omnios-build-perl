@@ -52,10 +52,10 @@ DEPENDS_IPS="omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/pe
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-514-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-516-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

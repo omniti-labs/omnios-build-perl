@@ -30,29 +30,32 @@
 AUTHORID=NEOPHENIX
 PROG=Redis-hiredis
 MODNAME=Redis::hiredis
-VER=0.10.1
+VER=0.10.2
 VERHUMAN=$VER                # Human-readable version
 #PVER=                       # Branch (set in config.sh, override here if needed)
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
 SUMMARY="Redis::hiredis - interact with Redis using the hiredis client."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
-# Only 5.14.2 and later will get individual module builds
-PERLVERLIST="5.14.2"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; OMNIperl added below
 #DEPENDS_IPS=
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
-    5.14.2)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        ;;
+    5.16)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
@@ -71,7 +74,6 @@ download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PRO
 patch_source
 prep_build
 buildperl
-fix_permissions
 make_package
 clean_up
 
