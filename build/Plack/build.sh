@@ -30,7 +30,7 @@
 AUTHORID=MIYAGAWA
 PROG=Plack
 MODNAME=Plack
-VER=0.9989
+VER=1.0001
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl Superglue for Web frameworks and Web Servers (PSGI toolkit) (Perl $DEPVER)"
