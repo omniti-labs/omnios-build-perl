@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl Interface to libmemcached (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/memcached-libmemcached"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/memcached-libmemcached omniti/perl/task-weaken"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -44,19 +44,19 @@ reset_configure_opts
 BUILDARCH=64
 NO_PARALLEL_MAKE=1
 
-# Only 5.14.2 and later will get individual module builds
-PERLVERLIST="5.14.2 5.16.0"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/memcached-libmemcached omniti/perl/task-weaken"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
-    5.14.2)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5142-incorporation"
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
-    5.16.0)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/incorporation/perl-5160-incorporation"
+    5.16)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
