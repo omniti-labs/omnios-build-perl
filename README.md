@@ -187,3 +187,21 @@ At this point, optionally review `/tmp/build_esproul/omniti_perl_carp-clan.p5m`
 	--- Removing temporary install directory /tmp/build_esproul/omniti_perl_carp-clan_pkg
 	--- Cleaning up temporary manifest and transform files
 	Done.
+
+To change Perl versions, for example going from 5.14 to 5.16:
+
+	$ sudo pkg uninstall omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
+	$ sudo pkg install omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
+
+This will automatically upgrade `omniti/runtime/perl` to the latest release of 
+5.16 and install dist packages compatible with 5.16.
+
+You can "downgrade" as well, but it's slightly different, because normally 
+`pkg(1)` doesn't want to install an older version. Remove existing perl
+incorporation and dist packages as above, then:
+
+	$ sudo pkg omniti/runtime/perl@5.14
+
+Then install the 5.14 incorporation and supporting dists as above.
+
+	
