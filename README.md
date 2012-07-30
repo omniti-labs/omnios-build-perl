@@ -25,6 +25,9 @@ you need to do the following to get a basic build environment.
 
 	sudo pkg install developer/gcc46 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
 
+__Except for package management, all the following build commands are meant to run
+as your user, not root.__
+
 You typically use the name of the base module of the distribution as the 
 starting point.  If you're not sure, just pick one of the modules and things 
 should work out.  Give this module name with the `-m` option to 
@@ -90,3 +93,72 @@ If a build is not successful, the full output of the run is available in the
 
 You may review the current list of available dist packages at 
 http://pkg.omniti.com/omniti-perl/
+
+### Sample build
+
+	$ pwd
+	/home/esproul/git/perl-build
+	$ ./perl_module_dist.pl -m Carp::Clan
+	Installation order:
+	Sub-Uplevel
+	Test-Exception
+	Carp-Clan
+
+For the purposes of this example, let's assume that Sub::Uplevel and
+Test::Exception are already built and available.
+
+	$ cd build/Carp-Clan
+	$ ./build.sh -d 5.14
+	===== Build started at Fri Jul 27 16:55:14 UTC 2012 =====
+	Package name: omniti/perl/carp-clan
+	Selected flavor: None (use -f to specify a flavor)
+	Selected build arch: both
+	Extra dependency: 5.14
+	Verifying build dependencies
+	Testing whether Carp::Clan is in core
+	--- Ensuring omniti/perl/carp-clan is not installed
+	------ Not installed, good.
+	--- Module is not in core for Perl 5.14.  Continuing with build.
+	Checking for source directory
+	--- Source directory not found
+	Checking for Carp-Clan source archive
+	--- Archive not found.
+	Downloading archive
+	Extracting archive: Carp-Clan-6.04.tar.gz
+	Checking for patches in patches/ (in order to apply them)
+	--- No series file (list of patches) found
+	--- Not applying any patches
+	Preparing for build
+	--- Creating temporary install dir
+	Building 32-bit
+	--- make (dist)clean
+	--- *** WARNING *** make (dist)clean Failed
+	--- Makefile.PL 32-bit
+	--- make
+	--- make test (i386)
+	--- make install (pure)
+	Building 64-bit
+	--- make (dist)clean
+	--- Makefile.PL 64-bit
+	--- make
+	--- make test ()
+	--- make install (pure)
+	Making package
+	--- Generating package manifest from /tmp/build_esproul/omniti_perl_carp-clan_pkg
+	------ Running: /usr/bin/pkgsend generate /tmp/build_esproul/omniti_perl_carp-clan_pkg > /tmp/build_esproul/omniti_perl_carp-clan.p5m.int
+	--- Generating package metadata
+	------ Setting human-readable version
+	------ Adding dependencies
+	--- Applying transforms
+	--- Publishing package
+	Intentional pause: Last chance to sanity-check before publication!
+
+At this point, optionally review `/tmp/build_esproul/omniti_perl_carp-clan.p5m`
+
+	An Error occured in the build. Do you wish to continue anyway? (y/n) y
+	===== Error occured, user chose to continue anyway. =====
+	--- Published omniti/perl/carp-clan@6.4,5.11-0.151002
+	Cleaning up
+	--- Removing temporary install directory /tmp/build_esproul/omniti_perl_carp-clan_pkg
+	--- Cleaning up temporary manifest and transform files
+	Done.
