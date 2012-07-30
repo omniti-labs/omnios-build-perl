@@ -200,7 +200,7 @@ You can "downgrade" as well, but it's slightly different, because normally
 `pkg(1)` doesn't want to install an older version. Remove existing perl
 incorporation and dist packages as above, then:
 
-	$ sudo pkg omniti/runtime/perl@5.14
+	$ sudo pkg update omniti/runtime/perl@5.14
 
 Then install the 5.14 incorporation and supporting dists as above.
 
