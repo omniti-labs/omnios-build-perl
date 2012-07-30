@@ -23,9 +23,7 @@ You may override most variables in the build script.
 You need a release version of OmniOS to use as a build system.  At a minimum, 
 you need to do the following to get a basic build environment.
 
-	sudo pkg install developer/gcc46 developer/object-file developer/linker 
-	developer/library/lint developer/build/gnu-make system/header 
-	system/library/math/header-math
+	sudo pkg install developer/gcc46 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
 
 You typically use the name of the base module of the distribution as the 
 starting point.  If you're not sure, just pick one of the modules and things 
