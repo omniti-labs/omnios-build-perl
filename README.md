@@ -25,6 +25,13 @@ you need to do the following to get a basic build environment.
 
 	sudo pkg install developer/gcc46 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
 
+Additionally, you'll need `omniti/runtime/perl` at the desired version and a 
+couple of supporting modules.  Something like:
+
+	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
+
+will get you Perl 5.14.
+
 __Except for package management, all the following build commands are meant to run
 as your user, not root.__
 
@@ -105,7 +112,25 @@ http://pkg.omniti.com/omniti-perl/
 	Carp-Clan
 
 For the purposes of this example, let's assume that Sub::Uplevel and
-Test::Exception are already built and available.
+Test::Exception are already built and available.  We check `build.sh` and see
+that `omniti/perl/test-exception` is a build dependency, so we install it.
+
+	$ sudo pkg install omniti/perl/test-exception
+
+Now we change into the dist's build directory and run build.sh for each version
+of Perl we want.  Note that between runs for different Perl versions we'll need
+to update `omniti/runtime/perl` and install the matching incorporation package,
+which will ensure that build-dep packages are installed at the proper version.
+
+It's also important to clean your build environment for each new dist build
+(even within the same Perl version) so as not to miss any unstated dependencies.  
+This is one way to do it:
+
+	$ sudo pkg uninstall $(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation' | awk '{ print $1 }')
+
+This removes all packages with "omniti" in the name except for perl itself, 
+the incorporation and the two modules (File::Slurp and JSON) required by
+`perl_module_dist.pl`.
 
 	$ cd build/Carp-Clan
 	$ ./build.sh -d 5.14
