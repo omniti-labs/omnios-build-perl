@@ -26,7 +26,14 @@ you need to do the following to get a basic build environment.
 	sudo pkg install developer/gcc46 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
 
 Additionally, you'll need `omniti/runtime/perl` at the desired version and a 
-couple of supporting modules.  Something like:
+couple of supporting modules.  
+
+If you haven't got the perl.omniti.com publisher configured (see the output of
+`pkg publisher`), do:
+
+	sudo pkg set-publisher -g http://pkg.omniti.com/omniti-perl/ perl.omniti.com
+
+Then, something like:
 
 	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
 
