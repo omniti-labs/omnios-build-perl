@@ -1,0 +1,2 @@
+GD_LIBS="-R/opt/omni/lib"
+export GD_LIBS

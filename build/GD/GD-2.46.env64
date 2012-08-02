@@ -1,0 +1,3 @@
+MAKEFILE_OPTS=CCFLAGS=-m64
+GD_LIBS="-R/opt/omni/lib/amd64"
+export GD_LIBS

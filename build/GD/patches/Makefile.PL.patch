@@ -1,0 +1,11 @@
+--- GD-2.46/Makefile.PL.orig	Sat Feb  5 20:36:46 2011
++++ GD-2.46/Makefile.PL	Thu Aug  2 20:42:47 2012
+@@ -245,7 +245,7 @@
+     'PL_FILES'  => {'bdf_scripts/bdf2gdfont.PLS' => 'bdf_scripts/bdf2gdfont.pl',
+ 		    'GD/Image.pm.PLS' => 'GD/Image.pm',
+ 		   },
+-    'CCFLAGS'    => '-Wformat=0',
++    'CCFLAGS'    => join(' ','-Wformat=0',$ENV{'CCFLAGS'}),
+     'EXE_FILES' => ['bdf_scripts/bdf2gdfont.pl'],
+     'AUTHOR'    => 'Lincoln Stein (lstein@cshl.org)',
+     'ABSTRACT'  => 'Interface to Gd Graphics Library',
