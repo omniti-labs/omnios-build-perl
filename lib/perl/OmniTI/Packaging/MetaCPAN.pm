@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak Statistics::Basic String::CRC32 Test::TCP)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak ExtUtils::XSBuilder Statistics::Basic String::CRC32 Test::TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense DBIx-Safe Devel-Leak Statistics-Basic String-CRC32 Test-TCP)) {
+        foreach (qw(common-sense DBIx-Safe Devel-Leak ExtUtils-XSBuilder Statistics-Basic String-CRC32 Test-TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -67,6 +67,14 @@ sub deal_with_fucktards {
                 abstract            => 'Utility for looking for perl objects that are not reclaimed.',
                 version             => '0.03',
                 distribution        => 'Devel-Leak'
+            };
+        }
+        if ( $target eq 'ExtUtils::XSBuilder' ) {
+            $self->{'_data'} = {
+                author              => 'GRICHTER',
+                abstract            => 'Automatic Perl XS glue code generation',
+                version             => '0.28',
+                distribution        => 'ExtUtils-XSBuilder'
             };
         }
         if ( $target eq 'Statistics::Basic' ) {
