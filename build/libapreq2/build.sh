@@ -27,6 +27,9 @@
 # Load support functions
 . ../../lib/functions.sh
 
+## This build includes a shared C library as well as Perl stuff.
+## It delivers the C bits to /opt/omni and Perl bits to /opt/OMNIperl.
+
 AUTHORID=ISAAC
 PROG=libapreq2
 MODNAME=APR::Request
@@ -36,19 +39,26 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="wrapper for libapreq2's module/handle API. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/library/libapreq2 omniti/perl/extutils-xsbuilder omniti/server/apache22/mod_perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/extutils-xsbuilder omniti/perl/parse-recdescent omniti/server/apache22 omniti/server/apache22/mod_perl"
 
-PREFIX=/opt/OMNIperl
+PREFIX=/opt/omni
+export PREFIX
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 BUILDARCH=64
+PERL64="/opt/OMNIperl/bin/$ISAPART64/perl"
+
+CONFIGURE_OPTS="--enable-perl-glue"
+CONFIGURE_OPTS_64="$CONFIGURE_OPTS_64
+                   --with-perl=$PERL64
+                   --with-apache2-apxs=/opt/apache22/bin/$ISAPART64/apxs"
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/library/libapreq2"
+DEPENDS_IPS="omniti/perl/parse-recdescent"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -63,6 +73,13 @@ case $DEPVER in
         ;;
 esac
 
+# Install to the Perl vendorlib path
+make_install() {
+    logmsg "--- make install"
+    logcmd $MAKE DESTDIR=${DESTDIR} INSTALLDIRS=vendor install || \
+        logerr "--- Make install failed"
+}
+
 # Uncomment and set PREFIX if any modules install site binaries
 #save_function make_isa_stub make_isa_stub_orig
 #make_isa_stub() {
@@ -70,11 +87,10 @@ esac
 #}
 
 init
-test_if_core
 download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
-buildperl
+build
 make_package
 clean_up
 
