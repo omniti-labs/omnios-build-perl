@@ -27,16 +27,17 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GAAS
-PROG=URI
-MODNAME=URI
-VER=1.60
+AUTHORID=CYCLES
+PROG=Text-WikiFormat
+MODNAME=Text::WikiFormat
+VER=0.80
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Uniform Resource Identifiers (absolute and relative)"
-DESC="Uniform Resource Identifiers (absolute and relative)"
+SUMMARY="module for translating Wiki formatted text into other formats (Perl $DEPVER)"
+DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/uri"
+
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -45,8 +46,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
-# Add any additional deps here; OMNIperl added below
-#DEPENDS_IPS=
+# Add any additional deps here; omniti/runtime/perl added below
+DEPENDS_IPS="omniti/perl/uri"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
