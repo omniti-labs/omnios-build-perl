@@ -1,0 +1,2 @@
+MAKEFILE_OPTS="inc=/opt/omni/include lib=/opt/omni/lib"
+export MAKEFILE_OPTS
