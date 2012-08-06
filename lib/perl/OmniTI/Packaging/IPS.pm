@@ -12,13 +12,15 @@ Currently just makes a build/<dist>/build.sh file
 
 sub create_buildsh {
     my %args = @_;
+#    use Data::Dumper;
+#    print Dumper(\%args);
 
     die "need dist" if ( ! $args{'dist'} );
-    die "need author" if ( ! $args{'author'} );
-    die "need version" if ( ! $args{'version'} );
-    die "need module" if ( ! $args{'module'} );
-    die "need summary" if ( ! $args{'summary'} );
-    die "need a build_root dir" if ( ! $args{'build_root'} );
+    die "need author for $args{'dist'}" if ( ! $args{'author'} );
+    die "need version for $args{'dist'}" if ( ! $args{'version'} );
+    die "need module for $args{'dist'}" if ( ! $args{'module'} );
+    die "need summary for $args{'module'} from $args{'dist'}" if ( ! $args{'summary'} );
+    die "need a build_root dir for $args{'dist'}" if ( ! $args{'build_root'} );
 
     return if ( -f "$args{'build_root'}/build/$args{'dist'}/build.sh" );
 

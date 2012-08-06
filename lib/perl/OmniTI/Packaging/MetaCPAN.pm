@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak ExtUtils::XSBuilder Statistics::Basic String::CRC32 Test::TCP)) {
+        foreach (qw(common::sense DBIx::Safe Devel::Leak ExtUtils::XSBuilder Font::Metrics::CourierOblique Statistics::Basic String::CRC32 Test::TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense DBIx-Safe Devel-Leak ExtUtils-XSBuilder Statistics-Basic String-CRC32 Test-TCP)) {
+        foreach (qw(common-sense Devel-Leak Test-TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -75,6 +75,14 @@ sub deal_with_fucktards {
                 abstract            => 'Automatic Perl XS glue code generation',
                 version             => '0.28',
                 distribution        => 'ExtUtils-XSBuilder'
+            };
+        }
+        if ( $target eq 'Font::Metrics::CourierOblique' ) {
+            $self->{'_data'} = {
+                author              => 'GAAS',
+                abstract            => 'Interface to Adobe Font Metrics files',
+                version             => '1.20',
+                distribution        => 'Font-AFM'
             };
         }
         if ( $target eq 'Statistics::Basic' ) {
