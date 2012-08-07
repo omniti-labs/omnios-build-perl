@@ -74,25 +74,19 @@ directory.
 
 When you've got your list of dists to build, cd into the named subdirectory 
 under `build/`.  These directories are named for the dist without the version.  
-View the build.sh script and check the `BUILD_DEPENDS_IPS` variable.  Ensure 
-these packages are installed.  The first three packages are always present:
-
-	developer/build/gnu-make system/header system/library/math/header-math
-
-Any additional packages specified are requirements to build this distribution.  
-The simplest way to get them is to copy the entire set of packages in that 
-variable line and `sudo pkg install` them.  Don't worry if some packages are 
-already installed, as pkg will skip them.
 
 All you need to do now is run `./build.sh -d <VER>` where `<VER>` is the 
-major/minor Perl version, e.g. "5.16".  Assuming the build is successful, you 
-will be prompted to confirm that you want to publish the package (it will say 
-"An error occurred..." but that's just because we use the same function, 
-`ask_to_continue()`, so don't be concerned.)  In another terminal window, feel 
-free to review the IPS manifest that has been created for the package.  That 
-lives in your build directory, which defaults to `/tmp/build_<username>/`.  The 
-manifest will be the IPS package name with slashes replaced with underscores and 
-with a `.p5m` extension.
+major/minor Perl version, e.g. "5.16".  The build will attempt to install all
+necessary build dependencies and will remove any extraneous packages upon
+successful completion.
+
+Assuming the build is successful, you will be prompted to confirm that you want
+to publish the package (it will say "An error occurred..." but that's just
+because we use the same function, `ask_to_continue()`, so don't be concerned.)
+In another terminal window, optionally review the IPS manifest that has been
+created for the package.  That lives in your build directory, which defaults to
+`/tmp/build_<username>/`.  The manifest will be the IPS package name with
+slashes replaced with underscores and with a `.p5m` extension.
 
 	/tmp/build_esproul/omniti_perl_mime-lite.p5m
 
@@ -104,6 +98,10 @@ is able to be installed.
 If a build is not successful, the full output of the run is available in the 
 `build.log` file.  If the log file exists when build.sh is run, it is moved to 
 `build.log.1` so you always have the current log and one previous.
+
+__When you've got a working build for your dist, please append the dist name
+(which is the same as the directory created by perl_module_dist.pl) to the
+`perl-build-order.txt` file.__
 
 You may review the current list of available dist packages at 
 http://pkg.omniti.com/omniti-perl/
