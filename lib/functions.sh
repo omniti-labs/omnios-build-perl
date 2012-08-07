@@ -258,6 +258,7 @@ init() {
 verify_depends() {
     logmsg "Verifying build dependencies"
     [[ -z "$BUILD_DEPENDS_IPS" ]] && BUILD_DEPENDS_IPS=$BUILD_DEPENDS
+    local deplist=( )
     for i in $BUILD_DEPENDS_IPS; do
         # Trim indicators to get the true name (see make_package for details)
         case ${i:0:1} in
@@ -272,9 +273,18 @@ verify_depends() {
                 continue
                 ;;
         esac
-        pkg info $i > /dev/null 2<&1 ||
-            logerr "--- Build dependency $i not found"
+        pkg info $i > /dev/null 2<&1
+        if [[ $? -ne 0 ]]; then
+            logmsg "--- Build dependency $i not found. Adding it to the list to install."
+            deplist=( "${deplist[@]}" "$i" )
+        fi
     done
+    if [[ ${#deplist[*]} -gt 0 ]]; then
+        logmsg "--- ${#deplist[*]} dependencies are not currently installed."
+        logmsg "--- About to run: sudo pkg install ${deplist[@]}"
+        sudo pkg install ${deplist[@]} || \
+            logerr "--- Dependency installation failed."
+    fi
 }
 
 #############################################################################
@@ -993,8 +1003,18 @@ clean_up() {
         logmsg "--- Cleaning up temporary manifest and transform files"
         logcmd rm -f $P5M_INT $P5M_FINAL $MY_MOG_FILE || \
             logerr "Failed to remove temporary manifest and transform files"
-        logmsg "Done."
     fi
+    logmsg "--- Checking to see whether any build dependencies should be removed"
+    local pkglist=$(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation' | awk '{ printf"%s ",$1 }')
+    if [[ -n $pkglist ]]; then
+        logmsg "------ Removing: $pkglist"
+        logmsg "------ About to run: sudo pkg uninstall $pkglist"
+        sudo pkg uninstall $pkglist || \
+            logmsg "WARNING: unable to remove the specified build dependencies. Please make sure they are removed before building other packages."
+    else
+        logmsg "------ Nothing needs to be removed."
+    fi
+    logmsg "Done."
 }
 
 #############################################################################
