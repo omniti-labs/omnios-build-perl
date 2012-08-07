@@ -33,8 +33,8 @@ MODNAME=JSON
 VER=2.53
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="JSON encoder/decoder"
-DESC="JSON encoder/decoder"
+SUMMARY="JSON encoder/decoder (Perl $DEPVER)"
+DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
 PREFIX=/opt/OMNIperl

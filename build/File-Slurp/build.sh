@@ -33,7 +33,7 @@ MODNAME=File::Slurp
 VER=9999.19
 VERHUMAN=$VER                # Human-readable version
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
-SUMMARY="Simple and Efficient Reading/Writing/Modifying of Complete Files"
+SUMMARY="Simple and Efficient Reading/Writing/Modifying of Complete Files (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
