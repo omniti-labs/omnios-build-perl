@@ -35,9 +35,9 @@ If you haven't got the perl.omniti.com publisher configured (see the output of
 
 Then, something like:
 
-	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
+	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
 
-will get you Perl 5.14.
+will get you Perl 5.16.
 
 __Except for package management, all the following build commands are meant to run
 as your user, not root.__
@@ -85,7 +85,7 @@ to publish the package (it will say "An error occurred..." but that's just
 because we use the same function, `ask_to_continue()`, so don't be concerned.)
 In another terminal window, optionally review the IPS manifest that has been
 created for the package.  That lives in your build directory, which defaults to
-`/tmp/build_<username>/`.  The manifest will be the IPS package name with
+`/tmp/build_<USERNAME>/`.  The manifest will be the IPS package name with
 slashes replaced with underscores and with a `.p5m` extension.
 
 	/tmp/build_esproul/omniti_perl_mime-lite.p5m
@@ -110,51 +110,54 @@ http://pkg.omniti.com/omniti-perl/
 
 	$ pwd
 	/home/esproul/git/perl-build
-	$ ./perl_module_dist.pl -m Carp::Clan
+	$ ./perl_module_dist.pl -m Test::Base
 	Installation order:
-	Sub-Uplevel
-	Test-Exception
-	Carp-Clan
-
-For the purposes of this example, let's assume that Sub::Uplevel and
-Test::Exception are already built and available.  We check `build.sh` and see
-that `omniti/perl/test-exception` is a build dependency, so we install it.
-
-	$ sudo pkg install omniti/perl/test-exception
+	Spiffy
+	Test-Base
 
 Now we change into the dist's build directory and run build.sh for each version
 of Perl we want.  Note that between runs for different Perl versions we'll need
 to update `omniti/runtime/perl` and install the matching incorporation package,
 which will ensure that build-dep packages are installed at the proper version.
 
-It's also important to clean your build environment for each new dist build
-(even within the same Perl version) so as not to miss any unstated dependencies.  
-This is one way to do it:
-
-	$ sudo pkg uninstall $(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation' | awk '{ print $1 }')
-
-This removes all packages with "omniti" in the name except for perl itself, 
-the incorporation and the two modules (File::Slurp and JSON) required by
-`perl_module_dist.pl`.
-
-	$ cd build/Carp-Clan
-	$ ./build.sh -d 5.14
-	===== Build started at Fri Jul 27 16:55:14 UTC 2012 =====
-	Package name: omniti/perl/carp-clan
+	$ cd build/Test-Base
+	$ ./build.sh -d 5.16
+	===== Build started at Tue Aug  7 18:41:29 UTC 2012 =====
+	Package name: omniti/perl/test-base
 	Selected flavor: None (use -f to specify a flavor)
 	Selected build arch: both
-	Extra dependency: 5.14
+	Extra dependency: 5.16
 	Verifying build dependencies
-	Testing whether Carp::Clan is in core
-	--- Ensuring omniti/perl/carp-clan is not installed
+	--- Build dependency omniti/perl/spiffy not found. Adding it to the list to install.
+	--- 1 dependencies are not currently installed.
+	--- About to run: sudo pkg install omniti/perl/spiffy
+	           Packages to install:  1     
+	       Create boot environment: No
+	Create backup boot environment: No
+	
+	DOWNLOAD                                  PKGS       FILES    XFER (MB)
+	Completed                                  1/1         8/8      0.0/0.0
+	
+	PHASE                                        ACTIONS
+	Install Phase                                  28/28
+	
+	PHASE                                          ITEMS
+	Package State Update Phase                       1/1 
+	Image State Update Phase                         2/2 
+	
+	PHASE                                          ITEMS
+	Reading Existing Index                           8/8 
+	Indexing Packages                                1/1
+	Testing whether Test::Base is in core
+	--- Ensuring omniti/perl/test-base is not installed
 	------ Not installed, good.
-	--- Module is not in core for Perl 5.14.  Continuing with build.
+	--- Module is not in core for Perl 5.16.  Continuing with build.
 	Checking for source directory
 	--- Source directory not found
-	Checking for Carp-Clan source archive
+	Checking for Test-Base source archive
 	--- Archive not found.
 	Downloading archive
-	Extracting archive: Carp-Clan-6.04.tar.gz
+	Extracting archive: Test-Base-0.60.tar.gz
 	Checking for patches in patches/ (in order to apply them)
 	--- No series file (list of patches) found
 	--- Not applying any patches
@@ -174,8 +177,8 @@ the incorporation and the two modules (File::Slurp and JSON) required by
 	--- make test ()
 	--- make install (pure)
 	Making package
-	--- Generating package manifest from /tmp/build_esproul/omniti_perl_carp-clan_pkg
-	------ Running: /usr/bin/pkgsend generate /tmp/build_esproul/omniti_perl_carp-clan_pkg > /tmp/build_esproul/omniti_perl_carp-clan.p5m.int
+	--- Generating package manifest from /tmp/build_esproul/omniti_perl_test-base_pkg
+	------ Running: /usr/bin/pkgsend generate /tmp/build_esproul/omniti_perl_test-base_pkg > /tmp/build_esproul/omniti_perl_test-base.p5m.int
 	--- Generating package metadata
 	------ Setting human-readable version
 	------ Adding dependencies
@@ -183,14 +186,32 @@ the incorporation and the two modules (File::Slurp and JSON) required by
 	--- Publishing package
 	Intentional pause: Last chance to sanity-check before publication!
 
-At this point, optionally review `/tmp/build_esproul/omniti_perl_carp-clan.p5m`
+At this point, optionally review `/tmp/build_<USERNAME>/omniti_perl_test-base.p5m`
 
 	An Error occured in the build. Do you wish to continue anyway? (y/n) y
 	===== Error occured, user chose to continue anyway. =====
-	--- Published omniti/perl/carp-clan@6.4,5.11-0.151002
+	--- Published omniti/perl/test-base@0.60,5.11-0.151002
 	Cleaning up
-	--- Removing temporary install directory /tmp/build_esproul/omniti_perl_carp-clan_pkg
+	--- Removing temporary install directory /tmp/build_esproul/omniti_perl_test-base_pkg
 	--- Cleaning up temporary manifest and transform files
+	--- Checking to see whether any build dependencies should be removed
+	------ Removing: omniti/perl/spiffy 
+	------ About to run: sudo pkg uninstall omniti/perl/spiffy 
+	            Packages to remove:  1
+	       Create boot environment: No
+	Create backup boot environment: No
+	
+	PHASE                                        ACTIONS
+	Removal Phase                                  19/19 
+	
+	PHASE                                          ITEMS
+	Package State Update Phase                       1/1 
+	Package Cache Update Phase                       1/1
+	Image State Update Phase                         2/2
+	
+	PHASE                                          ITEMS
+	Reading Existing Index                           8/8 
+	Indexing Packages                                1/1
 	Done.
 
 To change Perl versions, for example going from 5.14 to 5.16:
@@ -209,4 +230,3 @@ incorporation and dist packages as above, then:
 
 Then install the 5.14 incorporation and supporting dists as above.
 
-	
