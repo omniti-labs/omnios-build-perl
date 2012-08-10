@@ -216,3 +216,4 @@ JavaScript-Minifier
 Net-CIDR
 Net-SSH2
 XML-XPath
+DBD-ODBC
