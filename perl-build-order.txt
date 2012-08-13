@@ -221,3 +221,4 @@ HTML-FillInForm
 Probe-Perl
 String-Truncate
 Text-Aligner
+Text-ASCIIMathML
