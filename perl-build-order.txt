@@ -223,3 +223,4 @@ String-Truncate
 Text-Aligner
 Text-ASCIIMathML
 Tie-DxHash
+Net-Jabber
