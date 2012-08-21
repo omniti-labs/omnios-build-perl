@@ -257,3 +257,4 @@ PPIx-Utilities
 Email-Address
 B-Keywords
 Perl-Critic
+XML-Filter-BufferText
