@@ -224,6 +224,7 @@ Text-Aligner
 Text-ASCIIMathML
 Tie-DxHash
 Net-Jabber
+Text-Iconv
 aliased
 Business-CreditCard
 Class-Date
