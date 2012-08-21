@@ -82,7 +82,15 @@ If you prefer to create a repo manually, see http://omnios.omniti.com/wiki.php/C
 
 If you are using the Vagrantfiles, it will automatically create a local repo in /data/set/local-repo, and expose it at http://<vm-hostname>:888/en/catalog.shtml . Its name will be <your-username>.omnios.omniti.com .
 
-To test your package, you would need to add your local repo.  For example:
+To build a package, you must tell the build system where your repo is.  Do this by editing the file 'lib/site.sh' in the build kit checkout:
+
+    # Package server URL and publisher
+    #PKGPUBLISHER=omnios-perl
+    #PKGSRVR=http://pkg-internal.omniti.com:10008/
+    PKGPUBLISHER=clinton.omnios.omniti.com
+    PKGSRVR=http://nursery.office.omniti.com:43888/
+
+To test-install your package, you would need to add your local repo.  For example:
 
      sudo pkg set-publisher -g http://localhost:888/ clinton.omnios.omniti.com
       
