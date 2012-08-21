@@ -16,7 +16,12 @@ build scripts.  The build scripts themselves live in the "build" subdirectory.
 
 The bulk of the build work is done via two shell files in lib, config.sh and 
 functions.sh.  You should not need to change anything directly in these files.  
-You may override most variables in the build script.
+You may override most variables and functions in the build script.
+
+The build scripts are the authoritative record of how to package the 
+distribution.  `perl_module_dist.pl` will never overwrite a build.sh script.
+Any tuning or tweaking required may be done in build.sh and may be expected
+to be preserved.
 
 ## Building A New Dist
 
