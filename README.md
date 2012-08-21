@@ -7,6 +7,8 @@ For a more detailed explanation of IPS packaging, please see the [IPS Dev
  Guide](http://hub.opensolaris.org/bin/download/Project+pkg/files/ipsdevguide.pdf), 
  particularly Chapter 3, which will explain the terminology.
 
+We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .
+
 ## How This Repository is Structured
 
 The Perl build repo is laid out like other OmniOS build repos, with some 
@@ -18,7 +20,17 @@ The bulk of the build work is done via two shell files in lib, config.sh and
 functions.sh.  You should not need to change anything directly in these files.  
 You may override most variables in the build script.
 
-## Building A New Dist
+## Obtaining a Packaging Building Machine
+
+You must use a machine for packaging either 5.14 or 5.16 modules at a time.  You can switch back and forth, or you can have separate machines.  
+
+The build process will termporarily install IPS dependencies (that is, your modules dependencies will be installed as IPS modules).  So, you'll need sudo on the machine.
+
+You can get Vagrantfiles for both 5.14 and 5.16 from here :  git@trac.omniti.net:/clinton/omnios-packaging-vagrant .
+
+### Making your own build machine
+
+Alternatively, you can do your own install of OmniOS.
 
 You need a release version of OmniOS to use as a build system.  At a minimum, 
 you need to do the following to get a basic build environment.
@@ -39,8 +51,41 @@ Then, something like:
 
 will get you Perl 5.16.
 
+### Switching Perl Versions Without Rebuilding The Machine
+
+To change Perl versions, for example going from 5.14 to 5.16:
+
+	$ sudo pkg uninstall omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
+	$ sudo pkg install omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
+
+This will automatically upgrade `omniti/runtime/perl` to the latest release of 
+5.16 and install dist packages compatible with 5.16.
+
+You can "downgrade" as well, but it's slightly different, because normally 
+`pkg(1)` doesn't want to install an older version. Remove existing perl
+incorporation and dist packages as above, then:
+
+	$ sudo pkg update omniti/runtime/perl@5.14
+
+Then install the 5.14 incorporation and supporting dists as above.
+
+
+## Building A New Dist
+
 __Except for package management, all the following build commands are meant to run
 as your user, not root.__
+
+### Checkout the Build Kit
+
+In a working space on your build machine, do:
+
+    git clone src@src.omniti.com:~omnios-perl/core/build
+
+The build instructions for each individual CPAN distribution are under build/ .
+
+The main helper script is ./perl_module_dist.pl .
+
+### Run The Helper Script
 
 You typically use the name of the base module of the distribution as the 
 starting point.  If you're not sure, just pick one of the modules and things 
@@ -98,6 +143,8 @@ is able to be installed.
 If a build is not successful, the full output of the run is available in the 
 `build.log` file.  If the log file exists when build.sh is run, it is moved to 
 `build.log.1` so you always have the current log and one previous.
+
+### Append the Module Name to the Build Order List
 
 __When you've got a working build for your dist, please append the dist name
 (which is the same as the directory created by perl_module_dist.pl) to the
@@ -214,19 +261,4 @@ At this point, optionally review `/tmp/build_<USERNAME>/omniti_perl_test-base.p5
 	Indexing Packages                                1/1
 	Done.
 
-To change Perl versions, for example going from 5.14 to 5.16:
-
-	$ sudo pkg uninstall omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
-	$ sudo pkg install omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
-
-This will automatically upgrade `omniti/runtime/perl` to the latest release of 
-5.16 and install dist packages compatible with 5.16.
-
-You can "downgrade" as well, but it's slightly different, because normally 
-`pkg(1)` doesn't want to install an older version. Remove existing perl
-incorporation and dist packages as above, then:
-
-	$ sudo pkg update omniti/runtime/perl@5.14
-
-Then install the 5.14 incorporation and supporting dists as above.
 
