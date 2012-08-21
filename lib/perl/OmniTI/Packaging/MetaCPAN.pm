@@ -28,12 +28,12 @@ sub special_snowflakes {
     my $type = shift;
 
     if ( $type eq 'module' ) {
-        foreach (qw(common::sense DBIx::Safe Devel::Leak ExtUtils::XSBuilder Font::Metrics::CourierOblique Statistics::Basic String::CRC32 Test::TCP)) {
+        foreach (qw(Class::Date common::sense DBIx::Safe Devel::Leak ExtUtils::XSBuilder Font::Metrics::CourierOblique Statistics::Basic String::CRC32 Test::TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
     elsif ( $type eq 'dist' ) {
-        foreach (qw(common-sense Devel-Leak Test-TCP)) {
+        foreach (qw(Class-Date common-sense Devel-Leak Test-TCP)) {
             return 1 if ( $target eq $_ );
         }
     }
@@ -45,6 +45,14 @@ sub deal_with_fucktards {
     my $type = shift;
 
     if ( $type eq 'module' ) {
+        if ( $target eq 'Class::Date' ) {
+            $self->{'_data'} = {
+                author              => 'DLUX',
+                abstract            => 'Class for easy date and time manipulation',
+                version             => '1.1.10',
+                distribution        => 'Class-Date'
+            };
+        }
         if ( $target eq 'common::sense' ) {
             $self->{'_data'} = {
                 author              => 'MLEHMANN',
@@ -111,7 +119,9 @@ sub deal_with_fucktards {
         }
     }
     elsif ( $type eq 'dist' ) {
-        if ( $target eq 'common-sense' || $target eq 'Devel-Leak' ) {
+        if ( $target eq 'Class-Date' || 
+             $target eq 'common-sense' || 
+             $target eq 'Devel-Leak' ) {
             $self->{'_data'} = {
                 license     => ['perl_5'],
                 dependency  => []
