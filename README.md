@@ -74,6 +74,19 @@ incorporation and dist packages as above, then:
 
 Then install the 5.14 incorporation and supporting dists as above.
 
+### Running a Private Package Repo 
+
+As part of this process, you'll be creating a package which MUST be distrubuted by a repo in order to be installed.
+
+If you prefer to create a repo manually, see http://omnios.omniti.com/wiki.php/CreatingRepos .  It is s simple process.
+
+If you are using the Vagrantfiles, it will automatically create a local repo in /data/set/local-repo, and expose it at http://<vm-hostname>:888/en/catalog.shtml . Its name will be <your-username>.omnios.omniti.com .
+
+To test your package, you would need to add your local repo.  For example:
+
+     sudo pkg set-publisher -g http://localhost:888/ clinton.omnios.omniti.com
+      
+You can now 'pkg install foo' to install packages you yourself have made but have not yet been promoted; this may be needed when working on a tree of dependencies.
 
 ## Building A New Dist
 
@@ -157,6 +170,11 @@ __When you've got a working build for your dist, please append the dist name
 
 You may review the current list of available dist packages at 
 http://pkg.omniti.com/omniti-perl/
+
+### Promoting Your Package to The World
+
+Once you think your build script works well, commit and push your build script.  Then let Eric know, and he will review it and if all is well, promote it onto http://pkg.omniti.com/omniti-perl/ .
+
 
 ### Sample build
 
