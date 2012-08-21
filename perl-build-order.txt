@@ -224,3 +224,4 @@ Text-Aligner
 Text-ASCIIMathML
 Tie-DxHash
 Net-Jabber
+Text-Iconv
