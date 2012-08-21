@@ -258,3 +258,4 @@ Email-Address
 B-Keywords
 Perl-Critic
 XML-Filter-BufferText
+XML-SAX-Write
