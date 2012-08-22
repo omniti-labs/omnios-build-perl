@@ -260,3 +260,7 @@ Perl-Critic
 XML-Filter-BufferText
 XML-SAX-Writer
 perl-ldap
+Encode-Detect
+Test-MockTime
+DateTime-Format-Flexible
+DateTime-Format-Pg
