@@ -264,3 +264,4 @@ Encode-Detect
 Test-MockTime
 DateTime-Format-Flexible
 DateTime-Format-Pg
+Net-Telnet
