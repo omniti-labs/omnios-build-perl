@@ -266,3 +266,4 @@ DateTime-Format-Flexible
 DateTime-Format-Pg
 Net-Telnet
 Spread
+Text-CSV
