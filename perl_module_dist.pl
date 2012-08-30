@@ -81,7 +81,7 @@ while (scalar(@dep_list)) {
         author          => $d_obj->author() || $m_obj->author(),
         version         => $d_obj->version() || $m_obj->version(),
         module          => $mod,
-        summary         => $d_obj->summary() || $m_obj->summary(),
+        summary         => $d_obj->summary() || $m_obj->summary() || '(No summary available on CPAN)',
         dependencies    => \@run_deps,
         builddeps       => \@build_deps
     );

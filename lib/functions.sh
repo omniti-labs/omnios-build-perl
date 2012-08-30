@@ -1005,7 +1005,7 @@ clean_up() {
             logerr "Failed to remove temporary manifest and transform files"
     fi
     logmsg "--- Checking to see whether any build dependencies should be removed"
-    local pkglist=$(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation' | awk '{ printf"%s ",$1 }')
+    local pkglist=$(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation|libgdbm|libyaml|ruby-19|management/chef' | awk '{ printf"%s ",$1 }')
     if [[ -n $pkglist ]]; then
         logmsg "------ Removing: $pkglist"
         logmsg "------ About to run: sudo pkg uninstall $pkglist"

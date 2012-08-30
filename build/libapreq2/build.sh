@@ -73,11 +73,54 @@ case $DEPVER in
         ;;
 esac
 
+# Clean up a bloody mess. I am so ashamed.
+chipotlaway() {
+    logmsg "--- Rebuilding Perl dynamic libs properly (because MakeMaker hates us)"
+    pushd $TMPDIR/$BUILDDIR/glue/perl > /dev/null
+    logmsg "--- Running: \"gsed -i -e 's#^LDFLAGS =.*#LDFLAGS =#' -e 's#^OTHERLDFLAGS =.*#OTHERLDFLAGS =#' -e 's#-R/tmp/build[^ \t]*\.libs\>##g'\" on all the Makefiles"
+    gsed -i \
+        -e 's#^LDFLAGS =.*#LDFLAGS =#' \
+        -e 's#^OTHERLDFLAGS =.*#OTHERLDFLAGS =#' \
+        -e 's#-R/tmp/build[^ \t]*\.libs\>##g' \
+        $(find . -name Makefile) || \
+            logerr "--- Makefile fix-up failed"
+    logcmd rm -rf blib/ || \
+        logerr "------ Unable to remove previous build products"
+    logcmd $MAKE || \
+        logerr "------ Re-make failed"
+    # This stuff is going to get shat on again during "make install" so we stash it
+    logmsg "------ Stashing dynamic libs"
+    pushd blib > /dev/null
+    logcmd mkdir -p $TMPDIR/chipotlaway/arch/auto/APR/Request/{Apache2,CGI,Cookie,Error,Hook,Param,Parser} || \
+        logerr "------ Failed to make stash directory tree"
+    for file in $(find arch/auto/APR -name '*.so') ; do \
+        cp $file $TMPDIR/chipotlaway/$file || logerr "------ Failed to copy $file" ; done
+    popd > /dev/null
+    popd > /dev/null
+}
+
+save_function make_prog make_prog_orig
+make_prog() {
+    make_prog_orig
+    chipotlaway
+}
+
 # Install to the Perl vendorlib path
 make_install() {
     logmsg "--- make install"
     logcmd $MAKE DESTDIR=${DESTDIR} INSTALLDIRS=vendor install || \
         logerr "--- Make install failed"
+}
+
+install_so() {
+    logmsg "Restoring the known-good dynamic libs"
+    DESTPATH=$($PERL64 -MConfig -e'print $Config{vendorarch}')
+    pushd $TMPDIR/chipotlaway/arch > /dev/null
+    for file in $(find auto/APR -name '*.so') ; do \
+        cp -f $file $DESTDIR/$DESTPATH/$file || logerr "--- Failed to copy $file"; done
+    logmsg "--- Copy complete, removing stash dir"
+    logcmd rm -rf $TMPDIR/chipotlaway
+    popd > /dev/null
 }
 
 # Uncomment and set PREFIX if any modules install site binaries
@@ -91,6 +134,7 @@ download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PRO
 patch_source
 prep_build
 build
+install_so
 make_package
 clean_up
 

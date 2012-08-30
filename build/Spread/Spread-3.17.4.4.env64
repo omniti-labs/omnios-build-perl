@@ -1,0 +1,2 @@
+SPLIB_LIB="-L/opt/omni/lib/$ISAPART64 -R/opt/omni/lib/$ISAPART64"
+export SPLIB_LIB
