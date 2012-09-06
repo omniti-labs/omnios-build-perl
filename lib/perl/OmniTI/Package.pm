@@ -1,5 +1,8 @@
 package OmniTI::Package;
 
+use strict;
+use warnings;
+
 use Data::Dumper;
 use Dist::Metadata;
 use File::Path qw( make_path );
@@ -12,7 +15,16 @@ our $VERSION = 0.01;
 sub new {
     my ($class, %opts) = @_;
 
-    my $self = bless {}, $class;
+    my $self = {};
+
+    $self->{'_get_deps'} = $opts{'deps'} || 0;
+
+    $self->{'_build_deps'} = [];
+    $self->{'_run_deps'} = [];
+
+    $self->{'_mod_cache'} = $opts{'cache'} && ref($opts{'cache'}) eq 'HASH' ? $opts{'cache'} : {};
+
+    $self = bless $self, $class;
 
     if ($opts{'module'}) {
         $self->module($opts{'module'});
@@ -22,18 +34,19 @@ sub new {
         $self->archive($opts{'archive'});
     }
 
-    $self->{'_build_deps'} = [];
-    $self->{'_run_deps'} = [];
-
     return $self;
 }
 
 sub builddeps {
     my ($self) = @_;
+
+    return @{$self->{'_build_deps'}};
 }
 
 sub rundeps {
     my ($self) = @_;
+
+    return @{$self->{'_run_deps'}};
 }
 
 sub module {
@@ -48,6 +61,8 @@ sub module {
     die "No distribution name found for $module!" unless $json->{'distvname'};
 
     $self->dist($json->{'distvname'});
+
+    $self->{'_author'} = $json->{'cpanid'} if $json->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');;
 
     return $self->{'_module'};
 }
@@ -75,11 +90,13 @@ sub dist {
 
     my $file = qq{$dir/$d->{'distvname'}.tar.gz};
 
-    getstore($url, $file);
+    getstore($url, $file) unless -f $file;
 
     die "Error downloading archive for $dist" unless -f $file;
 
     $self->archive($file);
+
+    $self->{'_author'} = $d->{'cpanid'} if $d->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');;
 
     return $self->{'_dist'};
 }
@@ -96,23 +113,39 @@ sub archive {
 
         $self->{'_archive'} = $archive;
         $self->{'_dist'} = $metadata->{'name'};
-        $self->{'_module'} = (sort { length($a) <=> length($b) } keys %{$metadata->{'provides'}})[0];
+        $self->{'_module'} = (
+            sort { length($a) <=> length($b) }
+            grep { length($_) >= length($metadata->{'name'}) }
+            keys %{$metadata->{'provides'}}
+            )[0];
+        $self->{'_provides'} = [keys %{$metadata->{'provides'}}];
         $self->{'_version'} = $metadata->{'version'};
-        $self->{'_author'} = ($metadata->{'x_authority'} =~ m{cpan:(.*)})[0] || 'UNKNOWN';
+        $self->{'_author'} = ($metadata->{'x_authority'} =~ m{cpan:(.*)})[0] if $metadata->{'x_authority'} && !$self->{'_author'};
+        $self->{'_author'} = 'UNKNOWN' unless $self->{'_author'};
         $self->{'_summary'} = $metadata->{'abstract'};
         $self->{'_original_summary'} = $metadata->{'abstract'};
 
-        foreach my $deptype (keys %{$metadata->{'prereqs'}}) {
-            foreach my $req (keys %{$metadata->{'prereqs'}->{$deptype}}) {
-                foreach my $mod (keys %{$metadata->{'prereqs'}->{$deptype}->{$req}}) {
-                    $self->add_dep('build', 'module', $mod);
-                    $self->add_dep('run', 'module', $mod) if $deptype eq 'runtime';
+        if ($self->{'_get_deps'}) {
+            foreach my $deptype (keys %{$metadata->{'prereqs'}}) {
+                foreach my $req (keys %{$metadata->{'prereqs'}->{$deptype}}) {
+                    foreach my $mod (keys %{$metadata->{'prereqs'}->{$deptype}->{$req}}) {
+                        $self->add_dep('build', $mod);
+                        $self->add_dep('run', $mod) if $deptype eq 'runtime';
+                    }
                 }
             }
         }
     }
 
     return $self->{'_archive'};
+}
+
+sub author {
+    my ($self, $author) = @_;
+
+    $self->{'_author'} = $author if defined $author;
+
+    return $self->{'_author'};
 }
 
 sub summary {
@@ -125,8 +158,24 @@ sub summary {
     return $self->{'_summary'} || '(No summary available on CPAN)'
 }
 
+sub provides {
+    my ($self) = @_;
+
+    return @{$self->{'_provides'}};
+}
+
 sub generate_build {
     my ($self, $rootdir) = @_;
+
+    die "No base directory for build scripts provided!" unless $rootdir;
+    die "Invalid base directory for build scripts: $rootdir" unless -d $rootdir;
+
+    my $build_dir = $rootdir . '/build/' . $self->dist;
+    $build_dir =~ s{/+}{/}g;
+
+    return if -f "$build_dir/build.sh";
+
+    
 }
 
 sub add_dep {
@@ -134,29 +183,59 @@ sub add_dep {
     # itself be a full OmniTI::Package object. Skips any CORE dependencies.
     # Dependencies can be assured to be in the correct order for building since
     # we populate the deplist depth-first.
-    my ($self, $list, $type, $name) = @_;
+    my ($self, $list, $name, $recurse) = @_;
 
-    return if $name eq 'perl';
+    $recurse = 0 unless $recurse;
 
-    die "Invalid dependency type provided (must be 'module' or 'dist')!"
-        unless $type eq 'module' || $type eq 'dist';
+    return if lc($name) eq 'perl';
+
+    my $cache_name = $self->{'_mod_cache'}->{$name} ? $self->{'_mod_cache'}->{$name}->module() : $name;
 
     # short circuit if the dependency is already in the list
-    return if $type eq 'module' && grep { $_->module() eq $name } @{$deplist};
-    return if $type eq 'dist' && grep { $_->dist() eq $name } @{$deplist};
+    return if grep { $_->module() eq $cache_name } @{$self->{"_${list}_deps"}};
+
+    # skip adding to the deplist if this one's a CORE module
+    my @core = Module::CoreList::find_modules($name);
+    return if scalar(@core) > 0;
 
     # new dependency, so now the descent begins and we create a new object for it
     # which will trigger it to fill in its own dependencies, and so on, until there
     # is nothing in the list but CORE modules
-    my $dep = OmniTI::Package->new();
-    $dep->module($name) if $type eq 'module';
-    $dep->dist($name) if $type eq 'dist';
+    my $dep = exists $self->{'_mod_cache'}->{$name}
+        ? $self->{'_mod_cache'}->{$name}
+        : OmniTI::Package->new( module => $name, cache => $self->{'_mod_cache'}, deps => $recurse );
 
-    # skip adding to the deplist if this one's a CORE module
-    return if Module::CoreList::find_modules($dep->module);
+    $self->{'_mod_cache'}->{$name} = $dep unless $self->{'_mod_cache'}->{$name};
+    $self->{'_mod_cache'}->{$dep->module()} = $dep unless $self->{'_mod_cache'}->{$dep->module()};
+    $self->{'_mod_cache'}->{$_} = $dep for $dep->provides();
 
-    push(@{$self->{'_build_deps'}}, $dep->build_deps) if $list eq 'build';
-    push(@{$self->{'_run_deps'}}, $dep->run_deps) if $list eq 'run';
+    if ($list eq 'build' && $recurse) {
+        my %seen;
+
+        my @t = @{$self->{'_build_deps'}};
+        $self->{'_build_deps'} = [];
+
+        foreach my $d ((@t, $dep->builddeps)) {
+            next if $seen{$d->module};
+            $seen{$d->module} = 1;
+            push(@{$self->{'_build_deps'}}, $d);
+        }
+    }
+    push(@{$self->{'_build_deps'}}, $dep) if $list eq 'build';
+
+    if ($list eq 'run' && $recurse) {
+        my %seen;
+
+        my @t = @{$self->{'_run_deps'}};
+        $self->{'_run_deps'} = [];
+
+        foreach my $d ((@t, $dep->rundeps)) {
+            next if $seen{$d->module};
+            $seen{$d->module} = 1;
+            push(@{$self->{'_run_deps'}}, $d);
+        }
+    }
+    push(@{$self->{'_run_deps'}}, $dep) if $list eq 'run';
 }
 
 sub _temp_dir {
@@ -164,7 +243,7 @@ sub _temp_dir {
 
     die "No distribution name provided!" unless $dist;
 
-    my $dir = '/tmp/build_' . getpwuid($<) . "/$dist/";
+    my $dir = '/tmp/build_' . getpwuid($<) . "/$dist";
     make_path($dir);
 
     return $dir;
