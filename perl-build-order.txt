@@ -267,3 +267,4 @@ DateTime-Format-Pg
 Net-Telnet
 Spread
 Text-CSV
+DDL-Oracle
