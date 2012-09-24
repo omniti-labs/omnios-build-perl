@@ -268,3 +268,4 @@ Net-Telnet
 Spread
 Text-CSV
 DDL-Oracle
+GnuPG
