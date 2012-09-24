@@ -33,10 +33,10 @@ MODNAME=DDL::Oracle
 VER=1.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="- unknown -"
+SUMMARY="a DDL generator for Oracle databases (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
