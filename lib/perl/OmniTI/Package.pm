@@ -178,7 +178,7 @@ sub generate_build {
     die "No base directory for build scripts provided!" unless $rootdir;
     die "Invalid base directory for build scripts: $rootdir" unless -d $rootdir;
 
-    my $build_dir = $rootdir . '/build/' . $self->dist;
+    my $build_dir = $rootdir . $self->dist;
     $build_dir =~ s{/+}{/}g;
 
     if (-f "$build_dir/build.sh") {
