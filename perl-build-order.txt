@@ -270,3 +270,5 @@ Text-CSV
 GnuPG
 Time-modules
 DDL-Oracle
+HTML-Tiny
+Captcha-reCAPTCHA
