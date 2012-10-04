@@ -274,3 +274,5 @@ HTML-Tiny
 Captcha-reCAPTCHA
 IO-HTML
 Business-MaxMind
+Mozilla-CA
+LWP-Protocol-https
