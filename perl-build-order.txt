@@ -276,3 +276,5 @@ IO-HTML
 Business-MaxMind
 Mozilla-CA
 LWP-Protocol-https
+MIME-tools
+SOAP-Lite
