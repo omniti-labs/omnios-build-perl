@@ -278,3 +278,9 @@ Mozilla-CA
 LWP-Protocol-https
 MIME-tools
 SOAP-Lite
+UNIVERSAL-can
+UNIVERSAL-isa
+File-Spec-Native
+CPAN-DistnameInfo
+Test-MockObject
+Dist-Metadata
