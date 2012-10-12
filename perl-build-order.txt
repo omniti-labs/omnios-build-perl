@@ -284,3 +284,4 @@ File-Spec-Native
 CPAN-DistnameInfo
 Test-MockObject
 Dist-Metadata
+Class-ReluctantORM
