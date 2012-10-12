@@ -78,9 +78,8 @@ PERL_MAKE_TEST="" # to skip tests requiring an active database
 
 buildperl
 
-mv $TMPDIR/Class-ReluctantORM-0.52_0 $TMPDIR/Class-ReluctantORM-0.52.0
-mv $TMPDIR/Class-ReluctantORM-0.52.0/Class-ReluctantORM-0.52_0.tar.gz $TMPDIR/Class-ReluctantORM-0.52.0/Class-ReluctantORM-0.52.0.tar.gz
-VER="0.52.0"
+# Fix up version for IPS
+VER=${VER//_/.}
 
 make_package
 clean_up
