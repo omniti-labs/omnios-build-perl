@@ -285,3 +285,4 @@ CPAN-DistnameInfo
 Test-MockObject
 Dist-Metadata
 Class-ReluctantORM
+Redis
