@@ -43,9 +43,6 @@ reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
-# Temporary while mirrors.omniti.com is catching up
-MIRROR=search.cpan.org
-
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
