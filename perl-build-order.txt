@@ -286,3 +286,4 @@ Test-MockObject
 Dist-Metadata
 Class-ReluctantORM
 Redis
+Test-DatabaseRow
