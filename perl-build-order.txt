@@ -287,3 +287,8 @@ Dist-Metadata
 Class-ReluctantORM
 Redis
 Test-DatabaseRow
+Getopt-Long-Descriptive
+Hash-Merge
+Class-Accessor-Grouped
+SQL-Abstract
+DBIx-Roles
