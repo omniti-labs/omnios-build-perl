@@ -181,7 +181,14 @@ http://pkg.omniti.com/omniti-perl/
 
 ### Promoting Your Package to The World
 
-Once you think your build script works well, commit and push your build script.  Then let Eric know, and he will review it and if all is well, promote it onto http://pkg.omniti.com/omniti-perl/ .
+Once you think your build script works well, commit and push your build script.
+
+Assuming you have network access to pkg-il-1.int.omniti.net (check with SRE team if you don't), set:
+    PKGPUBLISHER=omnios-perl
+    PKGSRVR=http://pkg-il-1.int.omniti.net:10008/
+and build against both 5.14 and 5.16 to publish for real.
+
+If you discover a problem with the package later on, just fix it and publish again.  Clients will always prefer the latest version.
 
 
 ### Sample build
