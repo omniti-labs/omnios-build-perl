@@ -17,10 +17,12 @@ sub new {
 
     my $self = {};
 
+    $self->{'_recurse'} = $opts{'recurse'} || 0;
     $self->{'_get_deps'} = $opts{'deps'} || 0;
 
     $self->{'_build_deps'} = [];
     $self->{'_run_deps'} = [];
+    $self->{'_full_deps'} = [];
 
     $self->{'_mod_cache'} = $opts{'cache'} && ref($opts{'cache'}) eq 'HASH' ? $opts{'cache'} : {};
 
@@ -47,6 +49,12 @@ sub rundeps {
     my ($self) = @_;
 
     return @{$self->{'_run_deps'}};
+}
+
+sub fulldeps {
+    my ($self) = @_;
+
+    return @{$self->{'_full_deps'}};
 }
 
 sub module {
@@ -197,6 +205,11 @@ sub generate_build {
     my $template = join('',<DATA>);
     seek(DATA, $spos, 0);
 
+    print STDERR "Build Deps for " . $self->module() . "\n";
+    print STDERR "\t$_\n" for map { lc('omniti/perl/' . $_->dist) } $self->builddeps;
+    print STDERR "Run Deps for " . $self->module() . "\n";
+    print STDERR "\t$_\n" for map { lc('omniti/perl/' . $_->dist) } $self->rundeps;
+
     my %vars = (
         authorid    => $self->author,
         progname    => $self->dist,
@@ -224,6 +237,7 @@ sub add_dep {
     my ($self, $list, $name, $recurse) = @_;
 
     $recurse = 0 unless $recurse;
+    $recurse = $self->{'_recurse'} if $self->{'_recurse'};
 
     return if lc($name) eq 'perl';
 
@@ -241,39 +255,44 @@ sub add_dep {
     # is nothing in the list but CORE modules
     my $dep = exists $self->{'_mod_cache'}->{$name}
         ? $self->{'_mod_cache'}->{$name}
-        : OmniTI::Package->new( module => $name, cache => $self->{'_mod_cache'}, deps => $recurse );
+        : OmniTI::Package->new( module => $name, cache => $self->{'_mod_cache'}, deps => $recurse, recurse => $recurse );
 
     $self->{'_mod_cache'}->{$name} = $dep unless $self->{'_mod_cache'}->{$name};
     $self->{'_mod_cache'}->{$dep->module()} = $dep unless $self->{'_mod_cache'}->{$dep->module()};
     $self->{'_mod_cache'}->{$_} = $dep for $dep->provides();
 
-    if ($list eq 'build' && $recurse) {
-        my %seen;
-
-        my @t = @{$self->{'_build_deps'}};
-        $self->{'_build_deps'} = [];
-
-        foreach my $d ((@t, $dep->builddeps)) {
-            next if $seen{$d->module};
-            $seen{$d->module} = 1;
-            push(@{$self->{'_build_deps'}}, $d);
-        }
-    }
+#    if ($list eq 'build' && $recurse) {
+#        my %seen;
+#
+#        my @t = @{$self->{'_build_deps'}};
+#        $self->{'_build_deps'} = [];
+#
+#        foreach my $d ((@t, $dep->builddeps)) {
+#            next if $seen{$d->module};
+#            $seen{$d->module} = 1;
+#            push(@{$self->{'_build_deps'}}, $d);
+#        }
+#    }
     push(@{$self->{'_build_deps'}}, $dep) if $list eq 'build';
 
-    if ($list eq 'run' && $recurse) {
-        my %seen;
-
-        my @t = @{$self->{'_run_deps'}};
-        $self->{'_run_deps'} = [];
-
-        foreach my $d ((@t, $dep->rundeps)) {
-            next if $seen{$d->module};
-            $seen{$d->module} = 1;
-            push(@{$self->{'_run_deps'}}, $d);
-        }
-    }
+#    if ($list eq 'run' && $recurse) {
+#        my %seen;
+#
+#        my @t = @{$self->{'_run_deps'}};
+#        $self->{'_run_deps'} = [];
+#
+#        foreach my $d ((@t, $dep->rundeps)) {
+#            next if $seen{$d->module};
+#            $seen{$d->module} = 1;
+#            push(@{$self->{'_run_deps'}}, $d);
+#        }
+#    }
     push(@{$self->{'_run_deps'}}, $dep) if $list eq 'run';
+
+    foreach my $d ($dep->fulldeps) {
+        push(@{$self->{'_full_deps'}}, $d) unless grep { $_->dist eq $d->dist } @{$self->{'_full_deps'}};
+    }
+    push(@{$self->{'_full_deps'}}, $dep) unless grep { $_->dist eq $dep->dist } @{$self->{'_full_deps'}};
 }
 
 sub _temp_dir {
