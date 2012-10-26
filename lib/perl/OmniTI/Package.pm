@@ -192,7 +192,10 @@ sub generate_build {
 
     make_path($build_dir) unless -d $build_dir;
 
+    # read template from DATA section, then reset seek position for the next generate_build call
+    my $spos = tell DATA;
     my $template = join('',<DATA>);
+    seek(DATA, $spos, 0);
 
     my %vars = (
         authorid    => $self->author,
