@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=THALJEF
-PROG=Perl-Critic
-MODNAME=Perl::Critic
-VER=1.118
+AUTHORID=ADAMK
+PROG=File-Which
+MODNAME=File::Which
+VER=1.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Critique Perl source code for best-practices. (Perl $DEPVER)"
+SUMMARY="Portable implementation of the 'which' utility (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/ppi omniti/perl/b-keywords omniti/perl/list-moreutils omniti/perl/ppix-utilities omniti/perl/pod-spell omniti/perl/perl-tidy omniti/perl/string-format omniti/perl/task-weaken omniti/perl/io-string omniti/perl/readonly omniti/perl/exception-class omniti/perl/ppix-regexp omniti/perl/config-tiny omniti/perl/email-address omniti/perl/file-homedir omniti/perl/file-which omniti/perl/readonly-xs omniti/perl/test-deep"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-script"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/ppi omniti/perl/b-keywords omniti/perl/list-moreutils omniti/perl/ppix-utilities omniti/perl/pod-spell omniti/perl/perl-tidy omniti/perl/string-format omniti/perl/task-weaken omniti/perl/io-string omniti/perl/readonly omniti/perl/exception-class omniti/perl/ppix-regexp omniti/perl/config-tiny omniti/perl/email-address omniti/perl/file-homedir omniti/perl/file-which omniti/perl/readonly-xs"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
