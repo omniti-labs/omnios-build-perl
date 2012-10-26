@@ -181,6 +181,11 @@ sub generate_build {
     my $build_dir = $rootdir . $self->dist;
     $build_dir =~ s{/+}{/}g;
 
+    # generate builds for any dependencies, as well
+    foreach my $dep (@{$self->{'_build_deps'}}, @{$self->{'_run_deps'}}) {
+        $dep->generate_build($rootdir, $overwrite);
+    }
+
     if (-f "$build_dir/build.sh") {
         return unless defined $overwrite && $overwrite;
     }
