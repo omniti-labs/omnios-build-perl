@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DOY
-PROG=Class-Load
-MODNAME=Class::Load
-VER=0.20
+AUTHORID=RJBS
+PROG=App-Cronjob
+MODNAME=App::Cronjob
+VER=1.102311
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a working (require 'Class::Name') and more (Perl $DEPVER)"
+SUMMARY="wrap up programs to be run as cron jobs"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-implementation omniti/perl/module-runtime omniti/perl/package-stash omniti/perl/test-fatal omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,8 +46,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
-# Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/try-tiny omniti/perl/package-stash omniti/perl/data-optlist omniti/perl/module-runtime omniti/perl/module-implementation"
+# Add any additional deps here; omniti/runtime/perl added below
+DEPENDS_IPS="omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -62,6 +62,16 @@ case $DEPVER in
         ;;
 esac
 
+make_omni_symlink() {
+    logmsg "Creating symlink to opt/omni/bin"
+    logcmd mkdir -p $DESTDIR/opt/omni/bin || \
+        logerr "--- Failed to create destination directory"
+    pushd $DESTDIR/opt/omni/bin > /dev/null
+    logcmd ln -s ../../OMNIperl/bin/cronjob || \
+        logerr "--- Failed to create symlink"
+    popd > /dev/null
+}
+
 # Uncomment and set PREFIX if any modules install site binaries
 #save_function make_isa_stub make_isa_stub_orig
 #make_isa_stub() {
@@ -74,6 +84,7 @@ download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PRO
 patch_source
 prep_build
 buildperl
+make_omni_symlink
 make_package
 clean_up
 

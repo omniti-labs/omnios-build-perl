@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DOY
-PROG=Class-Load
-MODNAME=Class::Load
-VER=0.20
+AUTHORID=RJBS
+PROG=Email-Sender
+MODNAME=Email::Sender::Simple
+VER=0.120002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a working (require 'Class::Name') and more (Perl $DEPVER)"
+SUMMARY="a library for sending email (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-implementation omniti/perl/module-runtime omniti/perl/package-stash omniti/perl/test-fatal omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,8 +46,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
-# Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/try-tiny omniti/perl/package-stash omniti/perl/data-optlist omniti/perl/module-runtime omniti/perl/module-implementation"
+# Add any additional deps here; omniti/runtime/perl added below
+DEPENDS_IPS="omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

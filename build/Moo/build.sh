@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DOY
-PROG=Class-Load
-MODNAME=Class::Load
-VER=0.20
+AUTHORID=ILMARI
+PROG=Moo
+MODNAME=Moo
+VER=1.000005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a working (require 'Class::Name') and more (Perl $DEPVER)"
+SUMMARY="Minimalist Object Orientation (with Moose compatiblity) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-implementation omniti/perl/module-runtime omniti/perl/package-stash omniti/perl/test-fatal omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-method-modifiers omniti/perl/devel-globaldestruction omniti/perl/module-runtime omniti/perl/role-tiny omniti/perl/test-fatal omniti/perl/strictures"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,8 +46,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
-# Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/try-tiny omniti/perl/package-stash omniti/perl/data-optlist omniti/perl/module-runtime omniti/perl/module-implementation"
+# Add any additional deps here; omniti/runtime/perl added below
+DEPENDS_IPS="omniti/perl/class-method-modifiers omniti/perl/devel-globaldestruction omniti/perl/module-runtime omniti/perl/role-tiny omniti/perl/strictures"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
