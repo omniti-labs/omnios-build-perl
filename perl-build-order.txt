@@ -313,3 +313,7 @@ IPC-Run3
 Log-Dispatchouli
 Email-Sender
 App-Cronjob
+DateTime-Format-ISO8601
+Exporter-Lite
+Time-Duration-Parse
+Test-Recent
