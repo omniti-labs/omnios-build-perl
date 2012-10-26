@@ -210,6 +210,7 @@ sub generate_build {
     open(my $fh, '>', "$build_dir/build.sh") || die "Error opening build file for writing: $!";
     print $fh $template;
     close($fh);
+    chmod 0755, "$build_dir/build.sh";
 }
 
 sub add_dep {
