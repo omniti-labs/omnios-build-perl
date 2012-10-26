@@ -7,7 +7,7 @@ For a more detailed explanation of IPS packaging, please see the [IPS Dev
  Guide](http://hub.opensolaris.org/bin/download/Project+pkg/files/ipsdevguide.pdf), 
  particularly Chapter 3, which will explain the terminology.
 
-We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .
+We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .  Please make sure that you publish packages for both versions when building a new dist.
 
 ## How This Repository is Structured
 
