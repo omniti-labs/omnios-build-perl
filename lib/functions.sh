@@ -868,6 +868,8 @@ buildperl32() {
         build_prog
         [[ -n $PERL_MAKE_TEST ]] && build_test
         build_install
+    else
+        logerr "Unable to detect build type. No Makefile.PL or Build.PL found in $TMPDIR/$BUILDDIR"
     fi
     popd > /dev/null
     unset ISALIST
