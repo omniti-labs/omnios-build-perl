@@ -205,11 +205,6 @@ sub generate_build {
     my $template = join('',<DATA>);
     seek(DATA, $spos, 0);
 
-    print STDERR "Build Deps for " . $self->module() . "\n";
-    print STDERR "\t$_\n" for map { lc('omniti/perl/' . $_->dist) } $self->builddeps;
-    print STDERR "Run Deps for " . $self->module() . "\n";
-    print STDERR "\t$_\n" for map { lc('omniti/perl/' . $_->dist) } $self->rundeps;
-
     my %vars = (
         authorid    => $self->author,
         progname    => $self->dist,
