@@ -90,9 +90,9 @@ sub dist {
 
     die "Cannot find valid match for $dist in CPAN releases!" unless $d && ref($d) eq 'HASH';
 
-    my $url = sprintf('http://search.cpan.org/CPAN/authors/id/%s/%s/%s/%s.tar.gz',
+    my $url = sprintf('http://search.cpan.org/CPAN/authors/id/%s/%s/%s/%s',
         substr($d->{'cpanid'}, 0, 1), substr($d->{'cpanid'}, 0, 2), $d->{'cpanid'},
-        $d->{'distvname'});
+        $d->{'archive'} ? $d->{'archive'} : $d->{'distvname'} . '.tar.gz');
 
     my $dir = _temp_dir($dist);
 
@@ -139,8 +139,6 @@ sub archive {
                     next if $req eq 'conflicts';
 
                     foreach my $mod (keys %{$metadata->{'prereqs'}->{$deptype}->{$req}}) {
-#printf STDERR ("Module: %-32s DepType: %-12s Req: %-12s Dep: %-32s\n", $self->module, $deptype, $req, $mod);
-
                         $self->add_dep('build', $mod);
                         $self->add_dep('run', $mod) if $deptype eq 'runtime';
                     }
@@ -241,8 +239,6 @@ sub add_dep {
     $recurse = 0 unless $recurse;
     $recurse = $self->{'_recurse'} if $self->{'_recurse'};
 
-#    printf STDERR ("Module: %-32s List: %-6s Name: %-32s Recurse: %s\n", $self->module, $list, $name, $recurse);
-
     return if lc($name) eq 'perl';
 
     my $cache_name = $self->{'_mod_cache'}->{$name} ? $self->{'_mod_cache'}->{$name}->module() : $name;
@@ -265,8 +261,6 @@ sub add_dep {
     $self->{'_mod_cache'}->{$dep->module()} = $dep unless $self->{'_mod_cache'}->{$dep->module()};
     $self->{'_mod_cache'}->{$_} = $dep for $dep->provides();
 
-#    printf STDERR ("[%s] _mod_cache keys dump:\n\t%s\n", $self->module, join(', ', sort keys %{$self->{'_mod_cache'}}));
-
 #    if ($list eq 'build' && $recurse) {
 #        my %seen;
 #
@@ -281,8 +275,6 @@ sub add_dep {
 #    }
     push(@{$self->{'_build_deps'}}, $dep) if $list eq 'build';
 
-#    printf STDERR ("Adding build dep %-32s to module %-32s\n", $dep->module, $self->module) if $list eq 'build';
-
 #    if ($list eq 'run' && $recurse) {
 #        my %seen;
 #
@@ -296,8 +288,6 @@ sub add_dep {
 #        }
 #    }
     push(@{$self->{'_run_deps'}}, $dep) if $list eq 'run';
-
-#    printf STDERR ("Adding run   dep %-32s to module %-32s\n", $dep->module, $self->module) if $list eq 'run';
 
     foreach my $d ($dep->fulldeps) {
         push(@{$self->{'_full_deps'}}, $d) unless grep { $_->dist eq $d->dist } @{$self->{'_full_deps'}};
