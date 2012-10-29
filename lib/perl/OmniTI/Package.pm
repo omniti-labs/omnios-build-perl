@@ -136,7 +136,11 @@ sub archive {
         if ($self->{'_get_deps'}) {
             foreach my $deptype (keys %{$metadata->{'prereqs'}}) {
                 foreach my $req (keys %{$metadata->{'prereqs'}->{$deptype}}) {
+                    next if $req eq 'conflicts';
+
                     foreach my $mod (keys %{$metadata->{'prereqs'}->{$deptype}->{$req}}) {
+#printf STDERR ("Module: %-32s DepType: %-12s Req: %-12s Dep: %-32s\n", $self->module, $deptype, $req, $mod);
+
                         $self->add_dep('build', $mod);
                         $self->add_dep('run', $mod) if $deptype eq 'runtime';
                     }
@@ -231,8 +235,13 @@ sub add_dep {
     # we populate the deplist depth-first.
     my ($self, $list, $name, $recurse) = @_;
 
+    # we don't add the current dist as a dep to itself
+    return if $self->module eq $name;
+
     $recurse = 0 unless $recurse;
     $recurse = $self->{'_recurse'} if $self->{'_recurse'};
+
+#    printf STDERR ("Module: %-32s List: %-6s Name: %-32s Recurse: %s\n", $self->module, $list, $name, $recurse);
 
     return if lc($name) eq 'perl';
 
@@ -256,6 +265,8 @@ sub add_dep {
     $self->{'_mod_cache'}->{$dep->module()} = $dep unless $self->{'_mod_cache'}->{$dep->module()};
     $self->{'_mod_cache'}->{$_} = $dep for $dep->provides();
 
+#    printf STDERR ("[%s] _mod_cache keys dump:\n\t%s\n", $self->module, join(', ', sort keys %{$self->{'_mod_cache'}}));
+
 #    if ($list eq 'build' && $recurse) {
 #        my %seen;
 #
@@ -270,6 +281,8 @@ sub add_dep {
 #    }
     push(@{$self->{'_build_deps'}}, $dep) if $list eq 'build';
 
+#    printf STDERR ("Adding build dep %-32s to module %-32s\n", $dep->module, $self->module) if $list eq 'build';
+
 #    if ($list eq 'run' && $recurse) {
 #        my %seen;
 #
@@ -283,6 +296,8 @@ sub add_dep {
 #        }
 #    }
     push(@{$self->{'_run_deps'}}, $dep) if $list eq 'run';
+
+#    printf STDERR ("Adding run   dep %-32s to module %-32s\n", $dep->module, $self->module) if $list eq 'run';
 
     foreach my $d ($dep->fulldeps) {
         push(@{$self->{'_full_deps'}}, $d) unless grep { $_->dist eq $d->dist } @{$self->{'_full_deps'}};
