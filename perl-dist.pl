@@ -28,8 +28,8 @@ $recurse = 0 unless $recurse && $recurse == 1;
 exit usage() if $help || (scalar(@mods) == 0 && scalar(@dists) == 0 && scalar(@files) == 0);;
 
 my $mod_cache = {};
-
 my %already_built = ();
+my @new_dists = ();
 
 open(my $fh, "$rootdir/perl-build-order.txt") || die "Error opening build order file: $!\n";
 while (my $l = <$fh>) {
@@ -44,6 +44,7 @@ if (@mods) {
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
+        already_built($p->dist);
     }
 }
 
@@ -53,6 +54,7 @@ if (@dists) {
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
+        already_build($p->dist);
     }
 }
 
@@ -64,7 +66,18 @@ if (@files) {
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
+        already_built($p->dist);
     }
+}
+
+printf("The following distributions are new:\n");
+printf("    %s\n", $_) for @new_dists;
+
+my @need_licenses = grep { !-f "$rootdir/build/$_/local.mog" } @new_dists;
+
+if (scalar(@need_licenses) > 0) {
+    printf("\nLicenses are unresolved for:\n");
+    printf("    %s\n", $_) for @need_licenses;
 }
 
 sub show_summary {
@@ -87,6 +100,9 @@ sub already_built {
     my ($dist) = @_;
 
     return 1 if exists $already_built{$dist};
+
+    push(@new_dists, $dist) unless grep { $_ eq $dist } @new_dists;
+
     return 0;
 }
 
