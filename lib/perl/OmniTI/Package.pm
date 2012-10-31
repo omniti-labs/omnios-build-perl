@@ -132,6 +132,7 @@ sub archive {
         $self->{'_author'} = 'UNKNOWN' unless $self->{'_author'};
         $self->{'_summary'} = $metadata->{'abstract'};
         $self->{'_original_summary'} = $metadata->{'abstract'};
+        $self->{'_licenses'} = [grep { $_ =~ m{\w+}o } @{$metadata->{'license'}}];
 
         if ($self->{'_get_deps'}) {
             foreach my $deptype (keys %{$metadata->{'prereqs'}}) {
@@ -182,6 +183,66 @@ sub provides {
     return @{$self->{'_provides'}};
 }
 
+sub generate_localmog {
+    my ($self, $build_dir, $overwrite) = @_;
+
+    die "Invalid build directory provided: $build_dir\n" unless -d $build_dir;
+
+    $overwrite = 0 unless $overwrite && $overwrite == 1;
+
+    return unless !-f "$build_dir/local.mog" || $overwrite;
+
+    # The licenses hash can take an array reference of %licenses keys, for specifying
+    # multiple licenses easily under one banner. It can also take a hashref which gives
+    # a license a "name" and a "file". The name is arbitrary and the file should be
+    # one of those present in the licenses/ directory
+
+    my %licenses = (
+        # Aliases and multi-license groups
+        artistic2    => [qw( artistic_2 )],
+        mpl          => [qw( mozilla )],
+        qr/perl_\d+/ => [qw( artistic gpl )],
+        perl         => [qw( artistic )],
+
+        # Individual licenses
+        apache       => { name => 'Apache',     file => 'apache-v2' },
+        artistic     => { name => 'Artistic',   file => 'perl-artistic-1' },
+        artistic_2   => { name => 'Artistic2',  file => 'perl-artistic-2' },
+        freebsd      => { name => 'FreeBSD',    file => 'freebsd' },
+        gpl          => { name => 'GPL1',       file => 'perl-gpl-v1' },
+        gpl2         => { name => 'GPL2',       file => 'perl-gpl-v2' },
+        gpl3         => { name => 'GPL3',       file => 'perl-gpl-v3' },
+        lgpl2        => { name => 'LGPL2',      file => 'perl-lgpl-v2' },
+        lgpl3        => { name => 'LGPL3',      file => 'perl-lgpl-v3' },
+        mit          => { name => 'MIT',        file => 'mit' },
+        mozilla      => { name => 'Mozilla',    file => 'mozilla-mpl-1' },
+        mozilla2     => { name => 'Mozilla2',   file => 'mozilla-mpl-2' },
+        openssl      => { name => 'OpenSSL',    file => 'openssl' },
+    );
+
+    my $mog;
+
+    foreach my $distlicense (@{$self->{'_licenses'}}) {
+        LICENSE:
+        foreach my $license (keys %licenses) {
+            next LICENSE unless $distlicense =~ m/^$license$/i;
+
+            my @l = ref($licenses{$license}) eq 'ARRAY' ? @{$licenses{$license}} : ($license);
+
+            $mog .= sprintf("license %s license=%s\n", $licenses{$_}->{'file'}, $licenses{$_}->{'name'}) for @l;
+        }
+    }
+
+    return unless $mog && length($mog) > 0;
+
+    open(my $mogfh, '>', "$build_dir/local.mog") || die "Error opening local.mog file for writing: $!";
+    print $mogfh $mog;
+    close($mogfh);
+    chmod 0644, "$build_dir/local.mog";
+
+    return 1;
+}
+
 sub generate_build {
     my ($self, $rootdir, $overwrite) = @_;
 
@@ -224,6 +285,8 @@ sub generate_build {
     print $fh $template;
     close($fh);
     chmod 0755, "$build_dir/build.sh";
+
+    $self->generate_localmog($build_dir, $overwrite);
 }
 
 sub add_dep {
