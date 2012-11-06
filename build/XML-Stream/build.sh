@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Creates an XML Stream connection and parses return data (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/authen-sasl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/authen-sasl omniti/perl/io-socket-ssl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/authen-sasl"
+DEPENDS_IPS="omniti/perl/authen-sasl omniti/perl/io-socket-ssl"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
