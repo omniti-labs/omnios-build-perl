@@ -321,3 +321,4 @@ Test-Script
 File-Which
 File-HomeDir
 Readonly-XS
+IO-File-Lockable
