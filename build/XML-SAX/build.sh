@@ -62,6 +62,12 @@ case $DEPVER in
         ;;
 esac
 
+install_ini() {
+    logmsg "Installing a sensible default parser config"
+    logcmd cp $SRCDIR/files/ParserDetails.ini ${DESTDIR}${PREFIX}/lib/vendor_perl/${DEPVER}/XML/SAX/ || \
+        logerr "--- Failed to copy parser config"
+}
+
 # Uncomment and set PREFIX if any modules install site binaries
 #save_function make_isa_stub make_isa_stub_orig
 #make_isa_stub() {
@@ -74,6 +80,7 @@ download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PRO
 patch_source
 prep_build
 buildperl
+install_ini
 make_package
 clean_up
 

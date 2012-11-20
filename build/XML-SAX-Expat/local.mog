@@ -1,2 +1,5 @@
 license perl-artistic-1 license=Artistic
 license perl-gpl-v1 license=GPLv1
+
+<transform file path=opt/OMNIperl/lib/vendor_perl/.*/XML/SAX/ParserDetails.ini$ -> set overlay true>
+<transform file path=opt/OMNIperl/lib/vendor_perl/.*/XML/SAX/ParserDetails.ini$ -> set preserve renameold>
