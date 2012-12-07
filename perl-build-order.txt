@@ -162,6 +162,7 @@ Data-Diff
 Data-UUID
 Exception-Class
 Geo-IP
+Test-Number-Delta
 Math-Random-MT
 Lingua-EN-Numbers
 Lingua-EN-Inflect
