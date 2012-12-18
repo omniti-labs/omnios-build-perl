@@ -41,6 +41,12 @@ close($fh);
 if (@mods) {
     foreach my $module (@mods) {
         my $p = OmniTI::Package->new( module => $module, cache => $mod_cache, deps => 1, recurse => $recurse );
+
+        if ($p->core) {
+            show_core($p);
+            next;
+        }
+
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
@@ -51,6 +57,12 @@ if (@mods) {
 if (@dists) {
     foreach my $dist (@dists) {
         my $p = OmniTI::Package->new( dist => $dist, cache => $mod_cache, deps => 1, recurse => $recurse );
+
+        if ($p->core) {
+            show_core($p);
+            next;
+        }
+
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
@@ -63,11 +75,22 @@ if (@files) {
         die "Invalid path provided for local archive: $file\n" unless -f $file;
 
         my $p = OmniTI::Package->new( archive => $file, cache => $mod_cache, deps => 1, recurse => $recurse );
+
+        if ($p->core) {
+            show_core($p);
+            next;
+        }
+
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
         already_built($p->dist);
     }
+}
+
+if (scalar(@new_dists) == 0) {
+    print "Nothing to do.\n";
+    exit 0;
 }
 
 printf("The following distributions are new:\n");
@@ -78,6 +101,12 @@ my @need_licenses = grep { !-f "$rootdir/build/$_/local.mog" } @new_dists;
 if (scalar(@need_licenses) > 0) {
     printf("\nLicenses are unresolved for:\n");
     printf("    %s\n", $_) for @need_licenses;
+}
+
+sub show_core {
+    my ($p) = @_;
+
+    printf("Module %s is CORE. Skipping.\n\n", $p->module);
 }
 
 sub show_summary {
