@@ -159,6 +159,17 @@ sub author {
     return $self->{'_author'};
 }
 
+sub core {
+    my ($self) = @_;
+
+    return unless $self->module;
+
+    my @core = Module::CoreList::find_modules($self->module);
+
+    return 1 if @core;
+    return 0;
+}
+
 sub summary {
     my ($self, $summary) = @_;
 
