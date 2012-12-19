@@ -13,11 +13,12 @@ eval <<EOE;
     use OmniTI::Package;
 EOE
 
-my ($help, $recurse, @mods, @dists, @files);
+my ($help, $recurse, $buildcore, @mods, @dists, @files);
 
 exit usage() unless GetOptions(
     'help|h'          => \$help,
     'recurse|r'       => \$recurse,
+    'build-core'      => \$buildcore,
     'module|mod|m:s'  => \@mods,
     'dist|d:s'        => \@dists,
     'package|file|f:s'=> \@files,
@@ -44,7 +45,7 @@ if (@mods) {
 
         if ($p->core) {
             show_core($p);
-            next;
+            next unless $buildcore;
         }
 
         $p->generate_build("$rootdir/build/");
@@ -60,7 +61,7 @@ if (@dists) {
 
         if ($p->core) {
             show_core($p);
-            next;
+            next unless $buildcore;
         }
 
         $p->generate_build("$rootdir/build/");
@@ -78,7 +79,7 @@ if (@files) {
 
         if ($p->core) {
             show_core($p);
-            next;
+            next unless $buildcore;
         }
 
         $p->generate_build("$rootdir/build/");
@@ -106,7 +107,13 @@ if (scalar(@need_licenses) > 0) {
 sub show_core {
     my ($p) = @_;
 
-    printf("Module %s is CORE. Skipping.\n\n", $p->module);
+    if ($buildcore) {
+        printf("Module %s is CORE. Building anyway (--build-core provided), but please make\n".
+               "sure you know what you're doing and that this module is safe to package\n".
+               "separately.\n\n", $p->module);
+    } else {
+        printf("Module %s is CORE. Skipping.\n\n", $p->module);
+    }
 }
 
 sub show_summary {
@@ -148,6 +155,9 @@ $prog - Generate build scripts for creating omniti-perl IPS packages.
     --file    -f    Local archive file to inspect and package.
 
     --recurse -r    Follow dependencies of dependencies of ...
+
+    --build-core    Ignores check for CORE modules and creates build
+                    scripts for them anyway. Use with caution.
 
     --help    -h    Display this message and exit.
 
