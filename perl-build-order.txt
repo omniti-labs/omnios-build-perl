@@ -330,3 +330,4 @@ JSON-Any
 Devel-NYTProf
 Parallel-ForkManager
 local-lib
+HTML-Template
