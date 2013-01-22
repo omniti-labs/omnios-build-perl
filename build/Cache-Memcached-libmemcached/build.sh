@@ -30,7 +30,7 @@
 AUTHORID=DMAKI
 PROG=Cache-Memcached-libmemcached
 MODNAME=Cache::Memcached::libmemcached
-VER=0.02010
+VER=0.02011
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl Interface to libmemcached (Perl $DEPVER)"
