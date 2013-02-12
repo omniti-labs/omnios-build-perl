@@ -332,3 +332,5 @@ Parallel-ForkManager
 local-lib
 HTML-Template
 Proc-Queue
+Net-Domain-TLD
+Data-Validate-Domain
