@@ -338,3 +338,4 @@ Domain-PublicSuffix
 IDNA-Punycode
 Text-Textile
 Business-PayPal-NVP
+FreezeThaw
