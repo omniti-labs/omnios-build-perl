@@ -339,3 +339,4 @@ IDNA-Punycode
 Text-Textile
 Business-PayPal-NVP
 FreezeThaw
+Sun-Solaris-Kstat
