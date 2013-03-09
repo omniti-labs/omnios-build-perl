@@ -27,7 +27,7 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DOY
+AUTHORID=DROLSKY
 PROG=Class-Load
 MODNAME=Class::Load
 VER=0.20
