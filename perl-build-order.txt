@@ -77,11 +77,11 @@ Email-Date-Format
 MIME-Lite
 Variable-Magic
 Authen-SASL
+Net-SSLeay
+IO-Socket-SSL
 XML-Stream
 Digest-SHA1
 Net-XMPP
-Net-SSLeay
-IO-Socket-SSL
 Convert-ASN1
 Convert-X509
 Term-ReadLine-Gnu
@@ -309,7 +309,6 @@ Log-Dispatch-Array
 Text-Template
 Sys-Hostname-Long
 String-Flogger
-Getopt-Long-Descriptive
 IPC-Run3
 Log-Dispatchouli
 Email-Sender
