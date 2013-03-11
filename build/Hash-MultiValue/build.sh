@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ARISTOTLE
+AUTHORID=MIYAGAWA
 PROG=Hash-MultiValue
 MODNAME=Hash::MultiValue
-VER=0.12
+VER=0.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Store multiple values per key (Perl $DEPVER)"

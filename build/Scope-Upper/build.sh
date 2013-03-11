@@ -30,7 +30,7 @@
 AUTHORID=VPIT
 PROG=Scope-Upper
 MODNAME=Scope::Upper
-VER=0.18
+VER=0.22
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Act on upper scopes. (Perl $DEPVER)"

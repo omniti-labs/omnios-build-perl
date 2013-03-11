@@ -30,7 +30,7 @@
 AUTHORID=ABH
 PROG=Mozilla-CA
 MODNAME=Mozilla::CA
-VER=20120823
+VER=20130114
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Mozilla's CA cert bundle in PEM format (Perl $DEPVER)"
