@@ -340,3 +340,4 @@ Business-PayPal-NVP
 FreezeThaw
 Sun-Solaris-Kstat
 Net-Stomp
+PerlMagick

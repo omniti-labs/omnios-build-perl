@@ -1,0 +1,27 @@
+--- PerlMagick-6.77/Makefile.PL.orig	Tue Mar 12 21:51:40 2013
++++ PerlMagick-6.77/Makefile.PL	Fri Mar 22 22:10:28 2013
+@@ -124,7 +124,7 @@
+ sub AutodetectDelegates {
+   #try to get configuration info via identify or convert utilities
+   my $devnull = devnull();
+-  my $conf = `identify -list Configure 2>$devnull` || `convert -list Configure 2>$devnull`;
++  my $conf = `/opt/omni/bin/identify -list Configure 2>$devnull` || `/opt/omni/bin/convert -list Configure 2>$devnull`;
+   my @delegates = ();
+   foreach my $line (split '\n', $conf) {
+     next unless $line =~ /^DELEGATES\s+/;
+@@ -156,11 +156,11 @@
+ }
+ 
+ # defaults for LIBS & INC & CCFLAGS params that we later pass to Writemakefile
+-my $INC_magick = '-I../ -I.. -pthread -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -pthread -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/libxml2 -I"' . $Config{'usrinc'} . '/ImageMagick"';
+-my $LIBS_magick = '-L../magick/.libs -lMagickCore -lperl -lm';
++my $INC_magick = '-I../ -I.. -pthread -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -pthread -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/libxml2 -I/opt/omni/include -I/opt/omni/include/ImageMagick';
++my $LIBS_magick = '-L../magick/.libs -l/opt/omni/lib/libMagickCore.so -lperl -lm';
+ my $CCFLAGS_magick = "$Config{'ccflags'} -fopenmp -g -O2 -Wall -pthread";
+-my $LDFLAGS_magick   = "-L../magick/.libs -lMagickCore $Config{'ldflags'} -L/usr/lib";
+-my $LDDLFLAGS_magick = "-L../magick/.libs -lMagickCore $Config{'lddlflags'} -L/usr/lib";
++my $LDFLAGS_magick   = "$Config{'ldflags'} -L/usr/lib $ENV{'MAGICK_LDFLAGS'} -lMagickCore";
++my $LDDLFLAGS_magick = "$Config{'lddlflags'} -L/usr/lib $ENV{'MAGICK_LDFLAGS'} -lMagickCore";
+ 
+ if (($^O eq 'MSWin32') && ($Config{cc} =~ /gcc/)) {
+   my($Ipaths, $Lpaths) = AutodetectWin32gcc();
