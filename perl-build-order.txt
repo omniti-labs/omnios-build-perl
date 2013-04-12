@@ -343,3 +343,7 @@ Net-Stomp
 PerlMagick
 Test-Pod
 Text-Diff-HTML
+EV
+Async-Interrupt
+AnyEvent-HTTP
+Plack-App-Proxy

@@ -28,15 +28,15 @@
 . ../../lib/functions.sh
 
 AUTHORID=MLEHMANN
-PROG=AnyEvent
-MODNAME=AnyEvent::Log
-VER=7.04
+PROG=EV
+MODNAME=EV
+VER=4.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="the DBI of event loop programming (Perl $DEPVER)"
+SUMMARY="perl interface to libev, a high performance full-featured event loop (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/common-sense"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omniti/perl/common-sense"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
