@@ -13,6 +13,18 @@ eval <<EOE;
     use OmniTI::Package;
 EOE
 
+die <<EOD if $@;
+An error was encountered trying to load the packaging libraries. This
+is most frequently because there are missing dependencies. On OmniOS,
+you may be able to fix this via the following:
+
+    sudo pkg install omniti/perl/dist-metadata omniti/perl/libwww-perl
+
+The full error was:
+
+$@
+EOD
+
 my ($help, $recurse, $buildcore, @mods, @dists, @files);
 
 exit usage() unless GetOptions(
