@@ -24,7 +24,7 @@ sub new {
     $self->{'_run_deps'} = [];
     $self->{'_full_deps'} = [];
 
-    $self->{'_mod_cache'} = $opts{'cache'} && ref($opts{'cache'}) eq 'HASH' ? $opts{'cache'} : {};
+    $self->{'_mod_cache'} = exists $opts{'cache'} && ref($opts{'cache'}) eq 'HASH' ? $opts{'cache'} : {};
 
     $self = bless $self, $class;
 
@@ -65,12 +65,19 @@ sub module {
     my $res = get('http://search.cpan.org/api/module/' . $module) || die "Error contacting CPAN!";
     my $json = decode_json($res) || die "Bad response from CPAN!";
 
+    if (exists $json->{'error'} and lc($json->{'error'}) eq 'not found') {
+        my $temp_distname = $module;
+        $temp_distname =~ s{::}{-}og;
+
+        return $self->{'_module'} if $self->dist($temp_distname);
+    }
+
     die "CPAN error for $module: $json->{'error'}\n" if $json->{'error'};
     die "No distribution name found for $module!" unless $json->{'distvname'};
 
     $self->dist($json->{'distvname'});
 
-    $self->{'_author'} = $json->{'cpanid'} if $json->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');;
+    $self->{'_author'} = $json->{'cpanid'} if exists $json->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');
 
     return $self->{'_module'};
 }
@@ -104,7 +111,7 @@ sub dist {
 
     $self->archive($file);
 
-    $self->{'_author'} = $d->{'cpanid'} if $d->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');;
+    $self->{'_author'} = $d->{'cpanid'} if $d->{'cpanid'} && (!$self->{'_author'} || $self->{'_author'} eq 'UNKNOWN');
 
     return $self->{'_dist'};
 }
@@ -133,6 +140,16 @@ sub archive {
         $self->{'_summary'} = $metadata->{'abstract'};
         $self->{'_original_summary'} = $metadata->{'abstract'};
         $self->{'_licenses'} = [grep { $_ =~ m{\w+}o } @{$metadata->{'license'}}];
+
+        if (!$self->{'_module'}) {
+            # most likely broken metadata for this distribution, so we will make a best
+            # guess as to the name
+            $self->{'_module'} = $metadata->{'name'};
+            $self->{'_module'} =~ s{-}{::}og;
+            $self->{'_provides'} = [$self->{'_module'}]
+                unless exists $self->{'_provides'} && ref($self->{'_provides'}) eq 'ARRAY'
+                    && @{$self->{'_provides'}} > 0;
+        }
 
         if ($self->{'_get_deps'}) {
             foreach my $deptype (keys %{$metadata->{'prereqs'}}) {
@@ -308,17 +325,17 @@ sub add_dep {
     my ($self, $list, $name, $recurse) = @_;
 
     # we don't add the current dist as a dep to itself
-    return if $self->module eq $name;
+    return if $self->{'_module'} eq $name;
 
     $recurse = 0 unless $recurse;
-    $recurse = $self->{'_recurse'} if $self->{'_recurse'};
+    $recurse = $self->{'_recurse'} if exists $self->{'_recurse'};
 
     return if lc($name) eq 'perl';
 
-    my $cache_name = $self->{'_mod_cache'}->{$name} ? $self->{'_mod_cache'}->{$name}->module() : $name;
+    my $cache_name = exists $self->{'_mod_cache'}->{$name} ? $self->{'_mod_cache'}->{$name}->module() : $name;
 
     # short circuit if the dependency is already in the list
-    return if grep { $_->module() eq $cache_name } @{$self->{"_${list}_deps"}};
+    return if grep { $_->module() && $_->module() eq $cache_name } @{$self->{"_${list}_deps"}};
 
     # skip adding to the deplist if this one's a CORE module
     my @core = Module::CoreList::find_modules($name);
@@ -327,40 +344,29 @@ sub add_dep {
     # new dependency, so now the descent begins and we create a new object for it
     # which will trigger it to fill in its own dependencies, and so on, until there
     # is nothing in the list but CORE modules
-    my $dep = exists $self->{'_mod_cache'}->{$name}
-        ? $self->{'_mod_cache'}->{$name}
-        : OmniTI::Package->new( module => $name, cache => $self->{'_mod_cache'}, deps => $recurse, recurse => $recurse );
+
+    my $dep;
+    eval {
+        $dep = exists $self->{'_mod_cache'}->{$name}
+            ? $self->{'_mod_cache'}->{$name}
+            : OmniTI::Package->new(
+                module  => $name,
+                cache   => $self->{'_mod_cache'},
+                deps    => $recurse,
+                recurse => $recurse
+              );
+    };
+
+    if ($@) {
+        print STDERR "Error adding dependency ($name). Skipping, but you may need to resolve this manually.\n";
+        return;
+    }
 
     $self->{'_mod_cache'}->{$name} = $dep unless $self->{'_mod_cache'}->{$name};
-    $self->{'_mod_cache'}->{$dep->module()} = $dep unless $self->{'_mod_cache'}->{$dep->module()};
+    $self->{'_mod_cache'}->{$dep->module()} = $dep if $dep->module() && !exists $self->{'_mod_cache'}->{$dep->module()};
     $self->{'_mod_cache'}->{$_} = $dep for $dep->provides();
 
-#    if ($list eq 'build' && $recurse) {
-#        my %seen;
-#
-#        my @t = @{$self->{'_build_deps'}};
-#        $self->{'_build_deps'} = [];
-#
-#        foreach my $d ((@t, $dep->builddeps)) {
-#            next if $seen{$d->module};
-#            $seen{$d->module} = 1;
-#            push(@{$self->{'_build_deps'}}, $d);
-#        }
-#    }
     push(@{$self->{'_build_deps'}}, $dep) if $list eq 'build';
-
-#    if ($list eq 'run' && $recurse) {
-#        my %seen;
-#
-#        my @t = @{$self->{'_run_deps'}};
-#        $self->{'_run_deps'} = [];
-#
-#        foreach my $d ((@t, $dep->rundeps)) {
-#            next if $seen{$d->module};
-#            $seen{$d->module} = 1;
-#            push(@{$self->{'_run_deps'}}, $d);
-#        }
-#    }
     push(@{$self->{'_run_deps'}}, $dep) if $list eq 'run';
 
     foreach my $d ($dep->fulldeps) {

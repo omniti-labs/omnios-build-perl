@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 
+$| = 1;
+
 use Getopt::Long;
 
 use File::Basename;
@@ -79,7 +81,7 @@ if (@dists) {
         $p->generate_build("$rootdir/build/");
 
         show_summary($p);
-        already_build($p->dist);
+        already_built($p->dist);
     }
 }
 
