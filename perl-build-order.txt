@@ -347,3 +347,9 @@ EV
 Async-Interrupt
 AnyEvent-HTTP
 Plack-App-Proxy
+PadWalker
+Data-Dumper-Names
+Test-Most
+Math-MatrixReal
+Math-Symbolic
+Algorithm-CurveFit
