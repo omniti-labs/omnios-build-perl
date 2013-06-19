@@ -353,3 +353,4 @@ Test-Most
 Math-MatrixReal
 Math-Symbolic
 Algorithm-CurveFit
+Clone-AsUTF8Bytes
