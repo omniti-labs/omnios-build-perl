@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-data-inheritable"
+DEPENDS_IPS="omniti/perl/class-data-inheritable omniti/perl/class-accessor omniti/perl/digest-sha1 omniti/perl/digest-hmac omniti/perl/libwww-perl omniti/perl/uri"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
