@@ -356,3 +356,4 @@ Algorithm-CurveFit
 Clone-AsUTF8Bytes
 Crypt-SSLeay
 Net-OAuth
+Net-Twitter-Lite
