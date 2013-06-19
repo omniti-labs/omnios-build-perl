@@ -20,7 +20,7 @@ An error was encountered trying to load the packaging libraries. This
 is most frequently because there are missing dependencies. On OmniOS,
 you may be able to fix this via the following:
 
-    sudo pkg install omniti/perl/dist-metadata omniti/perl/libwww-perl
+    sudo pkg install omniti/perl/dist-metadata omniti/perl/json omniti/perl/libwww-perl
 
 The full error was:
 
