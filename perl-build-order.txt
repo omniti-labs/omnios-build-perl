@@ -354,3 +354,4 @@ Math-MatrixReal
 Math-Symbolic
 Algorithm-CurveFit
 Clone-AsUTF8Bytes
+Crypt-SSLeay
