@@ -52,16 +52,16 @@ If you haven't got the perl.omniti.com publisher configured (see the output of
 
 Then, something like:
 
-	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
+	sudo pkg install omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/dist-metadata omniti/perl/json omniti/perl/libwww-perl
 
-will get you Perl 5.16.
+will get you Perl 5.16 and the dist packages necessary for the helper script.
 
 ### Switching Perl Versions Without Rebuilding The Machine
 
 To change Perl versions, for example going from 5.14 to 5.16:
 
-	$ sudo pkg uninstall omniti/incorporation/perl-514-incorporation omniti/perl/file-slurp omniti/perl/json
-	$ sudo pkg install omniti/incorporation/perl-516-incorporation omniti/perl/file-slurp omniti/perl/json
+	$ sudo pkg uninstall $(pkg list -H pkg://perl.omniti.com/* | awk '{ print $1 }')
+	$ sudo pkg install omniti/incorporation/perl-516-incorporation omniti/perl/dist-metadata omniti/perl/json omniti/perl/libwww-perl
 
 This will automatically upgrade `omniti/runtime/perl` to the latest release of 
 5.16 and install dist packages compatible with 5.16.
