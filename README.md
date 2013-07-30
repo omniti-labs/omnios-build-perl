@@ -13,7 +13,7 @@ We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .  Please mak
 
 The Perl build repo is laid out like other OmniOS build repos, with some 
 additional code to facilitate metadata processing, particularly dependency 
-resolution.  In the root directory, `perl_module_dist.pl` is used to make new 
+resolution.  In the root directory, `perl-dist.pl` is used to make new 
 build scripts.  The build scripts themselves live in the "build" subdirectory.
 
 The bulk of the build work is done via two shell files in lib, config.sh and 
@@ -21,7 +21,7 @@ functions.sh.  You should not need to change anything directly in these files.
 You may override most variables and functions in the build script.
 
 The build scripts are the authoritative record of how to package the 
-distribution.  `perl_module_dist.pl` will never overwrite a build.sh script.
+distribution.  `perl-dist.pl` will never overwrite a build.sh script.
 Any tuning or tweaking required may be done in build.sh and may be expected
 to be preserved.
 
@@ -109,21 +109,25 @@ In a working space on your build machine, do:
 
 The build instructions for each individual CPAN distribution are under build/ .
 
-The main helper script is ./perl_module_dist.pl .
+The main helper script is `./perl-dist.pl`
 
 ### Run The Helper Script
 
 You typically use the name of the base module of the distribution as the 
 starting point.  If you're not sure, just pick one of the modules and things 
 should work out.  Give this module name with the `-m` option to 
-`perl_module_dist.pl`.  It should do the rest, including creating the build 
+`perl-dist.pl`.  It should do the rest, including creating the build 
 script (as long as it does not already exist) as well as telling you the order 
 in which to build them. For example:
 
-	./perl_module_dist.pl -m MIME::Lite
-	Installation order:
-	Email-Date-Format
-	MIME-Lite
+    $ ./perl-dist.pl -m XML::Writer
+    Module:       XML::Writer
+    Distribution: XML-Writer
+    Version:      0.623
+    Depends on:
+    The following distributions are new:
+        XML-Writer
+
 
 __NOTE:__ The dist script will attempt to determine the license for each 
 distribution, but if it can't it will tell you.  You'll need to provide a file 
@@ -173,7 +177,7 @@ If a build is not successful, the full output of the run is available in the
 ### Append the Module Name to the Build Order List
 
 __When you've got a working build for your dist, please append the dist name
-(which is the same as the directory created by perl_module_dist.pl) to the
+(which is the same as the directory created by perl-dist.pl) to the
 `perl-build-order.txt` file.__
 
 You may review the current list of available dist packages at 
@@ -181,7 +185,8 @@ http://pkg.omniti.com/omniti-perl/
 
 ### Promoting Your Package to The World
 
-Once you think your build script works well, commit and push your build script.
+Once you think your build script works well, commit and push your build script
+as well as the update(s) to `perl-build-order.txt`.
 
 Assuming you have network access to pkg-il-1.int.omniti.net (check with SRE team if you don't), set:
     PKGPUBLISHER=omnios-perl
@@ -193,12 +198,15 @@ If you discover a problem with the package later on, just fix it and publish aga
 
 ### Sample build
 
-	$ pwd
-	/home/esproul/git/perl-build
-	$ ./perl_module_dist.pl -m Test::Base
-	Installation order:
-	Spiffy
-	Test-Base
+        $ pwd
+        /home/esproul/git/perl-build
+        $ ./perl-dist.pl -m Test::Base
+        Module:       Test::Base
+        Distribution: Test-Base
+        Version:      0.60
+        Depends on:   Spiffy
+                      Test-Deep
+
 
 Now we change into the dist's build directory and run build.sh for each version
 of Perl we want.  Note that between runs for different Perl versions we'll need
