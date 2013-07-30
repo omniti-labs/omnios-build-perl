@@ -176,9 +176,12 @@ If a build is not successful, the full output of the run is available in the
 
 ### Append the Module Name to the Build Order List
 
-__When you've got a working build for your dist, please append the dist name
-(which is the same as the directory created by perl-dist.pl) to the
-`perl-build-order.txt` file.__
+__When you've got a working build for your dist, please append any new dist names
+(the directory names under `build/` that you'll be checking in) to the 
+`perl-build-order.txt` file with dependencies, if any, listed above your new 
+dist in the order reported by `perl-dist.pl`.__
+
+This facilitates a mass build of all dists when we introduce a new Perl version.
 
 You may review the current list of available dist packages at 
 http://pkg.omniti.com/omniti-perl/
