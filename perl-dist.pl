@@ -10,6 +10,21 @@ use Getopt::Long;
 use File::Basename;
 my $rootdir = dirname(__FILE__);
 
+my ($help, $recurse, $buildcore, @mods, @dists, @files);
+
+exit usage() unless GetOptions(
+    'help|h'          => \$help,
+    'recurse|r'       => \$recurse,
+    'build-core'      => \$buildcore,
+    'module|mod|m:s'  => \@mods,
+    'dist|d:s'        => \@dists,
+    'package|file|f:s'=> \@files,
+);
+
+$recurse = 0 unless $recurse && $recurse == 1;
+
+exit usage() if $help || (scalar(@mods) == 0 && scalar(@dists) == 0 && scalar(@files) == 0);;
+
 eval <<EOE;
     use lib "$rootdir/lib/perl";
     use OmniTI::Package;
@@ -26,21 +41,6 @@ The full error was:
 
 $@
 EOD
-
-my ($help, $recurse, $buildcore, @mods, @dists, @files);
-
-exit usage() unless GetOptions(
-    'help|h'          => \$help,
-    'recurse|r'       => \$recurse,
-    'build-core'      => \$buildcore,
-    'module|mod|m:s'  => \@mods,
-    'dist|d:s'        => \@dists,
-    'package|file|f:s'=> \@files,
-);
-
-$recurse = 0 unless $recurse && $recurse == 1;
-
-exit usage() if $help || (scalar(@mods) == 0 && scalar(@dists) == 0 && scalar(@files) == 0);;
 
 my $mod_cache = {};
 my %already_built = ();
