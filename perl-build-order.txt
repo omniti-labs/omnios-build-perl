@@ -358,3 +358,8 @@ Crypt-SSLeay
 Net-OAuth
 Net-Twitter-Lite
 HTML-ParseBrowser
+XML-Writer
+CPAN-Changes
+Test-FailWarnings
+HTTP-BrowserDetect
+Net-BGP
