@@ -363,3 +363,4 @@ CPAN-Changes
 Test-FailWarnings
 HTTP-BrowserDetect
 Net-BGP
+Devel-DTrace-Provider
