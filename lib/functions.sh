@@ -156,7 +156,14 @@ url_encode() {
 LANG=C
 export LANG
 # Set the path - This can be overriden/extended in the build script
-PATH="/opt/gcc-4.6.3/bin:/usr/ccs/bin:/usr/bin:/usr/sbin:/usr/gnu/bin:/usr/sfw/bin"
+PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/usr/gnu/bin:/usr/sfw/bin"
+# Determine what release we're running as that affects some versions of things
+RELEASE=$(head -1 /etc/release | awk '{ print $3 }')
+if [[ ${RELEASE:1} -le 151004 ]]; then
+    PATH="/opt/gcc-4.6.3/bin:$PATH"
+else
+    PATH="/opt/gcc-4.7.2/bin:$PATH"
+fi
 export PATH
 # The dir where this file is located - used for sourcing further files
 MYDIR=$PWD/`dirname $BASH_SOURCE[0]`
@@ -180,7 +187,8 @@ process_opts $@
 
 BasicRequirements(){
     local needed=""
-    [[ -x /opt/gcc-4.6.3/bin/gcc ]] || needed+=" developer/gcc46"
+    [[ -x /opt/gcc-4.6.3/bin/gcc ]] || if [[ ${RELEASE:1} -le 151004 ]]; then needed+=" developer/gcc46"; fi
+    [[ -x /opt/gcc-4.7.2/bin/gcc ]] || if [[ ${RELEASE:1} -ge 151005 ]]; then needed+=" developer/gcc47"; fi
     [[ -x /usr/bin/ar ]] || needed+=" developer/object-file"
     [[ -x /usr/bin/ls ]] || needed+=" developer/linker"
     [[ -f /usr/lib/crt1.o ]] || needed+=" developer/library/lint"
@@ -517,6 +525,7 @@ make_package() {
         DESCSTR="$DESCSTR ($FLAVOR)"
     fi
     PKGSEND=/usr/bin/pkgsend
+    PKGDEPEND=/usr/bin/pkgdepend
     PKGMOGRIFY=/usr/bin/pkgmogrify
     PKGFMT=/usr/bin/pkgfmt
     P5M_INT=$TMPDIR/${PKGE}.p5m.int
@@ -582,7 +591,16 @@ make_package() {
         LOCAL_MOG_FILE=$SRCDIR/local.mog
     fi
     logmsg "--- Applying transforms"
-    $PKGMOGRIFY $P5M_INT $MY_MOG_FILE $GLOBAL_MOG_FILE $LOCAL_MOG_FILE $* | $PKGFMT -u > $P5M_FINAL
+    $PKGMOGRIFY $P5M_INT $MY_MOG_FILE $GLOBAL_MOG_FILE $LOCAL_MOG_FILE $* > $P5M_INT.stage1
+    if [[ -z "$NO_AUTO_DEPENDS" ]]; then
+        $PKGDEPEND generate -d $DESTDIR $P5M_INT.stage1 > $P5M_INT.dep
+        $PKGDEPEND resolve $P5M_INT.dep
+        cat $P5M_INT.dep.res >> $P5M_INT.stage1
+        # Incorporate on entire so that a newer version/timestamp for an earlier release 
+        # won't install on a later release.
+        echo "depend fmri=pkg:/entire@11-$PVER type=incorporate" >> $P5M_INT.stage1
+    fi
+    $PKGFMT -u < $P5M_INT.stage1 > $P5M_FINAL
     logmsg "--- Publishing package"
     logerr "Intentional pause: Last chance to sanity-check before publication!"
     if [[ -n "$DESTDIR" ]]; then
@@ -856,6 +874,7 @@ buildperl32() {
     local OPTS
     OPTS=${MAKEFILE_OPTS//_ARCH_/}
     OPTS=${OPTS//_ARCHBIN_/$ISAPART}
+    OPTS="$OPTS MAKE=$MAKE"
     if [[ -f Makefile.PL ]]; then
         make_clean
         makefilepl32 $OPTS
@@ -886,6 +905,7 @@ buildperl64() {
     local OPTS
     OPTS=${MAKEFILE_OPTS//_ARCH_/$ISAPART64}
     OPTS=${OPTS//_ARCHBIN_/$ISAPART64}
+    OPTS="$OPTS MAKE=$MAKE"
     if [[ -f Makefile.PL ]]; then
         make_clean
         makefilepl64 $OPTS
@@ -1003,7 +1023,7 @@ clean_up() {
         logcmd rm -rf $DESTDIR || \
             logerr "Failed to remove temporary install directory"
         logmsg "--- Cleaning up temporary manifest and transform files"
-        logcmd rm -f $P5M_INT $P5M_FINAL $MY_MOG_FILE || \
+        logcmd rm -f $P5M_INT{,.*} $P5M_FINAL $MY_MOG_FILE || \
             logerr "Failed to remove temporary manifest and transform files"
     fi
     logmsg "--- Checking to see whether any build dependencies should be removed"
