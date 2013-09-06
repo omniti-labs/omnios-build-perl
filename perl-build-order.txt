@@ -364,3 +364,4 @@ Test-FailWarnings
 HTTP-BrowserDetect
 Net-BGP
 Devel-DTrace-Provider
+IPC-System-Simple
