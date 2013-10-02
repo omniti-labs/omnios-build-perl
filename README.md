@@ -40,7 +40,7 @@ Alternatively, you can do your own install of OmniOS.
 You need a release version of OmniOS to use as a build system.  At a minimum, 
 you need to do the following to get a basic build environment.
 
-	sudo pkg install developer/gcc46 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
+	sudo pkg install developer/gcc47 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
 
 Additionally, you'll need `omniti/runtime/perl` at the desired version and a 
 couple of supporting modules.  

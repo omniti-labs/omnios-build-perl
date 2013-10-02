@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MKUTTER
+AUTHORID=PHRED
 PROG=SOAP-Lite
 MODNAME=XML::Parser::Lite
-VER=0.715
+VER=0.716
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl's Web Services Toolkit (Perl $DEPVER)"
