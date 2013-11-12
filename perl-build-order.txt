@@ -365,3 +365,4 @@ HTTP-BrowserDetect
 Net-BGP
 Devel-DTrace-Provider
 IPC-System-Simple
+Pragmatic
