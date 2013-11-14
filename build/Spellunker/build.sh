@@ -21,22 +21,22 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MIYAGAWA
-PROG=Plack
-MODNAME=Plack
-VER=1.0029
+AUTHORID=TOKUHIROM
+PROG=Spellunker
+MODNAME=Spellunker
+VER=v0.4.0
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Perl Superglue for Web frameworks and Web Servers (PSGI toolkit) (Perl $DEPVER)"
+SUMMARY="Pure perl spelling checker implementation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-sharedir omniti/perl/regexp-common"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
+DEPENDS_IPS="omniti/perl/file-sharedir omniti/perl/regexp-common"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -74,6 +74,7 @@ download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PRO
 patch_source
 prep_build
 buildperl
+VER=${VER/v/}
 make_package
 clean_up
 

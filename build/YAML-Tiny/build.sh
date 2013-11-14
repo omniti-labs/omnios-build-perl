@@ -21,33 +21,34 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MIYAGAWA
-PROG=Plack
-MODNAME=Plack
-VER=1.0029
+AUTHORID=ETHER
+PROG=YAML-Tiny
+MODNAME=YAML::Tiny
+VER=1.56
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Perl Superglue for Web frameworks and Web Servers (PSGI toolkit) (Perl $DEPVER)"
+SUMMARY="Read/Write YAML files with as little code as possible"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+unset PERL_MAKE_TEST
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

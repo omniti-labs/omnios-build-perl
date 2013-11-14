@@ -127,6 +127,15 @@ Test-NoWarnings
 Test-Deep
 HTTP-Body
 Hash-MultiValue
+File-ShareDir-Install
+Stream-Buffered
+Spellunker
+File-Find-Rule-Perl
+Perl-MinimumVersion
+YAML-Tiny
+Test-MinimumVersion
+Test-CPAN-Meta
+Apache-LogFormat-Compiler
 Plack
 JSON-PP-Compat5006
 Data-ID-Exim
