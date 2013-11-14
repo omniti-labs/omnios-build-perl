@@ -367,3 +367,4 @@ Devel-DTrace-Provider
 IPC-System-Simple
 Pragmatic
 XML-LibXML-PrettyPrint
+Data-Structure-Util
