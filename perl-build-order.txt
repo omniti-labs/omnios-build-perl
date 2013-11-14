@@ -264,6 +264,7 @@ String-Format
 Perl-Tidy
 Pod-Spell
 PPIx-Utilities
+Capture-Tiny
 Email-Address
 B-Keywords
 Perl-Critic
@@ -311,7 +312,6 @@ Sub-Exporter-Progressive
 Email-Simple
 Email-Abstract
 Throwable
-Capture-Tiny
 Sub-Exporter-GlobExporter
 Log-Dispatch
 Log-Dispatch-Array
