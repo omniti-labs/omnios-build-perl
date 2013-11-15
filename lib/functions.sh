@@ -533,8 +533,8 @@ make_package() {
     GLOBAL_MOG_FILE=$MYDIR/global-transforms.mog
     MY_MOG_FILE=$TMPDIR/${PKGE}.mog
 
-    ## Strip leading zeros in version components.
-    VER=`echo $VER | sed -e 's/\.0*\([1-9]\)/.\1/g;'`
+    ## Strip leading zeros in version components, and elide all non-numerics besides '.'.
+    VER=`echo $VER | sed -e 's/\.0*\([1-9]\)/.\1/g;' -e 's/[^\.0-9]//g'`
     if [[ -n "$FLAVOR" ]]; then
         # We use FLAVOR instead of FLAVORSTR as we don't want the trailing dash
         FMRI="${PKG}-${FLAVOR}@${VER},${SUNOSVER}-${PVER}"
