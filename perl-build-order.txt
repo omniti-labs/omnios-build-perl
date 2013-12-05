@@ -378,3 +378,5 @@ Pragmatic
 XML-LibXML-PrettyPrint
 Data-Structure-Util
 CRO-OmniTI-kit
+XML-Easy
+Test-XML-Easy
