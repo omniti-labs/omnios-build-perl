@@ -380,3 +380,11 @@ Data-Structure-Util
 CRO-OmniTI-kit
 XML-Easy
 Test-XML-Easy
+Test-Perl-Critic
+Mixin-Linewise
+Pod-Eventual
+Pod-Coverage-TrustPod
+ExtUtils-Config
+ExtUtils-Helpers
+ExtUtils-InstallPaths
+Test-Harness
