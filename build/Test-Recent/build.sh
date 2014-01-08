@@ -30,7 +30,7 @@
 AUTHORID=MARKF
 PROG=Test-Recent
 MODNAME=Test::Recent
-VER=2.02
+VER=2.05
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="check a time is recent"

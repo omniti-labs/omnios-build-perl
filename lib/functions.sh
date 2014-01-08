@@ -968,7 +968,7 @@ build_test() {
 build_install() {
     logmsg "--- Build install"
     logcmd ./Build pure_install --destdir=$DESTDIR --installdirs vendor || \
-        logmsg "Build install failed"
+        logerr "Build install failed"
 }
 
 test_if_core() {
@@ -981,8 +981,7 @@ test_if_core() {
     fi
     if logcmd $PERL32 -M$MODNAME -e '1'; then
         # Module is in core, don't create a package
-        logmsg "--- Module is in core for Perl $DEPVER.  Not creating a package."
-        exit 0
+        logerr "--- Module is in core for Perl $DEPVER.  Are you sure you want to package this?"
     else
         logmsg "--- Module is not in core for Perl $DEPVER.  Continuing with build."
     fi
