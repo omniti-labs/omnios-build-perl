@@ -388,3 +388,5 @@ ExtUtils-Config
 ExtUtils-Helpers
 ExtUtils-InstallPaths
 Test-Harness
+NetAddr-IP
+Data-Validate-IP
