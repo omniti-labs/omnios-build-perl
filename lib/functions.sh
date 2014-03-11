@@ -117,14 +117,14 @@ logerr() {
     # Print an error message and ask the user if they wish to continue
     logmsg $@
     if [[ -z $BATCH ]]; then
-        ask_to_continue
+        ask_to_continue "An Error occured in the build. "
     else
         exit 1
     fi
 }
 ask_to_continue() {
-    # Ask the user if they want to continue or quit in the event of an error
-    echo -n "An Error occured in the build. Do you wish to continue anyway? (y/n) "
+    # Ask the user if they want to continue or quit
+    echo -n "${1}Do you wish to continue anyway? (y/n) "
     read
     while [[ ! "$REPLY" =~ [yYnN] ]]; do
         echo -n "continue? (y/n) "
@@ -134,7 +134,7 @@ ask_to_continue() {
         logmsg "===== Build aborted ====="
         exit 1
     fi
-    logmsg "===== Error occured, user chose to continue anyway. ====="
+    logmsg "===== User elected to continue after prompt. ====="
 }
 
 #############################################################################
@@ -611,7 +611,9 @@ make_package() {
     fi
     $PKGFMT -u < $P5M_INT.stage1 > $P5M_FINAL
     logmsg "--- Publishing package"
-    logerr "Intentional pause: Last chance to sanity-check before publication!"
+    if [[ -z "$BATCH" ]]; then
+        ask_to_continue "Last chance to sanity-check before publication! "
+    fi
     if [[ -n "$DESTDIR" ]]; then
         logcmd $PKGSEND -s $PKGSRVR publish -d $SRCDIR/../../licenses -d $DESTDIR -d $TMPDIR/$BUILDDIR \
             -d $SRCDIR $P5M_FINAL || logerr "------ Failed to publish package"
@@ -1033,18 +1035,8 @@ clean_up() {
         logmsg "--- Cleaning up temporary manifest and transform files"
         logcmd rm -f $P5M_INT{,.*} $P5M_FINAL $MY_MOG_FILE || \
             logerr "Failed to remove temporary manifest and transform files"
+        logmsg "Done."
     fi
-    logmsg "--- Checking to see whether any build dependencies should be removed"
-    local pkglist=$(pkg list | grep omniti | egrep -v 'json |file-slurp|/perl |incorporation|libgdbm|libyaml|ruby-19|management/chef' | awk '{ printf"%s ",$1 }')
-    if [[ -n $pkglist ]]; then
-        logmsg "------ Removing: $pkglist"
-        logmsg "------ About to run: sudo pkg uninstall $pkglist"
-        sudo pkg uninstall $pkglist || \
-            logmsg "WARNING: unable to remove the specified build dependencies. Please make sure they are removed before building other packages."
-    else
-        logmsg "------ Nothing needs to be removed."
-    fi
-    logmsg "Done."
 }
 
 #############################################################################
