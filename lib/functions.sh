@@ -255,6 +255,15 @@ init() {
         BUILDDIR=$PROG-$VER
     fi
 
+    RPATH=`echo $PKGSRVR | sed -e 's/^file:\/*/\//'`
+    if [[ "$RPATH" != "$PKGSRVR" ]]; then
+        if [[ ! -f $RPATH/pkg5.repository ]]; then
+            pkgrepo create $RPATH || \
+                logerr "Could not create local repo"
+            pkgrepo add-publisher -s $RPATH $PKGPUBLISHER || \
+                logerr "Could not set publisher on repo"
+        fi
+    fi
     pkgrepo get -s $PKGSRVR > /dev/null 2>&1 || \
         logerr "The PKGSRVR ($PKGSRVR) isn't available. All is doomed."
     verify_depends
