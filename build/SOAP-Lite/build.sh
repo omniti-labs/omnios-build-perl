@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl's Web Services Toolkit (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-inspector omniti/perl/http-daemon omniti/perl/io-socket-ssl omniti/perl/mime-tools omniti/perl/task-weaken omniti/perl/uri omniti/perl/xml-parser omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-inspector omniti/perl/http-daemon omniti/perl/io-socket-ssl omniti/perl/mime-tools omniti/perl/task-weaken omniti/perl/uri omniti/perl/xml-parser omniti/perl/libwww-perl omniti/perl/test-mockobject"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

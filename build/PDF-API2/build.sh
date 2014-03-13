@@ -68,6 +68,8 @@ esac
 #    PREFIX=/usr make_isa_stub_orig
 #}
 
+unset PERL_MAKE_TEST
+
 init
 test_if_core
 download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER

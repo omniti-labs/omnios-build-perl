@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Data-Validate-IP
 MODNAME=Data::Validate::IP
-VER=0.22
+VER=0.23
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="IPv4 and IPv6 validation methods"

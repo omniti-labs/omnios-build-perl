@@ -68,6 +68,8 @@ esac
 #    PREFIX=/usr make_isa_stub_orig
 #}
 
+unset PERL_MAKE_TEST
+
 init
 test_if_core
 # older PerlMagicks are no longer on CPAN, and we rsync with --delete for our mirror

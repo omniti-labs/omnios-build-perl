@@ -7,7 +7,12 @@ For a more detailed explanation of IPS packaging, please see the [IPS Dev
  Guide](http://hub.opensolaris.org/bin/download/Project+pkg/files/ipsdevguide.pdf), 
  particularly Chapter 3, which will explain the terminology.
 
-We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .  Please make sure that you publish packages for both versions when building a new dist.
+We currently (Aug 2012) build packages for both perl 5.14 and 5.16 .
+Please make sure that you publish packages for both versions when building a new dist.
+
+These packages are also tied to the OmniOS release on which they were built.
+Please ensure that you use the same version to create the packages as you expect
+to run them on.
 
 ## How This Repository is Structured
 
@@ -38,9 +43,7 @@ You can get Vagrantfiles for both 5.14 and 5.16 from here :  git@trac.omniti.net
 Alternatively, you can do your own install of OmniOS.
 
 You need a release version of OmniOS to use as a build system.  At a minimum, 
-you need to do the following to get a basic build environment.
-
-	sudo pkg install developer/gcc47 developer/object-file developer/linker developer/library/lint developer/build/gnu-make system/header system/library/math/header-math
+you need to [get a basic build environment](http://omnios.omniti.com/wiki.php/DevEnv).
 
 Additionally, you'll need `omniti/runtime/perl` at the desired version and a 
 couple of supporting modules.  
@@ -181,7 +184,8 @@ __When you've got a working build for your dist, please append any new dist name
 `perl-build-order.txt` file with dependencies, if any, listed above your new 
 dist in the order reported by `perl-dist.pl`.__
 
-This facilitates a mass build of all dists when we introduce a new Perl version.
+This facilitates a mass build of all dists when we introduce a new Perl version and/or
+want to support a new OmniOS release.
 
 You may review the current list of available dist packages at 
 http://pkg.omniti.com/omniti-perl/
