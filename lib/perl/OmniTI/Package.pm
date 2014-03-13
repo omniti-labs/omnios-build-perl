@@ -429,7 +429,7 @@ MODNAME=%modname%
 VER=%version%
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="%summary%"
+SUMMARY="%summary% (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="%deps_build%"
