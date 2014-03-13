@@ -389,3 +389,4 @@ ExtUtils-InstallPaths
 Test-Harness
 NetAddr-IP
 Data-Validate-IP
+Encoding-FixLatin
