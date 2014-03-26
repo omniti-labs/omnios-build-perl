@@ -29,13 +29,13 @@
 
 PROG=Mungo
 MODNAME=Mungo
-VER=1.1.113
+VER=1.1.122
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="an 'anti-framework' to make programming web pages under mod_perl as accessible as php."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/server/apache22 omniti/server/apache22/mod_perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/html-parser omniti/server/apache22 omniti/server/apache22/mod_perl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -50,7 +50,7 @@ export APXS
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/server/apache22/mod_perl"
+DEPENDS_IPS="omniti/perl/html-parser omniti/server/apache22/mod_perl"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
