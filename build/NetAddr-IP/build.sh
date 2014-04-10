@@ -30,7 +30,7 @@
 AUTHORID=MIKER
 PROG=NetAddr-IP
 MODNAME=NetAddr::IP
-VER=4.071
+VER=4.073
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manages IPv4 and IPv6 addresses and subnets"
