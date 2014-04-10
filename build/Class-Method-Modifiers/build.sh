@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=Class-Method-Modifiers
 MODNAME=Class::Method::Modifiers
-VER=1.10
+VER=2.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="provides Moose-like method modifiers (Perl $DEPVER)"

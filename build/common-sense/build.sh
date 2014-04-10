@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=common-sense
 MODNAME=common::sense
-VER=3.6
+VER=3.72
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="save a tree AND a kitten, use common::sense!"
