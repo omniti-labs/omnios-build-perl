@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=DateTime
 MODNAME=DateTime
-VER=0.76
+VER=1.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A date and time object (Perl $DEPVER)"
