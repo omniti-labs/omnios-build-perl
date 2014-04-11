@@ -30,7 +30,7 @@
 AUTHORID=ZEFRAM
 PROG=Module-Runtime
 MODNAME=Module::Runtime
-VER=0.013
+VER=0.014
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="runtime module handling (Perl $DEPVER)"

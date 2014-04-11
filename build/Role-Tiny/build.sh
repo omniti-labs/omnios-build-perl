@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MSTROUT
+AUTHORID=HAARG
 PROG=Role-Tiny
 MODNAME=Role::Tiny
-VER=1.002000
+VER=1.003003
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Roles. Like a nouvelle cuisine portion size slice of Moose. (Perl $DEPVER)"

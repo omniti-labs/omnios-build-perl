@@ -30,7 +30,7 @@
 AUTHORID=SOENKE
 PROG=String-CRC32
 MODNAME=String::CRC32
-VER=1.4
+VER=1.5
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl interface for cyclic redundency check generation (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=MJD
 PROG=Text-Template
 MODNAME=Text::Template
-VER=1.45
+VER=1.46
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Expand template text with embedded Perl (Perl $DEPVER)"

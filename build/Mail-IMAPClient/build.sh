@@ -30,7 +30,7 @@
 AUTHORID=PLOBBES
 PROG=Mail-IMAPClient
 MODNAME=Mail::IMAPClient
-VER=3.32
+VER=3.35
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="IMAP4 client library"

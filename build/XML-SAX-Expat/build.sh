@@ -30,7 +30,7 @@
 AUTHORID=BJOERN
 PROG=XML-SAX-Expat
 MODNAME=XML::SAX::Expat
-VER=0.40
+VER=0.51
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SAX Driver for Expat (Perl $DEPVER)"

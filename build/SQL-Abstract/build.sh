@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FREW
+AUTHORID=RIBASUSHI
 PROG=SQL-Abstract
 MODNAME=SQL::Abstract
-VER=1.73
+VER=1.77
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Generate SQL from Perl data structures (Perl $DEPVER)"

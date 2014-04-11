@@ -30,7 +30,7 @@
 AUTHORID=DOY
 PROG=Try-Tiny
 MODNAME=Try::Tiny
-VER=0.11
+VER=0.20
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="minimal try/catch with proper localization of $@ (Perl $DEPVER)"

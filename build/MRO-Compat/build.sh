@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FLORA
+AUTHORID=BOBTFISH
 PROG=MRO-Compat
 MODNAME=MRO::Compat
-VER=0.11
+VER=0.12
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="mro::* interface compatibility for Perls < 5.9.5 (Perl $DEPVER)"

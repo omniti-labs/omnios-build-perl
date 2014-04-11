@@ -30,7 +30,7 @@
 AUTHORID=GBARR
 PROG=TimeDate
 MODNAME=Date::Format
-VER=1.20
+VER=2.30
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Date formating subroutines (Perl $DEPVER)"

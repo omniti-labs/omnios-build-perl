@@ -30,7 +30,7 @@
 AUTHORID=CHORNY
 PROG=MLDBM
 MODNAME=MLDBM
-VER=2.04
+VER=2.05
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="store multi-level Perl hash structure in single level tied hash (Perl $DEPVER)"

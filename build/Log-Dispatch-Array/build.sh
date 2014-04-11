@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Log-Dispatch-Array
 MODNAME=Log::Dispatch::Array
-VER=1.001
+VER=1.003
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="log events to an array (reference) (Perl $DEPVER)"

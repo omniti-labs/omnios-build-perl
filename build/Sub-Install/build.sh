@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Sub-Install
 MODNAME=Sub::Install
-VER=0.926
+VER=0.927
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="install subroutines into packages easily (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=MARKF
 PROG=Test-utf8
 MODNAME=Test::utf8
-VER=1.00
+VER=1.01
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="handy utf8 tests (Perl $DEPVER)"

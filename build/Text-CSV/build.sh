@@ -30,7 +30,7 @@
 AUTHORID=MAKAMAKA
 PROG=Text-CSV
 MODNAME=Text::CSV
-VER=1.21
+VER=1.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="comma-separated values manipulator (using XS or PurePerl) (Perl $DEPVER)"

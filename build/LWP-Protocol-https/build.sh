@@ -30,7 +30,7 @@
 AUTHORID=GAAS
 PROG=LWP-Protocol-https
 MODNAME=LWP::Protocol::https
-VER=6.03
+VER=6.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Provide https support for LWP::UserAgent (Perl $DEPVER)"

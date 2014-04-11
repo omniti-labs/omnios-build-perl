@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=MIME-Lite
 MODNAME=MIME::Lite
-VER=3.028
+VER=3.030
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="low-calorie MIME generator (Perl $DEPVER)"

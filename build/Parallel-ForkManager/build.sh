@@ -30,7 +30,7 @@
 AUTHORID=SZABGAB
 PROG=Parallel-ForkManager
 MODNAME=Parallel::ForkManager
-VER=1.02
+VER=1.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A simple parallel processing fork manager (Perl $DEPVER)"

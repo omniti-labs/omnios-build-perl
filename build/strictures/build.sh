@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ETHER
+AUTHORID=HAARG
 PROG=strictures
 MODNAME=strictures
-VER=1.004002
+VER=1.005004
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="turn on strict and make all warnings fatal (Perl $DEPVER)"

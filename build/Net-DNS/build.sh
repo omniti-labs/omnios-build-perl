@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=OLAF
+AUTHORID=NLNETLABS
 PROG=Net-DNS
 MODNAME=Net::DNS
-VER=0.68
+VER=0.74
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl DNS resolver module (Perl $DEPVER)"

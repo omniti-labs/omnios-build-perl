@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Sub-Exporter-GlobExporter
 MODNAME=Sub::Exporter::GlobExporter
-VER=0.002
+VER=0.004
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="export shared globs with Sub::Exporter collectors (Perl $DEPVER)"

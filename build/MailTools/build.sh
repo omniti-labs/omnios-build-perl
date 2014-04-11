@@ -30,7 +30,7 @@
 AUTHORID=MARKOV
 PROG=MailTools
 MODNAME=Mail::Internet
-VER=2.09
+VER=2.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Various e-mail related modules (Perl $DEPVER)"

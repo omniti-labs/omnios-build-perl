@@ -30,7 +30,7 @@
 AUTHORID=DSKOLL
 PROG=MIME-tools
 MODNAME=MIME::Parser
-VER=5.503
+VER=5.505
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Tools to manipulate MIME messages (Perl $DEPVER)"

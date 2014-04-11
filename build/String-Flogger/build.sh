@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=String-Flogger
 MODNAME=String::Flogger
-VER=1.101242
+VER=1.101244
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="string munging for loggers (Perl $DEPVER)"
