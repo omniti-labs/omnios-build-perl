@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Exception-Class
 MODNAME=Exception::Class
-VER=1.32
+VER=1.37
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A module that allows you to declare real exception classes in Perl (Perl $DEPVER)"

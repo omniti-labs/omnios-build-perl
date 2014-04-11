@@ -30,7 +30,7 @@
 AUTHORID=SULLR
 PROG=IO-Socket-SSL
 MODNAME=IO::Socket::SSL
-VER=1.76
+VER=1.981
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Nearly transparent SSL encapsulation for IO::Socket::INET. (Perl $DEPVER)"

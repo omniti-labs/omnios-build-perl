@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Sender
 MODNAME=Email::Sender::Simple
-VER=0.120002
+VER=1.300011
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a library for sending email (Perl $DEPVER)"

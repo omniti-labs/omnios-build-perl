@@ -30,7 +30,7 @@
 AUTHORID=MAKAMAKA
 PROG=JSON
 MODNAME=JSON
-VER=2.53
+VER=2.90
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="JSON encoder/decoder (Perl $DEPVER)"

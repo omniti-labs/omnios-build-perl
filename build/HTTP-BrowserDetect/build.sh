@@ -30,7 +30,7 @@
 AUTHORID=OALDERS
 PROG=HTTP-BrowserDetect
 MODNAME=HTTP::BrowserDetect
-VER=1.55
+VER=1.70
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Determine Web browser, version, and platform from an HTTP user agent string"

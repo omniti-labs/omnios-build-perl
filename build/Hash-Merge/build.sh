@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DMUEY
+AUTHORID=REHSACK
 PROG=Hash-Merge
 MODNAME=Hash::Merge
-VER=0.12
+VER=0.200
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Merges arbitrarily deep hashes into a single hash (Perl $DEPVER)"

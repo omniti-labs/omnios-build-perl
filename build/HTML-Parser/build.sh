@@ -30,7 +30,7 @@
 AUTHORID=GAAS
 PROG=HTML-Parser
 MODNAME=HTML::Parser
-VER=3.69
+VER=3.71
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTML parser class (Perl $DEPVER)"

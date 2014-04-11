@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=IPC-Run3
 MODNAME=IPC::Run3
-VER=0.045
+VER=0.048
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="run a subprocess with input/ouput redirection (Perl $DEPVER)"

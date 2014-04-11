@@ -30,7 +30,7 @@
 AUTHORID=SHLOMIF
 PROG=Error
 MODNAME=Error
-VER=0.17018
+VER=0.17022
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Error/exception handling in an OO-ish way (Perl $DEPVER)"
