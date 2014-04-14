@@ -30,7 +30,7 @@
 AUTHORID=GBARR
 PROG=Authen-SASL
 MODNAME=Authen::SASL
-VER=2.15
+VER=2.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SASL Authentication framework (Perl $DEPVER)"

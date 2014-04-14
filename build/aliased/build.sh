@@ -30,7 +30,7 @@
 AUTHORID=OVID
 PROG=aliased
 MODNAME=aliased
-VER=0.30
+VER=0.31
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Use shorter versions of class names. (Perl $DEPVER)"

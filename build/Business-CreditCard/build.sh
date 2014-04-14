@@ -30,7 +30,7 @@
 AUTHORID=IVAN
 PROG=Business-CreditCard
 MODNAME=Business::CreditCard
-VER=0.31
+VER=0.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Validate/generate credit card checksums/names (Perl $DEPVER)"

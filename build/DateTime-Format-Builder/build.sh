@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=DateTime-Format-Builder
 MODNAME=DateTime::Format::Builder
-VER=0.80
+VER=0.81
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Create DateTime parser classes and objects. (Perl $DEPVER)"

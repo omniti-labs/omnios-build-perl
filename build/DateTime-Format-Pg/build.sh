@@ -30,7 +30,7 @@
 AUTHORID=DMAKI
 PROG=DateTime-Format-Pg
 MODNAME=DateTime::Format::Pg
-VER=0.16007
+VER=0.16009
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format PostgreSQL dates and times (Perl $DEPVER)"

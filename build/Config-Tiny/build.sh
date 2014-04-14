@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ADAMK
+AUTHORID=RSAVAGE
 PROG=Config-Tiny
 MODNAME=Config::Tiny
-VER=2.14
+VER=2.20
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read/Write .ini style files with as little code as possible (Perl $DEPVER)"
