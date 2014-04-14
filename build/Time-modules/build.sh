@@ -30,7 +30,7 @@
 AUTHORID=MUIR
 PROG=Time-modules
 MODNAME=Time-modules
-VER=2011.0517
+VER=2013.0912
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format time values"
@@ -70,8 +70,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/M/MU/MUIR/modules Time-modules 2011.0517
-#download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID}/modules $PROG $VER
 patch_source
 prep_build
 buildperl

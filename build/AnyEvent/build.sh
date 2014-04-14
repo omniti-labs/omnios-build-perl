@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=AnyEvent
 MODNAME=AnyEvent::Log
-VER=7.04
+VER=7.07
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="the DBI of event loop programming (Perl $DEPVER)"

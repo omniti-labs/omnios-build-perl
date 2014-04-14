@@ -30,7 +30,7 @@
 AUTHORID=GAAS
 PROG=HTTP-Message
 MODNAME=HTTP::Message
-VER=6.03
+VER=6.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTTP style messages (Perl $DEPVER)"

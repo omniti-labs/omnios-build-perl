@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Test-Fatal
 MODNAME=Test::Fatal
-VER=0.010
+VER=0.013
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="incredibly simple helpers for testing code with exceptions (Perl $DEPVER)"

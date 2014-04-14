@@ -30,7 +30,7 @@
 AUTHORID=CHORNY
 PROG=Test-Warn
 MODNAME=Test::Warn
-VER=0.24
+VER=0.30
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension to test methods for warnings (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=CJM
 PROG=IO-HTML
 MODNAME=IO::HTML
-VER=0.04
+VER=1.00
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Open an HTML file with automatic charset detection (Perl $DEPVER)"

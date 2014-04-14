@@ -30,7 +30,7 @@
 AUTHORID=PJF
 PROG=IPC-System-Simple
 MODNAME=IPC::System::Simple
-VER=1.21
+VER=1.25
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Run commands simply, with detailed diagnostics"

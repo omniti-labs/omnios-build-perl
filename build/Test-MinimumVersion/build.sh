@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Test-MinimumVersion
 MODNAME=Test::MinimumVersion
-VER=0.101080
+VER=0.101081
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="does your code require newer perl than you think?"
