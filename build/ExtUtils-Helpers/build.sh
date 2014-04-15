@@ -30,7 +30,7 @@
 AUTHORID=LEONT
 PROG=ExtUtils-Helpers
 MODNAME=ExtUtils::Helpers
-VER=0.021
+VER=0.022
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Various portability utilities for module builders"

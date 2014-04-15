@@ -30,13 +30,13 @@
 AUTHORID=PERIGRIN
 PROG=JSON-Any
 MODNAME=JSON::Any
-VER=1.29
+VER=1.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Wrapper Class for the various JSON classes."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-without-module"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

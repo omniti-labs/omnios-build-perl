@@ -30,7 +30,7 @@
 AUTHORID=RWSTAUNER
 PROG=Dist-Metadata
 MODNAME=Dist::Metadata
-VER=0.923
+VER=0.925
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Information about a perl module distribution (Perl $DEPVER)"

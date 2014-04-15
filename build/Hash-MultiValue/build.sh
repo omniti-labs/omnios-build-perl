@@ -30,7 +30,7 @@
 AUTHORID=MIYAGAWA
 PROG=Hash-MultiValue
 MODNAME=Hash::MultiValue
-VER=0.13
+VER=0.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Store multiple values per key (Perl $DEPVER)"

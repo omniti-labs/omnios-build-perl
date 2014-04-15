@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=STEVAN
+AUTHORID=DROLSKY
 PROG=HTTP-Headers-ActionPack
 MODNAME=HTTP::Headers::ActionPack::PriorityList
-VER=0.03
+VER=0.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTTP Action, Adventure and Excitement (Perl $DEPVER)"

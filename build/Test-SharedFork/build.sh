@@ -30,7 +30,7 @@
 AUTHORID=TOKUHIROM
 PROG=Test-SharedFork
 MODNAME=Test::SharedFork
-VER=0.20
+VER=0.24
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="fork test (Perl $DEPVER)"

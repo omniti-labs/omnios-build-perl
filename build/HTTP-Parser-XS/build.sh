@@ -30,7 +30,7 @@
 AUTHORID=KAZUHO
 PROG=HTTP-Parser-XS
 MODNAME=HTTP::Parser::XS
-VER=0.14
+VER=0.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a fast, primitive HTTP request parser (Perl $DEPVER)"

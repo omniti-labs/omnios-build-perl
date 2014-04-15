@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MSCHWERN
+AUTHORID=NEILB
 PROG=Exporter-Lite
 MODNAME=Exporter::Lite
-VER=0.02
+VER=0.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="unknown"

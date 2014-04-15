@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=TJMATHER
+AUTHORID=MARKSTOS
 PROG=HTML-FillInForm
 MODNAME=HTML::FillInForm
-VER=2.1
+VER=2.20
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Populates HTML Forms with data. (Perl $DEPVER)"

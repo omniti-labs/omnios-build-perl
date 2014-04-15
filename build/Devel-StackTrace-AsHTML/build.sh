@@ -30,7 +30,7 @@
 AUTHORID=MIYAGAWA
 PROG=Devel-StackTrace-AsHTML
 MODNAME=Devel::StackTrace::AsHTML
-VER=0.11
+VER=0.14
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Displays stack trace in HTML (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=NIGELM
 PROG=HTML-Format
 MODNAME=HTML::FormatText
-VER=2.10
+VER=2.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Base class for HTML formatters (Perl $DEPVER)"

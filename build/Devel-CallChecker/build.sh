@@ -30,7 +30,7 @@
 AUTHORID=ZEFRAM
 PROG=Devel-CallChecker
 MODNAME=Devel::CallChecker
-VER=0.005
+VER=0.006
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="custom op checking attached to subroutines (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=GWYN
 PROG=File-ShareDir-Install
 MODNAME=File::ShareDir::Install
-VER=0.05
+VER=0.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Install shared files"

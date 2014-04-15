@@ -30,7 +30,7 @@
 AUTHORID=RCLAMP
 PROG=Pod-Coverage
 MODNAME=Pod::Coverage
-VER=0.22
+VER=0.23
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Checks if the documentation of a module is comprehensive (Perl $DEPVER)"

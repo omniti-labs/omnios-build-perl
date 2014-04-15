@@ -30,7 +30,7 @@
 AUTHORID=WONKO
 PROG=HTML-Template
 MODNAME=HTML::Template
-VER=2.91
+VER=2.95
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl module to use HTML-like templating language"

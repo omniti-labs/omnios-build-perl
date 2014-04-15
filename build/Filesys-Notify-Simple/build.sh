@@ -30,7 +30,7 @@
 AUTHORID=MIYAGAWA
 PROG=Filesys-Notify-Simple
 MODNAME=Filesys::Notify::Simple
-VER=0.08
+VER=0.12
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Simple and dumb file system watcher (Perl $DEPVER)"

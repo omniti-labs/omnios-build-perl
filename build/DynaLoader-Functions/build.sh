@@ -30,7 +30,7 @@
 AUTHORID=ZEFRAM
 PROG=DynaLoader-Functions
 MODNAME=DynaLoader::Functions
-VER=0.001
+VER=0.002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="deconstructed dynamic C library loading (Perl $DEPVER)"

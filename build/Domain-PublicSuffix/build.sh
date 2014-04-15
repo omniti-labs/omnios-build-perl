@@ -30,7 +30,7 @@
 AUTHORID=NMELNICK
 PROG=Domain-PublicSuffix
 MODNAME=Domain::PublicSuffix
-VER=0.08
+VER=0.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse a domain down to root"

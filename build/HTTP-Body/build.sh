@@ -30,7 +30,7 @@
 AUTHORID=GETTY
 PROG=HTTP-Body
 MODNAME=HTTP::Body
-VER=1.15
+VER=1.19
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTTP Body Parser (Perl $DEPVER)"

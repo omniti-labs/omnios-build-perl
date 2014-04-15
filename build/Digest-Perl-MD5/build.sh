@@ -30,7 +30,7 @@
 AUTHORID=DELTA
 PROG=Digest-Perl-MD5
 MODNAME=Digest::Perl::MD5
-VER=1.8
+VER=1.9
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl implementation of Ron Rivests MD5 Algorithm (Perl $DEPVER)"
