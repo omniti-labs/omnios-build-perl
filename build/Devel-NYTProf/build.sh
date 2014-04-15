@@ -30,13 +30,13 @@
 AUTHORID=TIMB
 PROG=Devel-NYTProf
 MODNAME=Devel::NYTProf
-VER=4.09
+VER=5.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Powerful fast feature-rich perl source code profiler"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/json-any"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/json-any omniti/perl/test-differences"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
