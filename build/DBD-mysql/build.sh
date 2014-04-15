@@ -33,7 +33,7 @@ export PATH
 AUTHORID=CAPTTOFU
 PROG=DBD-mysql
 MODNAME=DBD::mysql::GetInfo
-VER=4.021
+VER=4.027
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A MySQL driver for the Perl5 Database Interface (DBI) (Perl $DEPVER)"
