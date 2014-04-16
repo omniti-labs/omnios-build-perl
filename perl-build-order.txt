@@ -176,6 +176,8 @@ Path-Class
 Data-Dump
 HTTP-Parser-XS
 Net-Server
+Test-Harness
+Module-Build-Tiny
 Starman
 Sub-Uplevel
 Test-Exception
@@ -391,7 +393,6 @@ Pod-Coverage-TrustPod
 ExtUtils-Config
 ExtUtils-Helpers
 ExtUtils-InstallPaths
-Test-Harness
 NetAddr-IP
 Data-Validate-IP
 Encoding-FixLatin
