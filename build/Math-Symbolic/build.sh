@@ -30,7 +30,7 @@
 AUTHORID=SMUELLER
 PROG=Math-Symbolic
 MODNAME=Math::Symbolic
-VER=0.609
+VER=0.612
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Symbolic calculations"

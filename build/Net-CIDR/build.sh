@@ -30,7 +30,7 @@
 AUTHORID=MRSAM
 PROG=Net-CIDR
 MODNAME=Net::CIDR
-VER=0.15
+VER=0.17
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manipulate IPv4/IPv6 netblocks in CIDR notation (Perl $DEPVER)"

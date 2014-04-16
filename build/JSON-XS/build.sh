@@ -30,13 +30,13 @@
 AUTHORID=MLEHMANN
 PROG=JSON-XS
 MODNAME=JSON::XS
-VER=2.32
+VER=3.01
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="JSON serialising/deserialising, done correctly and fast"
 DESC="JSON serialising/deserialising, done correctly and fast"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/common-sense"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/common-sense omniti/perl/types-serialiser"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 

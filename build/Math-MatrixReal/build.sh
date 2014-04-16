@@ -30,7 +30,7 @@
 AUTHORID=LETO
 PROG=Math-MatrixReal
 MODNAME=Math::MatrixReal
-VER=2.09
+VER=2.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manipulate NxN matrices of real numbers"

@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=APEIRON
+AUTHORID=ETHER
 PROG=local-lib
 MODNAME=local::lib
-VER=1.008004
+VER=2.000011
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="create and use a local lib/ for perl modules with PERL5LIB"

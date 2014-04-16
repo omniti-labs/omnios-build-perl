@@ -30,7 +30,7 @@
 AUTHORID=ALEXP
 PROG=Net-Domain-TLD
 MODNAME=Net::Domain::TLD
-VER=1.69
+VER=1.72
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Net::Domain::TLD - Work with TLD names"

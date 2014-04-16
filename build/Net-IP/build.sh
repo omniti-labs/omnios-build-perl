@@ -30,7 +30,7 @@
 AUTHORID=MANU
 PROG=Net-IP
 MODNAME=Net::IP
-VER=1.25
+VER=1.26
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for manipulating IPv4/IPv6 addresses (Perl $DEPVER)"

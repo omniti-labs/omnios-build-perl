@@ -30,7 +30,7 @@
 AUTHORID=MARKOV
 PROG=MIME-Types
 MODNAME=MIME::Type
-VER=1.35
+VER=2.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Definition of MIME types (Perl $DEPVER)"
