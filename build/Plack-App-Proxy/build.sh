@@ -30,7 +30,7 @@
 AUTHORID=LEEDO
 PROG=Plack-App-Proxy
 MODNAME=Plack::App::Proxy
-VER=0.27
+VER=0.29
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="proxy requests (Perl $DEPVER)"

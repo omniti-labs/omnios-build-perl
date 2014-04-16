@@ -30,7 +30,7 @@
 AUTHORID=SHANCOCK
 PROG=Perl-Tidy
 MODNAME=Perl::Tidy
-VER=20120714
+VER=20140328
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="indent and reformat perl scripts (Perl $DEPVER)"

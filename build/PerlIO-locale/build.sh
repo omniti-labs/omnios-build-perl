@@ -30,7 +30,7 @@
 AUTHORID=RGARCIA
 PROG=PerlIO-locale
 MODNAME=PerlIO::locale
-VER=0.08
+VER=0.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="PerlIO layer to use the encoding of the current locale (Perl $DEPVER)"

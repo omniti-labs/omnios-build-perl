@@ -30,7 +30,7 @@
 AUTHORID=ROBIN
 PROG=PadWalker
 MODNAME=PadWalker
-VER=1.96
+VER=1.98
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="$PROG - play with other peoples' lexical variables"

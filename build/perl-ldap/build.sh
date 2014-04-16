@@ -30,7 +30,7 @@
 AUTHORID=MARSCHAP
 PROG=perl-ldap
 MODNAME=Net::LDAP
-VER=0.44
+VER=0.62
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="(No summary available on CPAN) (Perl $DEPVER)"

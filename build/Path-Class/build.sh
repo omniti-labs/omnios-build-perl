@@ -30,7 +30,7 @@
 AUTHORID=KWILLIAMS
 PROG=Path-Class
 MODNAME=Path::Class::File
-VER=0.26
+VER=0.33
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Cross-platform path specification manipulation (Perl $DEPVER)"

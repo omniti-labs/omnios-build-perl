@@ -30,7 +30,7 @@
 AUTHORID=MMIMS
 PROG=Net-Twitter-Lite
 MODNAME=Net::Twitter::Lite
-VER=0.12004
+VER=0.12006
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A perl API library for the Twitter API"

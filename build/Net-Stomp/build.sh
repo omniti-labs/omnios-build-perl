@@ -30,7 +30,7 @@
 AUTHORID=JTANG
 PROG=Net-Stomp
 MODNAME=Net::Stomp
-VER=0.45
+VER=0.46
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A Streaming Text Orientated Messaging Protocol Client"

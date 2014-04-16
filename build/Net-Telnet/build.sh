@@ -30,7 +30,7 @@
 AUTHORID=JROGERS
 PROG=Net-Telnet
 MODNAME=Net::Telnet
-VER=3.03
+VER=3.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="interact with TELNET port or other TCP ports (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=DOY
 PROG=Package-Stash-XS
 MODNAME=Package::Stash::XS
-VER=0.25
+VER=0.28
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="faster and more correct implementation of the Package::Stash API (Perl $DEPVER)"

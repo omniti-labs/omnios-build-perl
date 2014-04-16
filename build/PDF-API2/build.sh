@@ -30,7 +30,7 @@
 AUTHORID=SSIMMS
 PROG=PDF-API2
 MODNAME=PDF::API2
-VER=2.019
+VER=2.021
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Facilitates the creation and modification of PDF files (Perl $DEPVER)"
