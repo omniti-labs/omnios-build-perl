@@ -30,18 +30,20 @@
 AUTHORID=MIYAGAWA
 PROG=Starman
 MODNAME=Starman
-VER=0.3001
+VER=0.4009
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="High-performance preforking PSGI/Plack web server (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/data-dump omniti/perl/http-date omniti/perl/http-message omniti/perl/http-parser-xs omniti/perl/net-server omniti/perl/plack omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/data-dump omniti/perl/http-date omniti/perl/http-message omniti/perl/http-parser-xs omniti/perl/net-server omniti/perl/plack omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/module-build-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+PERL_NONPURE_INSTALL=1
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"

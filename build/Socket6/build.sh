@@ -30,7 +30,7 @@
 AUTHORID=UMEMOTO
 PROG=Socket6
 MODNAME=Socket6
-VER=0.23
+VER=0.25
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="IPv6 related part of the C socket.h defines and structure manipulators (Perl $DEPVER)"
