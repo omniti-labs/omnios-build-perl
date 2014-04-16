@@ -6,6 +6,7 @@ Business-ISBN
 URI
 WWW-RobotRules
 common-sense
+Types-Serialiser
 JSON-XS
 Crypt-OpenSSL-X509
 Tie-IxHash
@@ -164,6 +165,7 @@ Readonly-XS
 Perl-Critic
 Perl-MinimumVersion
 Test-MinimumVersion
+POSIX-strftime-Compiler
 Apache-LogFormat-Compiler
 Plack
 JSON-PP-Compat5006
@@ -314,6 +316,7 @@ DBIx-Roles
 Class-Method-Modifiers
 Role-Tiny
 strictures
+Import-Into
 Moo
 MooX-Types-MooseLike
 Sub-Exporter-Progressive
@@ -337,6 +340,7 @@ IO-File-Lockable
 Mail-IMAPClient
 DB_File
 Net-APNS-Persistent
+Test-Without-Module
 JSON-Any
 Devel-NYTProf
 Parallel-ForkManager
@@ -380,6 +384,7 @@ CRO-OmniTI-kit
 XML-Easy
 Test-XML-Easy
 Test-Perl-Critic
+PerlIO-utf8_strict
 Mixin-Linewise
 Pod-Eventual
 Pod-Coverage-TrustPod
