@@ -27,27 +27,29 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=REHSACK
-PROG=SQL-Statement
-MODNAME=SQL::Statement
-VER=1.405
+AUTHORID=LEONT
+PROG=Module-Build-Tiny
+MODNAME=Module::Build::Tiny
+VER=0.035
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="SQL parsing and processing engine (Perl $DEPVER)"
+SUMMARY="A tiny replacement for Module::Build"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/clone omniti/perl/params-util"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-harness"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
+PERL_NONPURE_INSTALL=1
+
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/clone omniti/perl/params-util"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

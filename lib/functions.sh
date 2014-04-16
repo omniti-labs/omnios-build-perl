@@ -891,13 +891,21 @@ buildperl32() {
         makefilepl32 $OPTS
         make_prog
         [[ -n $PERL_MAKE_TEST ]] && make_param test
-        make_pure_install
+        if [[ -n $PERL_NONPURE_INSTALL ]]; then
+            make_install
+        else
+            make_pure_install
+        fi
     elif [[ -f Build.PL ]]; then
         build_clean
         buildpl32 $OPTS
         build_prog
         [[ -n $PERL_MAKE_TEST ]] && build_test
-        build_install
+        if [[ -n $PERL_NONPURE_INSTALL ]]; then
+            build_install
+        else
+            build_pure_install
+        fi
     else
         logerr "Unable to detect build type. No Makefile.PL or Build.PL found in $TMPDIR/$BUILDDIR"
     fi
@@ -922,13 +930,21 @@ buildperl64() {
         makefilepl64 $OPTS
         make_prog
         [[ -n $PERL_MAKE_TEST ]] && make_param test
-        make_pure_install
+        if [[ -n $PERL_NONPURE_INSTALL ]]; then
+            make_install
+        else
+            make_pure_install
+        fi
     elif [[ -f Build.PL ]]; then
         build_clean
         buildpl64 $OPTS
         build_prog
         [[ -n $PERL_MAKE_TEST ]] && build_test
-        build_install
+        if [[ -n $PERL_NONPURE_INSTALL ]]; then
+            build_install
+        else
+            build_pure_install
+        fi
     fi
     popd > /dev/null
 }
@@ -978,8 +994,14 @@ build_test() {
 
 build_install() {
     logmsg "--- Build install"
-    logcmd ./Build pure_install --destdir=$DESTDIR --installdirs vendor || \
+    logcmd ./Build install --destdir=$DESTDIR --installdirs vendor || \
         logerr "Build install failed"
+}
+
+build_pure_install() {
+    logmsg "--- Build pure_install"
+    logcmd ./Build pure_install --destdir=$DESTDIR --installdirs vendor || \
+        logerr "Build pure_install failed"
 }
 
 test_if_core() {

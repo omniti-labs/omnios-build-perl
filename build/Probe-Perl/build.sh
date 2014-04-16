@@ -30,7 +30,7 @@
 AUTHORID=KWILLIAMS
 PROG=Probe-Perl
 MODNAME=Probe::Perl
-VER=0.01
+VER=0.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Information about the currently running perl (Perl $DEPVER)"
