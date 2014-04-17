@@ -273,6 +273,7 @@ Want
 IO-Prompt
 MIME-Types
 SQL-Statement
+File-Slurp-Tiny
 Tree-DAG_Node
 Test-Warn
 HTML-Form

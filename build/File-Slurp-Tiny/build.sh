@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=RSAVAGE
-PROG=Tree-DAG_Node
-MODNAME=Tree::DAG_Node
-VER=1.22
+AUTHORID=LEONT
+PROG=File-Slurp-Tiny
+MODNAME=File::Slurp::Tiny
+VER=0.003
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="(super)class for representing nodes in a tree (Perl $DEPVER)"
+SUMMARY="A simple, sane and efficient file slurper"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-slurp-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
