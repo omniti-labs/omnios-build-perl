@@ -30,7 +30,7 @@
 AUTHORID=BDFOY
 PROG=Test-Output
 MODNAME=Test::Output
-VER=1.01
+VER=1.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Utilities to test STDOUT and STDERR messages. (Perl $DEPVER)"

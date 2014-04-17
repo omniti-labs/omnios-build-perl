@@ -30,7 +30,7 @@
 AUTHORID=OVID
 PROG=Test-Most
 MODNAME=Test::Most
-VER=0.31
+VER=0.33
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Most commonly needed test functions and features."

@@ -30,7 +30,7 @@
 AUTHORID=STBEY
 PROG=Bit-Vector
 MODNAME=Bit::Vector
-VER=7.2
+VER=7.3
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Efficient bit vector, set of integers and 'big int' math library (Perl $DEPVER)"

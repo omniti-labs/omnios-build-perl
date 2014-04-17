@@ -30,7 +30,7 @@
 AUTHORID=TOKUHIROM
 PROG=Test-Requires
 MODNAME=Test::Requires
-VER=0.06
+VER=0.07
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Checks to see if the module can be loaded (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=TOKUHIROM
 PROG=Test-TCP
 MODNAME=Test::TCP
-VER=1.16
+VER=2.02
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="testing TCP program (Perl $DEPVER)"

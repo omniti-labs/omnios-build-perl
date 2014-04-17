@@ -30,7 +30,7 @@
 AUTHORID=CHORNY
 PROG=Tie-IxHash
 MODNAME=Tie::IxHash
-VER=1.22
+VER=1.23
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="ordered associative arrays for Perl (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=FDALY
 PROG=Test-Tester
 MODNAME=Test::Tester
-VER=0.108
+VER=0.109
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Ease testing test modules built with Test::Builder (Perl $DEPVER)"

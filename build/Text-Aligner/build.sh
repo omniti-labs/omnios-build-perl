@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ANNO
+AUTHORID=SHLOMIF
 PROG=Text-Aligner
 MODNAME=Text::Aligner
-VER=0.07
+VER=0.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Align text in columns (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=DAGOLDEN
 PROG=Test-Number-Delta
 MODNAME=Test::Number::Delta
-VER=1.03
+VER=1.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Compare the difference between numbers against a given tolerance (Perl $DEPVER)"
