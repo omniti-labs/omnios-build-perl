@@ -30,7 +30,7 @@
 AUTHORID=SHLOMIF
 PROG=XML-RSS
 MODNAME=XML::RSS
-VER=1.49
+VER=1.55
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="creates and updates RSS files (Perl $DEPVER)"

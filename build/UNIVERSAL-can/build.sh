@@ -30,7 +30,7 @@
 AUTHORID=CHROMATIC
 PROG=UNIVERSAL-can
 MODNAME=UNIVERSAL::can
-VER=1.20120726
+VER=1.20140328
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="work around buggy code calling UNIVERSAL::can() as a function (Perl $DEPVER)"

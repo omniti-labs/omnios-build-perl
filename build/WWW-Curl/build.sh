@@ -30,7 +30,7 @@
 AUTHORID=SZBALINT
 PROG=WWW-Curl
 MODNAME=WWW::Curl
-VER=4.15
+VER=4.17
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension interface for libcurl (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=PERIGRIN
 PROG=XML-SAX-Writer
 MODNAME=XML::SAX::Writer
-VER=0.53
+VER=0.54
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SAX2 Writer (Perl $DEPVER)"

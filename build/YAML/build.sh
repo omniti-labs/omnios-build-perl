@@ -30,7 +30,7 @@
 AUTHORID=INGY
 PROG=YAML
 MODNAME=YAML
-VER=0.81
+VER=0.90
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="YAML Ain't Markup Language (tm) (Perl $DEPVER)"

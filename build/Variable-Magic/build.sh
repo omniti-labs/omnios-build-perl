@@ -30,7 +30,7 @@
 AUTHORID=VPIT
 PROG=Variable-Magic
 MODNAME=Variable::Magic
-VER=0.50
+VER=0.53
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Associate user-defined magic to variables from Perl. (Perl $DEPVER)"

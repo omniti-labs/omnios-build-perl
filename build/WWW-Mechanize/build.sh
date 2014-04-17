@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=JESSE
+AUTHORID=ETHER
 PROG=WWW-Mechanize
 MODNAME=WWW::Mechanize
-VER=1.72
+VER=1.73
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Handy web browsing in a Perl object (Perl $DEPVER)"

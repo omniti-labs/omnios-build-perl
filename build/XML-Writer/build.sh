@@ -30,7 +30,7 @@
 AUTHORID=JOSEPHW
 PROG=XML-Writer
 MODNAME=XML::Writer
-VER=0.623
+VER=0.624
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Easily generate well-formed, namespace-aware XML."
