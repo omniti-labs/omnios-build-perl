@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=String-Truncate
 MODNAME=String::Truncate
-VER=1.100600
+VER=1.100602
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a module for when strings are too long to be displayed in... (Perl $DEPVER)"

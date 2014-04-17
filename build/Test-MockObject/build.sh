@@ -30,7 +30,7 @@
 AUTHORID=CHROMATIC
 PROG=Test-MockObject
 MODNAME=Test::MockObject
-VER=1.20120301
+VER=1.20140408
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for emulating troublesome interfaces (Perl $DEPVER)"

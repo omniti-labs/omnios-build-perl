@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Test-Deep
 MODNAME=Test::Deep
-VER=0.110
+VER=0.112
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Extremely flexible deep comparison (Perl $DEPVER)"

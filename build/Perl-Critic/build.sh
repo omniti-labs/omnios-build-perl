@@ -30,7 +30,7 @@
 AUTHORID=THALJEF
 PROG=Perl-Critic
 MODNAME=Perl::Critic
-VER=1.118
+VER=1.121
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Critique Perl source code for best-practices. (Perl $DEPVER)"

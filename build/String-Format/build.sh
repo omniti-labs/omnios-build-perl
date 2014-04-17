@@ -30,7 +30,7 @@
 AUTHORID=DARREN
 PROG=String-Format
 MODNAME=String::Format
-VER=1.16
+VER=1.17
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="sprintf-like string formatting capabilities with arbitrary format definitions (Perl $DEPVER)"

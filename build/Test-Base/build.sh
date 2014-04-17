@@ -30,7 +30,7 @@
 AUTHORID=INGY
 PROG=Test-Base
 MODNAME=Test::Base
-VER=0.60
+VER=0.62
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A Data Driven Testing Framework (Perl $DEPVER)"

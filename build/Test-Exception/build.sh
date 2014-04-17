@@ -30,7 +30,7 @@
 AUTHORID=ADIE
 PROG=Test-Exception
 MODNAME=Test::Exception
-VER=0.31
+VER=0.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Test exception based code (Perl $DEPVER)"

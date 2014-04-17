@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ROODE
+AUTHORID=SANKO
 PROG=Readonly
 MODNAME=Readonly
-VER=1.03
+VER=1.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Facility for creating read-only scalars, arrays, hashes. (Perl $DEPVER)"

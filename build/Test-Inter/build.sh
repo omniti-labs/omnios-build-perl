@@ -30,7 +30,7 @@
 AUTHORID=SBECK
 PROG=Test-Inter
 MODNAME=Test::Inter
-VER=1.03
+VER=1.05
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="framework for more readable interactive test scripts (Perl $DEPVER)"
