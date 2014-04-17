@@ -30,7 +30,7 @@
 AUTHORID=RHANDOM
 PROG=Net-Server
 MODNAME=Net::Server
-VER=2.006
+VER=2.007
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Extensible, general Perl server engine (Perl $DEPVER)"
