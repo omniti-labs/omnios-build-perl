@@ -30,7 +30,7 @@
 AUTHORID=RURBAN
 PROG=B-Keywords
 MODNAME=B::Keywords
-VER=1.12
+VER=1.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Lists of reserved barewords and symbol names (Perl $DEPVER)"

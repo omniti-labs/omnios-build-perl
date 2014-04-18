@@ -30,7 +30,7 @@
 AUTHORID=DAGOLDEN
 PROG=Test-FailWarnings
 MODNAME=Test::FailWarnings
-VER=0.005
+VER=0.008
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Add test failures if warnings are caught"

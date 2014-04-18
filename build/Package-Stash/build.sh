@@ -30,7 +30,7 @@
 AUTHORID=DOY
 PROG=Package-Stash
 MODNAME=Package::Stash
-VER=0.33
+VER=0.36
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="routines for manipulating stashes (Perl $DEPVER)"
