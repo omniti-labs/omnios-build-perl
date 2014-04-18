@@ -30,7 +30,7 @@
 AUTHORID=RKITOVER
 PROG=Net-SSH2
 MODNAME=Net::SSH2
-VER=0.45
+VER=0.53
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Support for the SSH 2 protocol via libssh2. (Perl $DEPVER)"
@@ -48,6 +48,8 @@ PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
 DEPENDS_IPS="omniti/library/libssh2"
+
+
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -73,7 +75,18 @@ test_if_core
 download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
-buildperl
+
+LIBSSH2_LIB="/opt/omni/lib"
+LIBSSH2_INCLUDE="/opt/omni/include"
+LIBSSH2_LDARGS="-L/opt/omni/lib -R/opt/omni/lib"
+export LIBSSH2_LIB LIBSSH2_INCLUDE LIBSSH2_LDARGS
+buildperl32
+
+LIBSSH2_LIB="/opt/omni/lib/amd64"
+LIBSSH2_LDARGS="-L/opt/omni/lib/amd64 -R/opt/omni/lib/amd64"
+export LIBSSH2_LIB LIBSSH2_LDARGS
+buildperl64
+
 make_package
 clean_up
 
