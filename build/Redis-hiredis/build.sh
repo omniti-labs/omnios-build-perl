@@ -30,7 +30,7 @@
 AUTHORID=NEOPHENIX
 PROG=Redis-hiredis
 MODNAME=Redis::hiredis
-VER=0.10.2
+VER=0.11.0
 VERHUMAN=$VER                # Human-readable version
 #PVER=                       # Branch (set in config.sh, override here if needed)
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
@@ -42,6 +42,9 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+#Add additional CFLAGS
+export OPTIMIZE="-O3 -std=gnu99"
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
