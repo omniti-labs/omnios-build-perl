@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DOY
+AUTHORID=ETHER
 PROG=Moose
 MODNAME=Moose
-VER=2.0603
+VER=2.1204
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A postmodern object system for Perl 5 (Perl $DEPVER)"
