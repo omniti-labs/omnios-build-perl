@@ -28,27 +28,26 @@
 . ../../lib/functions.sh
 
 AUTHORID=DAMS
-PROG=Redis
-MODNAME=Redis
-VER=1.972
+PROG=PerlIO-via-Timeout
+MODNAME=PerlIO::via::Timeout
+VER=0.29
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Perl binding for Redis database (Perl $DEPVER)"
+SUMMARY="a PerlIO layer that adds read & write timeout to a handle"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/digest-sha1 omniti/perl/io-string omniti/perl/test-deep omniti/perl/test-exception omniti/perl/test-fatal omniti/perl/try-tiny omniti/perl/io-socket-timeout"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
-PERL_MAKE_TEST=""
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/try-tiny"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

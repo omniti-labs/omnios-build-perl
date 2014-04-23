@@ -309,6 +309,8 @@ File-Spec-Native
 CPAN-DistnameInfo
 Dist-Metadata
 Class-ReluctantORM
+PerlIO-via-Timeout
+IO-Socket-Timeout
 Redis
 Test-DatabaseRow
 Getopt-Long-Descriptive

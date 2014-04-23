@@ -1,0 +1,49 @@
+--- Redis-1.972/dist.ini.orig	Tue Apr 22 20:47:28 2014
++++ Redis-1.972/dist.ini	Tue Apr 22 20:47:42 2014
+@@ -37,7 +37,7 @@
+ 
+ [ModuleBuildTiny]
+ [MakeMaker::Fallback]
+-eumm_version = 6.63_03
++eumm_version = 6.63_02
+ [PkgVersion]
+ [PodWeaver]
+ [Prepender]
+--- Redis-1.972/Makefile.PL.orig	Tue Apr 22 20:46:30 2014
++++ Redis-1.972/Makefile.PL	Tue Apr 22 20:48:57 2014
+@@ -9,7 +9,7 @@
+ BEGIN {
+ my %configure_requires = (
+     'Module::Build::Tiny' => '0.030',
+-    'ExtUtils::MakeMaker' => '6.63_03',
++    'ExtUtils::MakeMaker' => '6.63_02',
+ );
+ 
+ my @missing = grep {
+@@ -63,7 +63,7 @@
+ 
+ use 5.008;
+ 
+-use ExtUtils::MakeMaker 6.63_03;
++use ExtUtils::MakeMaker 6.63_02;
+ 
+ 
+ 
+@@ -72,7 +72,7 @@
+   "AUTHOR" => "Pedro Melo <melo\@cpan.org>, Damien Krotkine <dams\@cpan.org>",
+   "BUILD_REQUIRES" => {},
+   "CONFIGURE_REQUIRES" => {
+-    "ExtUtils::MakeMaker" => "6.63_03",
++    "ExtUtils::MakeMaker" => "6.63_02",
+     "Module::Build::Tiny" => "0.030"
+   },
+   "DISTNAME" => "Redis",
+@@ -124,7 +124,7 @@
+ );
+ 
+ 
+-unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
++unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_02) } ) {
+   delete $WriteMakefileArgs{TEST_REQUIRES};
+   delete $WriteMakefileArgs{BUILD_REQUIRES};
+   $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
