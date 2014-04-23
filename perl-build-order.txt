@@ -124,6 +124,10 @@ Class-Inspector
 Devel-StackTrace-AsHTML
 Test-SharedFork
 Test-TCP
+Path-Tiny
+Class-Tiny
+Path-IsDev
+Path-FindDev
 File-ShareDir
 Filesys-Notify-Simple
 Test-NoWarnings
