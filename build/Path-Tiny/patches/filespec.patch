@@ -1,0 +1,42 @@
+--- Path-Tiny-0.052/cpanfile.orig	Wed Apr 23 16:31:18 2014
++++ Path-Tiny-0.052/cpanfile	Wed Apr 23 16:31:38 2014
+@@ -6,7 +6,7 @@
+ requires "Fcntl" => "0";
+ requires "File::Copy" => "0";
+ requires "File::Path" => "2.07";
+-requires "File::Spec" => "3.40";
++requires "File::Spec" => "3.39";
+ requires "File::Temp" => "0.19";
+ requires "File::stat" => "0";
+ requires "constant" => "0";
+--- Path-Tiny-0.052/Makefile.PL.orig	Wed Apr 23 16:44:12 2014
++++ Path-Tiny-0.052/Makefile.PL	Wed Apr 23 16:45:24 2014
+@@ -29,7 +29,7 @@
+     "Fcntl" => 0,
+     "File::Copy" => 0,
+     "File::Path" => "2.07",
+-    "File::Spec" => "3.40",
++    "File::Spec" => "3.39",
+     "File::Temp" => "0.19",
+     "File::stat" => 0,
+     "constant" => 0,
+@@ -67,7 +67,7 @@
+   "File::Basename" => 0,
+   "File::Copy" => 0,
+   "File::Path" => "2.07",
+-  "File::Spec" => "3.40",
++  "File::Spec" => "3.39",
+   "File::Spec::Functions" => 0,
+   "File::Spec::Unix" => 0,
+   "File::Temp" => "0.19",
+--- Path-Tiny-0.052/lib/Path/Tiny.pm.orig	Wed Apr 23 16:58:37 2014
++++ Path-Tiny-0.052/lib/Path/Tiny.pm	Wed Apr 23 16:59:03 2014
+@@ -9,7 +9,7 @@
+ # Dependencies
+ use Config;
+ use Exporter 5.57   (qw/import/);
+-use File::Spec 3.40 ();
++use File::Spec 3.39 ();
+ use Carp ();
+ 
+ our @EXPORT    = qw/path/;
