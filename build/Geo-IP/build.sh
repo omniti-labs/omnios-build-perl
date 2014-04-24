@@ -30,7 +30,7 @@
 AUTHORID=BORISZ
 PROG=Geo-IP
 MODNAME=Geo::IP
-VER=1.40
+VER=1.43
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Look up location and network information by IP Address (Perl $DEPVER)"
