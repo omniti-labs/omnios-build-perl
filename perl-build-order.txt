@@ -178,6 +178,12 @@ Guard
 Coro
 Path-Class
 Data-Dump
+Test-Trap
+MooseX-Role-Parameterized
+MooseX-Getopt
+MooseX-App-Cmd
+Mouse
+Net-RabbitFoot
 HTTP-Parser-XS
 Net-Server
 Test-Harness
