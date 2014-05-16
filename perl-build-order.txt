@@ -180,8 +180,13 @@ Path-Class
 Data-Dump
 Test-Trap
 MooseX-Role-Parameterized
+B-Hooks-EndOfScope
+namespace-clean
+namespace-autoclean
 MooseX-Getopt
 MooseX-App-Cmd
+Module-Build-XSUtil
+File-Copy-Recursive
 Mouse
 Net-RabbitFoot
 HTTP-Parser-XS

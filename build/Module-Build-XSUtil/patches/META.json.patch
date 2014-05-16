@@ -1,0 +1,11 @@
+--- Module-Build-XSUtil-0.10/META.json.orig	Fri May 16 19:09:10 2014
++++ Module-Build-XSUtil-0.10/META.json	Fri May 16 19:09:25 2014
+@@ -30,7 +30,7 @@
+          "requires" : {
+             "CPAN::Meta" : "0",
+             "CPAN::Meta::Prereqs" : "0",
+-            "Module::Build" : "0.4005"
++            "Module::Build" : "0.3901"
+          }
+       },
+       "develop" : {

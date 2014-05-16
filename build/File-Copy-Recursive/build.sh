@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GFUJI
-PROG=Mouse
-MODNAME=Mouse
-VER=2.2.0
+AUTHORID=DMUEY
+PROG=File-Copy-Recursive
+MODNAME=File::Copy::Recursive
+VER=0.38
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Moose minus the antlers"
+SUMMARY="Perl extension for recursivelt copying files and directories"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-build-xsutil omniti/perl/test-exception"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

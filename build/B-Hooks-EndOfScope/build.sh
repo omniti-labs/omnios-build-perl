@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GFUJI
-PROG=Mouse
-MODNAME=Mouse
-VER=2.2.0
+AUTHORID=ETHER
+PROG=B-Hooks-EndOfScope
+MODNAME=B::Hooks::EndOfScope
+VER=0.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Moose minus the antlers"
+SUMMARY="Execute code after a scope finished compilation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-build-xsutil omniti/perl/test-exception"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/variable-magic omniti/perl/sub-exporter-progressive"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

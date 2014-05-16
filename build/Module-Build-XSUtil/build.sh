@@ -27,21 +27,23 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GFUJI
-PROG=Mouse
-MODNAME=Mouse
-VER=2.2.0
+AUTHORID=HIDEAKIO
+PROG=Module-Build-XSUtil
+MODNAME=Module::Build::XSUtil
+VER=0.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Moose minus the antlers"
+SUMMARY="A Module::Build class for building XS modules"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-build-xsutil omniti/perl/test-exception"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-copy-recursive"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+PERL_MAKE_TEST=""
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"

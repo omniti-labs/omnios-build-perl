@@ -1,0 +1,11 @@
+--- Module-Build-XSUtil-0.10/META.yml.orig	Fri May 16 19:11:48 2014
++++ Module-Build-XSUtil-0.10/META.yml	Fri May 16 19:12:00 2014
+@@ -12,7 +12,7 @@
+ configure_requires:
+   CPAN::Meta: 0
+   CPAN::Meta::Prereqs: 0
+-  Module::Build: 0.4005
++  Module::Build: 0.3901
+ dynamic_config: 0
+ generated_by: 'Minilla/v0.15.2, CPAN::Meta::Converter version 2.120921'
+ license: perl

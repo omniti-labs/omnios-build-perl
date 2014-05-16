@@ -1,0 +1,11 @@
+--- Module-Build-XSUtil-0.10/cpanfile.orig	Fri May 16 18:59:59 2014
++++ Module-Build-XSUtil-0.10/cpanfile	Fri May 16 19:00:18 2014
+@@ -9,7 +9,7 @@
+ requires 'File::Path';
+ 
+ on 'configure' => sub{
+-    requires 'Module::Build' => '0.4005';
++    requires 'Module::Build' => '0.3901';
+ };
+ 
+ on 'test' => sub {

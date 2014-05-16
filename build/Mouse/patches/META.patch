@@ -1,0 +1,22 @@
+--- Mouse-2.2.0/META.json.orig	Fri May 16 19:54:12 2014
++++ Mouse-2.2.0/META.json	Fri May 16 19:54:34 2014
+@@ -31,7 +31,7 @@
+             "CPAN::Meta::Prereqs" : "0",
+             "Devel::PPPort" : "3.19",
+             "ExtUtils::ParseXS" : "3.22",
+-            "Module::Build" : "0.4005",
++            "Module::Build" : "0.3901",
+             "Module::Build::XSUtil" : "0"
+          }
+       },
+--- Mouse-2.2.0/META.yml.orig	Fri May 16 19:54:25 2014
++++ Mouse-2.2.0/META.yml	Fri May 16 19:54:43 2014
+@@ -16,7 +16,7 @@
+   CPAN::Meta::Prereqs: 0
+   Devel::PPPort: 3.19
+   ExtUtils::ParseXS: 3.22
+-  Module::Build: 0.4005
++  Module::Build: 0.3901
+   Module::Build::XSUtil: 0
+ dynamic_config: 0
+ generated_by: 'Minilla/v0.13.0, CPAN::Meta::Converter version 2.133380'

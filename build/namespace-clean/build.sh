@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GFUJI
-PROG=Mouse
-MODNAME=Mouse
-VER=2.2.0
+AUTHORID=RIBASUSHI
+PROG=namespace-clean
+MODNAME=namespace::clean
+VER=0.25
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Moose minus the antlers"
+SUMMARY="Keep imports and functions out of your namespace"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-build-xsutil omniti/perl/test-exception"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

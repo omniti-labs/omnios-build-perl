@@ -1,0 +1,11 @@
+--- Mouse-2.2.0/Build.PL.orig	Fri May 16 19:52:20 2014
++++ Mouse-2.2.0/Build.PL	Fri May 16 19:52:32 2014
+@@ -20,7 +20,7 @@
+     dynamic_config       => 0,
+ 
+     configure_requires => {
+-        'Module::Build' => 0.4005,
++        'Module::Build' => 0.3901,
+     },
+ 
+     name            => 'Mouse',

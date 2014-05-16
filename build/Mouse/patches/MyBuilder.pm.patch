@@ -1,0 +1,44 @@
+--- Mouse-2.2.0/builder/MyBuilder.pm.orig	Fri May 16 20:15:49 2014
++++ Mouse-2.2.0/builder/MyBuilder.pm	Fri May 16 20:15:37 2014
+@@ -39,7 +39,7 @@
+     print {$fh} "#endif\n";
+     close($fh);
+ 
+-    unless ($self->pureperl_only) {
++#    unless ($self->pureperl_only) {
+         require ExtUtils::ParseXS;
+         for my $xs (qw(
+             xs-src/MouseAccessor.xs
+@@ -54,7 +54,7 @@
+                 output   => $c,
+             );
+         }
+-    }
++#    }
+ 
+     $self->SUPER::ACTION_code();
+ }
+@@ -66,10 +66,10 @@
+         $class->depends_on('moose_compat_test');
+     }
+ 
+-    if ($class->pureperl_only) {
+-        print "pureperl only tests.\n";
+-        $class->SUPER::ACTION_test();
+-    } else {
++#    if ($class->pureperl_only) {
++#        print "pureperl only tests.\n";
++#        $class->SUPER::ACTION_test();
++#    } else {
+         {
+             print "xs tests.\n";
+             local $ENV{MOUSE_XS} = 1;
+@@ -81,7 +81,7 @@
+             local $ENV{PERL_ONLY} = 1;
+             $class->SUPER::ACTION_test();
+         }
+-    }
++#    }
+ }
+ 
+ sub ACTION_moose_compat_test {
