@@ -50,7 +50,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
