@@ -27,30 +27,28 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=IKUTA
-PROG=Net-RabbitFoot
-MODNAME=Net::RabbitFoot
-VER=1.03
+AUTHORID=ETHER
+PROG=MooseX-Types-Path-Tiny
+MODNAME=MooseX::Types::Path::Tiny
+VER=0.010
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="An Asynchronous and multi cahnnel Perl AMQP client."
+SUMMARY="Path::Tiny types and coercions for Moose"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
-# Bypass 'make test'
-PERL_MAKE_TEST=""
-
 NO_PARALLEL_MAKE=1
+PERL_MAKE_TEST=""
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -80,5 +78,6 @@ buildperl
 make_package
 clean_up
 
+unset PERL_MAKE_TEST
 # Vim hints
 # vim:ts=4:sw=4:et:
