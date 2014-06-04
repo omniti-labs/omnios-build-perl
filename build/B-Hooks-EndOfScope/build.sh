@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Execute code after a scope finished compilation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/variable-magic omniti/perl/sub-exporter-progressive"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/variable-magic omniti/perl/sub-exporter-progressive omniti/perl/module-implementation omniti/perl/module-runtime"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

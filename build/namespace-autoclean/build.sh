@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Keep imports out of your namespace"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/b-hooks-endofscope omniti/perl/namespace-clean"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/b-hooks-endofscope omniti/perl/namespace-clean omniti/perl/moose"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

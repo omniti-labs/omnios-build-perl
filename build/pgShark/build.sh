@@ -27,16 +27,15 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=RIBASUSHI
-PROG=namespace-clean
-MODNAME=namespace::clean
-VER=0.25
+PROG=pgShark
+MODNAME=pgShark
+VER=0.2
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Keep imports and functions out of your namespace"
+SUMMARY="used to mess with PostgreSQL network traffic"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/b-hooks-endofscope omniti/perl/package-stash"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -70,7 +69,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
+download_source $PROG $PROG $VER
 patch_source
 prep_build
 buildperl
