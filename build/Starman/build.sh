@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 PERL_NONPURE_INSTALL=1
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16"
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
 DEPENDS_IPS="omniti/perl/data-dump omniti/perl/http-date omniti/perl/http-message omniti/perl/http-parser-xs omniti/perl/net-server omniti/perl/plack omniti/perl/test-tcp"
@@ -58,6 +58,9 @@ case $DEPVER in
         ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        ;;
+    5.20)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

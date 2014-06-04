@@ -35,6 +35,7 @@ Sub-Install
 Params-Util
 Data-OptList
 Sub-Exporter
+Capture-Tiny
 Test-Output
 List-MoreUtils
 Package-DeprecationManager
@@ -64,6 +65,7 @@ Email-Valid
 HTTP-Date
 LWP-MediaTypes
 Encode-Locale
+IO-HTML
 HTTP-Message
 HTTP-Cookies
 Net-HTTP
@@ -91,6 +93,7 @@ SOCKS
 Net-OSCAR
 DBIx-Safe
 Statistics-Basic
+IO-String
 Font-TTF
 PDF-API2
 MIME-Base32
@@ -126,6 +129,13 @@ Test-SharedFork
 Test-TCP
 Path-Tiny
 Class-Tiny
+Class-Method-Modifiers
+Role-Tiny
+Probe-Perl
+IPC-Run3
+Test-Script
+File-Which
+File-HomeDir
 Path-IsDev
 Path-FindDev
 File-ShareDir
@@ -142,14 +152,10 @@ YAML-Tiny
 Test-Pod
 Test-CPAN-Meta
 File-Remove
-IO-String
 Clone
 Test-Object
 Hook-LexWrap
 Test-SubCalls
-Probe-Perl
-IPC-Run3
-Test-Script
 PPI
 PPIx-Regexp
 Readonly
@@ -161,10 +167,7 @@ Pod-Spell
 Perl-Tidy
 String-Format
 Config-Tiny
-Capture-Tiny
 Email-Address
-File-Which
-File-HomeDir
 Readonly-XS
 Perl-Critic
 Perl-MinimumVersion
@@ -311,7 +314,6 @@ Time-modules
 DDL-Oracle
 HTML-Tiny
 Captcha-reCAPTCHA
-IO-HTML
 Business-MaxMind
 Mozilla-CA
 LWP-Protocol-https
@@ -333,8 +335,6 @@ Hash-Merge
 Class-Accessor-Grouped
 SQL-Abstract
 DBIx-Roles
-Class-Method-Modifiers
-Role-Tiny
 strictures
 Import-Into
 Moo

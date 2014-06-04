@@ -30,10 +30,10 @@
 PATH=/opt/OMNIperl/bin:/usr/gnu/bin:$PATH
 export PATH
 
-AUTHORID=TIMB
+AUTHORID=DMAKI
 PROG=Memcached-libmemcached
 MODNAME=Memcached::libmemcached
-VER=0.4406
+VER=0.4202
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Thin fast full interface to the libmemcached client API (Perl $DEPVER)"
@@ -47,7 +47,7 @@ reset_configure_opts
 BUILDARCH=64
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16"
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS=""
@@ -59,6 +59,9 @@ case $DEPVER in
         ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        ;;
+    5.20)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

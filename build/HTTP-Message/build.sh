@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTTP style messages (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri omniti/perl/io-html"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -44,10 +44,10 @@ reset_configure_opts
 NO_PARALLEL_MAKE=1
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16"
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri"
+DEPENDS_IPS="omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri omniti/perl/io-html"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -56,6 +56,9 @@ case $DEPVER in
         ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        ;;
+    5.20)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

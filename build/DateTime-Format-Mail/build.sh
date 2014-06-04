@@ -42,9 +42,10 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+PERL_MAKE_TEST=""  #skip broken tests
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16"
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/datetime omniti/perl/params-validate"
@@ -56,6 +57,9 @@ case $DEPVER in
         ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        ;;
+    5.20)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"

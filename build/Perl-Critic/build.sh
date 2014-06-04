@@ -44,7 +44,7 @@ reset_configure_opts
 NO_PARALLEL_MAKE=1
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16"
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
 DEPENDS_IPS="omniti/perl/ppi omniti/perl/b-keywords omniti/perl/list-moreutils omniti/perl/ppix-utilities omniti/perl/pod-spell omniti/perl/perl-tidy omniti/perl/string-format omniti/perl/task-weaken omniti/perl/io-string omniti/perl/readonly omniti/perl/exception-class omniti/perl/ppix-regexp omniti/perl/config-tiny omniti/perl/email-address omniti/perl/file-homedir omniti/perl/file-which omniti/perl/readonly-xs"
@@ -56,6 +56,9 @@ case $DEPVER in
         ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        ;;
+    5.20)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
