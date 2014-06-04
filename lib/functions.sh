@@ -159,10 +159,10 @@ export LANG
 PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/usr/gnu/bin:/usr/sfw/bin"
 # Determine what release we're running as that affects some versions of things
 RELEASE=$(head -1 /etc/release | awk '{ print $3 }')
-if [[ ${RELEASE:1} -le 151004 ]]; then
-    PATH="/opt/gcc-4.6.3/bin:$PATH"
-else
+if [[ ${RELEASE:1} -le 151006 ]]; then
     PATH="/opt/gcc-4.7.2/bin:$PATH"
+else
+    PATH="/opt/gcc-4.8.1/bin:$PATH"
 fi
 export PATH
 # The dir where this file is located - used for sourcing further files
