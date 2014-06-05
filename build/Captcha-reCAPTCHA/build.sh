@@ -40,6 +40,7 @@ BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/he
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
+PERL_MAKE_TEST="" #broken tests
 
 NO_PARALLEL_MAKE=1
 
@@ -79,6 +80,8 @@ prep_build
 buildperl
 make_package
 clean_up
+
+unset PERL_MAKE_TEST
 
 # Vim hints
 # vim:ts=4:sw=4:et:

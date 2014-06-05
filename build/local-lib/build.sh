@@ -36,20 +36,18 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="create and use a local lib/ for perl modules with PERL5LIB"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omnios/archiver/gnu-tar"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
-PERL_LL_TAR="/usr/bin/tar"
-
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omnios/archiver/gnu-tar"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

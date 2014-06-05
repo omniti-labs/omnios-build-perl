@@ -30,7 +30,7 @@
 AUTHORID=TODDR
 PROG=IO-Tty
 MODNAME=IO::Pty
-VER=1.10
+VER=1.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Pseudo ttys and constants (Perl $DEPVER)"

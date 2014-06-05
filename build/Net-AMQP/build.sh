@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=NEILB
-PROG=UNIVERSAL-require
-MODNAME=UNIVERSAL::require
-VER=0.17
+AUTHORID=CHIPS
+PROG=Net-AMQP
+MODNAME=Net::AMQP
+VER=0.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="require() modules from a variable (Perl $DEPVER)"
+SUMMARY="Advanced Message Queue Protocol (de)serialization and representation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-accessor omniti/perl/class-data-inheritable"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omniti/perl/class-accessor omniti/perl/class-data-inheritable"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An Asynchronous and multi cahnnel Perl AMQP client."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile omniti/perl/local-lib"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile omniti/perl/local-lib omniti/perl/coro omniti/perl/test-exception omniti/perl/json-xs omniti/perl/anyevent-rabbitmq"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

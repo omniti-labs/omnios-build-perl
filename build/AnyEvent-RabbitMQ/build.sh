@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=NEILB
-PROG=UNIVERSAL-require
-MODNAME=UNIVERSAL::require
-VER=0.17
+AUTHORID=BOBTFISH
+PROG=AnyEvent-RabbitMQ
+MODNAME=AnyEvent::RabbitMQ
+VER=1.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="require() modules from a variable (Perl $DEPVER)"
+SUMMARY="An asynchronous and multi channel Perl AMQP client"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-exception omniti/perl/anyevent omniti/perl/namespace-clean omniti/perl/devel-globaldestruction omniti/perl/file-sharedir omniti/perl/net-amqp"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
