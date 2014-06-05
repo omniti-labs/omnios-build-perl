@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An Asynchronous and multi cahnnel Perl AMQP client."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile omniti/perl/local-lib"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -50,7 +50,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile"
+DEPENDS_IPS="omniti/perl/moosex-getopt omniti/perl/mouse omniti/perl/xml-libxml omniti/perl/moosex-app-cmd omniti/perl/test-without-module omniti/perl/moosex-configfromfile omniti/perl/local-lib"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

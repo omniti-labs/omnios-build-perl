@@ -30,13 +30,13 @@
 AUTHORID=ETHER
 PROG=Moose
 MODNAME=Moose
-VER=2.1204
+VER=2.1209
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A postmodern object system for Perl 5 (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/try-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/try-tiny omniti/perl/cpan-meta-check"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/try-tiny"
+DEPENDS_IPS="omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/try-tiny omniti/perl/cpan-meta-check"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

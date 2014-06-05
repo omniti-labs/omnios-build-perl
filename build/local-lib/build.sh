@@ -43,6 +43,8 @@ reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
+PERL_LL_TAR="/usr/bin/tar"
+
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"
 
@@ -76,6 +78,8 @@ prep_build
 buildperl
 make_package
 clean_up
+
+unset PERL_LL_TAR
 
 # Vim hints
 # vim:ts=4:sw=4:et:

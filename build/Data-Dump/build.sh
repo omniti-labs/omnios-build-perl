@@ -30,7 +30,7 @@
 AUTHORID=GAAS
 PROG=Data-Dump
 MODNAME=Data::Dump
-VER=1.21
+VER=1.22
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Pretty printing of data structures (Perl $DEPVER)"

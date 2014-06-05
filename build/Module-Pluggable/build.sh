@@ -21,22 +21,22 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=KAZEBURO
-PROG=Apache-LogFormat-Compiler
-MODNAME=Apache::LogFormat::Compiler
-VER=0.30
+AUTHORID=SIMONW
+PROG=Module-Pluggable
+MODNAME=Module-Pluggable
+VER=5.1
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Compile a log format string to perl-code "
+SUMMARY="automatically give your module the ability to have plugins"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-cpan-meta omniti/perl/spellunker omniti/perl/test-minimumversion omniti/perl/test-pod omniti/perl/try-tiny omniti/perl/test-requires omniti/perl/uri omniti/perl/http-message omniti/perl/test-mocktime omniti/perl/posix-strftime-compiler"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/test-cpan-meta omniti/perl/spellunker omniti/perl/test-minimumversion omniti/perl/test-pod omniti/perl/try-tiny omniti/perl/test-requires omniti/perl/uri omniti/perl/http-message omniti/perl/test-mocktime omniti/perl/posix-strftime-compiler"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
