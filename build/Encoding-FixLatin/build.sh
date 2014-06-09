@@ -30,7 +30,7 @@
 AUTHORID=GRANTM
 PROG=Encoding-FixLatin
 MODNAME=Encoding::FixLatin
-VER=1.02
+VER=1.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="takes mixed encoding input and produces UTF-8 output (Perl $DEPVER)"
