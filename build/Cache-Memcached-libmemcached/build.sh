@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DMAKI
+AUTHORID=TIMB
 PROG=Cache-Memcached-libmemcached
 MODNAME=Cache::Memcached::libmemcached
-VER=0.02011
+VER=0.04001
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl Interface to libmemcached (Perl $DEPVER)"
@@ -41,7 +41,6 @@ BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/he
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
-BUILDARCH=64
 NO_PARALLEL_MAKE=1
 
 # Only 5.14 and later will get individual module builds
