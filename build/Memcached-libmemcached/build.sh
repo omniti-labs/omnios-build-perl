@@ -30,10 +30,10 @@
 PATH=/opt/OMNIperl/bin:/usr/gnu/bin:$PATH
 export PATH
 
-AUTHORID=DMAKI
+AUTHORID=WOLFSAGE
 PROG=Memcached-libmemcached
 MODNAME=Memcached::libmemcached
-VER=0.4202
+VER=1.001702
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Thin fast full interface to the libmemcached client API (Perl $DEPVER)"
@@ -44,7 +44,7 @@ BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/he
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
-BUILDARCH=64
+export LDFLAGS='-lsocket -lnsl'
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
@@ -79,7 +79,15 @@ test_if_core
 download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
-buildperl
+
+buildperl32
+
+export CFLAGS=-m64
+export CXXFLAGS=-m64
+export LDFLAGS="$LDFLAGS -m64"
+buildperl64
+unset CFLAGS CXXFLAGS LDFLAGS
+
 make_package
 clean_up
 

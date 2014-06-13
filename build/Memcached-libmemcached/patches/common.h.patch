@@ -1,0 +1,12 @@
+--- Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h.orig	Tue Jun 10 15:41:12 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h	Tue Jun 10 15:41:43 2014
+@@ -45,6 +45,9 @@
+ #include <sstream>
+ #include <string>
+ 
++#define HAVE_MEMCACHED_BINARY 1
++#define MEMCACHED_BINARY "$ac_cv_path_MEMCACHED_BINARY"
++
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif

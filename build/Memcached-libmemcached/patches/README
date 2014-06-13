@@ -1,0 +1,155 @@
+This file is meant to document the patching process when building Memcached::libmemcached version 1.001702
+
+
+Error with no patches:
+{{{
+libmemcached/byteorder.cc: In function 'uint64_t memcached_ntohll(uint64_t)':
+libmemcached/byteorder.cc:66:22: error: 'ntohll' was not declared in this scope
+libmemcached/byteorder.cc: In function 'uint64_t memcached_htonll(uint64_t)':
+libmemcached/byteorder.cc:75:22: error: 'htonll' was not declared in this scope
+libmemcached/byteorder.cc:79:1: warning: control reaches end of non-void function [-Wreturn-type]
+libmemcached/byteorder.cc: In function 'uint64_t memcached_ntohll(uint64_t)':
+libmemcached/byteorder.cc:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+}}}
+
+Patch: 
+{{{
+--- Memcached-libmemcached-1.001702/src/libmemcached/mem_config.in.orig Mon Jun  9 20:35:10 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/mem_config.in      Mon Jun  9 20:37:20 2014
+@@ -660,9 +660,11 @@
+ # define SHUT_RDWR SD_BOTH
+ #endif
+
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <strings.h>
+
+
+-
+ #ifndef __STDC_FORMAT_MACROS
+ #  define __STDC_FORMAT_MACROS
+ #endif
+}}}
+
+Next error:
+{{{
+libtest/server_container.cc: In member function 'libtest::Server* libtest::server_startup_st::create(const string&, in_port_t, bool)':
+libtest/server_container.cc:241:9: error: 'HAVE_MEMCACHED_BINARY' was not declared in this scope
+}}}
+
+Patch:
+{{{
+--- Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h.orig      Tue Jun 10 15:41:12 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h   Tue Jun 10 15:41:43 2014
+@@ -45,6 +45,8 @@
+ #include <sstream>
+ #include <string>
+
++#define HAVE_MEMCACHED_BINARY
++
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+}}}
+
+Next error:
+{{{
+libtest/has.cc:143:60: error: operator '&&' has no right operand
+}}}
+Where common.h is included and the line referred to is:
+{{{
+#if defined(HAVE_MEMCACHED_BINARY) && HAVE_MEMCACHED_BINARY
+}}}
+
+Patch:
+{{{
+--- Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h.orig      Tue Jun 10 15:41:12 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h   Tue Jun 10 15:41:43 2014
+@@ -45,6 +45,8 @@
+ #include <sstream>
+ #include <string>
+
++#define HAVE_MEMCACHED_BINARY 1
++
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+}}}
+
+Next error:
+{{{
+libtest/has.cc: In function 'bool libtest::has_memcached()':
+libtest/has.cc:150:54: error: 'MEMCACHED_BINARY' was not declared in this scope
+libtest/has.cc:155:19: error: 'MEMCACHED_BINARY' was not declared in this scope
+}}}
+
+Patch:
+{{{
+--- Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h.orig      Tue Jun 10 15:41:12 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h   Tue Jun 10 15:41:43 2014
+@@ -45,6 +45,9 @@
+ #include <sstream>
+ #include <string>
+
++#define HAVE_MEMCACHED_BINARY 1
++#define MEMCACHED_BINARY
++
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+}}}
+
+Next error:
+{{{
+libtest/has.cc: In function 'bool libtest::has_memcached()':
+libtest/has.cc:150:70: error: expected primary-expression before ',' token
+libtest/has.cc:155:35: error: expected primary-expression before ';' token
+}}}
+where the lines referred to are:
+{{{
+150: if (bool((getenv_ptr= getenv("PWD"))) and strcmp(MEMCACHED_BINARY, "memcached/memcached") == 0)
+155: arg_buffer << MEMCACHED_BINARY;
+}}}
+
+Patch (definition found in Memcached-libmemcached-1.001702/src/libmemcached/configure): 
+{{{
+--- Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h.orig      Tue Jun 10 15:41:12 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/libtest/common.h   Tue Jun 10 15:41:43 2014
+@@ -45,6 +45,9 @@
+ #include <sstream>
+ #include <string>
+
++#define HAVE_MEMCACHED_BINARY 1
++#define MEMCACHED_BINARY "$ac_cv_path_MEMCACHED_BINARY"
++
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+}}}
+
+Next error:
+{{{
+ld: fatal: symbol referencing errors. No output written to libmemcached-1.0/t/.libs/c_test
+collect2: error: ld returned 1 exit status
+}}}
+
+Fix - add link flags to build.sh:
+{{{
+export LDFLAGS='-lsocket -lnsl'
+}}}
+
+Next error before failing all tests:
+{{{
+ld: warning: file /tmp/build_vagrant/Memcached-libmemcached-1.001702/src_inst/lib/libmemcached.a(libmemcached_libmemcached_la-instance.o): wrong ELF class: ELFCLASS32
+}}}
+
+Fix - add CFLAGS and CXXFLAGS to build.sh for the 64bit build:
+{{{
+buildperl32
+
+export CFLAGS=-m64
+export CXXFLAGS=-m64
+export LDFLAGS="$LDFLAGS -m64"
+buildperl64
+unset CFLAGS CXXFLAGS LDFLAGS
+}}}

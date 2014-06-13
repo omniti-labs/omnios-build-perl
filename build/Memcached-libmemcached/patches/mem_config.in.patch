@@ -1,0 +1,15 @@
+--- Memcached-libmemcached-1.001702/src/libmemcached/mem_config.in.orig	Mon Jun  9 20:35:10 2014
++++ Memcached-libmemcached-1.001702/src/libmemcached/mem_config.in	Mon Jun  9 20:37:20 2014
+@@ -660,9 +660,11 @@
+ # define SHUT_RDWR SD_BOTH
+ #endif
+           
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <strings.h>
+ 
+ 
+-
+ #ifndef __STDC_FORMAT_MACROS
+ #  define __STDC_FORMAT_MACROS
+ #endif
