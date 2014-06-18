@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A tiny replacement for Module::Build"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths omniti/perl/test-harness"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -49,7 +49,7 @@ PERL_NONPURE_INSTALL=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths"
+DEPENDS_IPS="omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths omniti/perl/test-harness"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
