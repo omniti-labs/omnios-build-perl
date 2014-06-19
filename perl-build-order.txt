@@ -421,3 +421,4 @@ Test-Perl-Critic
 NetAddr-IP
 Data-Validate-IP
 Encoding-FixLatin
+Mail-Spam-Assassin
