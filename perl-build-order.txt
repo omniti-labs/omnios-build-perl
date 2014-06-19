@@ -234,6 +234,7 @@ Pod-Eventual
 Pod-Coverage-TrustPod
 ExtUtils-Helpers
 ExtUtils-InstallPaths
+Test-Harness
 Module-Build-Tiny
 Starman
 Carp-Clan
