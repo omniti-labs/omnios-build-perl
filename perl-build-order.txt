@@ -423,3 +423,4 @@ NetAddr-IP
 Data-Validate-IP
 Encoding-FixLatin
 Mail-Spam-Assassin
+Term-Shell

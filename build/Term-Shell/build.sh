@@ -21,22 +21,22 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MARSCHAP
-PROG=perl-ldap
-MODNAME=Net::LDAP
-VER=0.64
+AUTHORID=SHLOMIF
+PROG=Term-Shell
+MODNAME=Term::Shell
+VER=0.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="(No summary available on CPAN) (Perl $DEPVER)"
+SUMMARY="A simple command-line shell framework"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="omniti/perl/convert-asn1 omniti/perl/authen-sasl omniti/perl/uri omniti/perl/io-socket-ssl omniti/perl/xml-sax-writer developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/convert-asn1 omniti/perl/authen-sasl omniti/perl/uri omniti/perl/io-socket-ssl omniti/perl/xml-sax-writer"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
