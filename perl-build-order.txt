@@ -424,3 +424,11 @@ Data-Validate-IP
 Encoding-FixLatin
 Mail-Spam-Assassin
 Term-Shell
+Object-Pluggable-Constants
+IO-Pipely
+POE-Kernel
+POE-Component-Syndicator
+POE-Filter-IRCD
+IRC-Utils
+POE-Component-IRC-State
+Bot-BasicBot
