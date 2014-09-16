@@ -432,3 +432,4 @@ POE-Filter-IRCD
 IRC-Utils
 POE-Component-IRC-State
 Bot-BasicBot
+URI-Find
