@@ -434,3 +434,4 @@ POE-Component-IRC-State
 Bot-BasicBot
 URI-Find
 Cache-Memcached-Fast
+Mojolicious
