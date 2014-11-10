@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a library for sending email (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny omniti/perl/import-into omniti/perl/module-pluggable"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny"
+DEPENDS_IPS="omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny omniti/perl/import-into omniti/perl/module-pluggable"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
