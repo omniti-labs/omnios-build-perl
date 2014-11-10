@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="wrap up programs to be run as cron jobs"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template omniti/perl/process-status"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template"
+DEPENDS_IPS="omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template omniti/perl/process-status"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
