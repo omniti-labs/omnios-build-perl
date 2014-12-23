@@ -436,3 +436,4 @@ URI-Find
 Cache-Memcached-Fast
 Mojolicious
 Process-Status
+WWW-Salesforce
