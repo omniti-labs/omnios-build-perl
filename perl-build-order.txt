@@ -437,3 +437,4 @@ Cache-Memcached-Fast
 Mojolicious
 Process-Status
 WWW-Salesforce
+HTTP-Lite
