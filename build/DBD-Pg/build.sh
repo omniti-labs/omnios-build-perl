@@ -30,7 +30,7 @@
 AUTHORID=TURNSTEP
 PROG=DBD-Pg
 MODNAME=DBD::Pg
-VER=3.1.1
+VER=3.5.0
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DBI PostgreSQL interface (Perl $DEPVER)"
