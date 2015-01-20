@@ -36,8 +36,6 @@ You must use a machine for packaging either 5.14 or 5.16 modules at a time.  You
 
 The build process will termporarily install IPS dependencies (that is, your modules dependencies will be installed as IPS modules).  So, you'll need sudo on the machine.
 
-You can get Vagrantfiles for both 5.14 and 5.16 from here :  git@trac.omniti.net:/clinton/omnios-packaging-vagrant .
-
 ### Making your own build machine
 
 Alternatively, you can do your own install of OmniOS.
@@ -89,13 +87,13 @@ To build a package, you must tell the build system where your repo is.  Do this 
 
     # Package server URL and publisher
     #PKGPUBLISHER=omnios-perl
-    #PKGSRVR=http://pkg-internal.omniti.com:10008/
-    PKGPUBLISHER=clinton.omnios.omniti.com
-    PKGSRVR=http://nursery.office.omniti.com:43888/
+    #PKGSRVR=http://<pkgserver>
+    PKGPUBLISHER=<publisher>
+    PKGSRVR=<pkgserver>
 
 To test-install your package, you would need to add your local repo.  For example:
 
-     sudo pkg set-publisher -g http://localhost:888/ clinton.omnios.omniti.com
+     sudo pkg set-publisher -g http://localhost:888/ <reposerver>
       
 You can now 'pkg install foo' to install packages you yourself have made but have not yet been promoted; this may be needed when working on a tree of dependencies.
 
@@ -108,7 +106,7 @@ as your user, not root.__
 
 In a working space on your build machine, do:
 
-    git clone src@src.omniti.com:~omnios-perl/core/build
+    git clone https://github.com/omniti-labs/omnios-build-perl.git
 
 The build instructions for each individual CPAN distribution are under build/ .
 
