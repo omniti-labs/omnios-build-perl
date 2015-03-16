@@ -439,3 +439,5 @@ Process-Status
 WWW-Salesforce
 HTTP-Lite
 Archive-Extract
+Crypt-CBC
+Crypt-OpenSSL-AES
