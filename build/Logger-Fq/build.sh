@@ -33,7 +33,7 @@ export PATH
 AUTHORID=JESUS
 PROG=Logger-Fq
 MODNAME=Logger::Fq
-VER=0.2.9
+VER=0.2.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Thin fast full interface to the libmemcached client API (Perl $DEPVER)"
