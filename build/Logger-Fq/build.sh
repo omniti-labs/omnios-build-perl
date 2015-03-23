@@ -36,15 +36,13 @@ MODNAME=Logger::Fq
 VER=0.2.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Thin fast full interface to the libmemcached client API (Perl $DEPVER)"
+SUMMARY="Log asynchronously to an Fq instance. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
-
-export LDFLAGS='-L/opt/circonus/lib -R/opt/circonus/lib'
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
@@ -83,7 +81,7 @@ prep_build
 export LDFLAGS="-L/opt/circonus/lib -R/opt/circonus/lib"
 MAKEFILE_OPTS="INC=-I/opt/circonus/include"
 buildperl32
-export LDFLAGS="-L/opt/circonus/lib/amd64 -R/opt/circonus/lib/amd64"
+export LDFLAGS="-L/opt/circonus/lib/$ISAPART64 -R/opt/circonus/lib/$ISAPART64"
 buildperl64
 
 make_package
