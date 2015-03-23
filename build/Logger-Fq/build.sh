@@ -33,7 +33,7 @@ export PATH
 AUTHORID=JESUS
 PROG=Logger-Fq
 MODNAME=Logger::Fq
-VER=0.2.10
+VER=0.2.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Log asynchronously to an Fq instance. (Perl $DEPVER)"
