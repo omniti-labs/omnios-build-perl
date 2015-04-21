@@ -99,6 +99,13 @@ PDF-API2
 MIME-Base32
 Class-Accessor
 Test-Manifest
+Test-NoWarnings
+Test-Deep
+File-Slurp-Tiny
+Tree-DAG_Node
+Sub-Uplevel
+Test-Warnings
+List-AllUtils
 DateTime
 DateTime-Format-Mail
 DateTime-Format-W3CDTF
@@ -140,8 +147,6 @@ Path-IsDev
 Path-FindDev
 File-ShareDir
 Filesys-Notify-Simple
-Test-NoWarnings
-Test-Deep
 HTTP-Body
 Hash-MultiValue
 File-ShareDir-Install
@@ -164,11 +169,7 @@ Exception-Class
 PPIx-Utilities
 B-Keywords
 Lingua-EN-Inflect
-Sub-Uplevel
-File-Slurp-Tiny
-Tree-DAG_Node
 Test-Warn
-Test-Warnings
 Test-Exception
 PadWalker
 Data-Dumper-Names
