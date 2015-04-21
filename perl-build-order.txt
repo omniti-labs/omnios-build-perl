@@ -407,6 +407,7 @@ Clone-AsUTF8Bytes
 Crypt-SSLeay
 Net-OAuth
 Net-Twitter-Lite
+JSON-Tiny
 HTML-ParseBrowser
 XML-Writer
 CPAN-Changes
@@ -416,6 +417,7 @@ Net-BGP
 Devel-DTrace-Provider
 IPC-System-Simple
 Pragmatic
+Exporter-Tiny
 XML-LibXML-PrettyPrint
 Data-Structure-Util
 CRO-OmniTI-kit
