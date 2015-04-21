@@ -177,6 +177,7 @@ Algorithm-Diff
 Text-Diff
 Test-Differences
 Test-Most
+File-ShareDir-ProjectDistDir
 Pod-Spell
 Perl-Tidy
 String-Format
@@ -355,11 +356,11 @@ Redis
 Test-DatabaseRow
 Hash-Merge
 Class-Accessor-Grouped
-SQL-Abstract
-DBIx-Roles
 strictures
 Import-Into
 Moo
+SQL-Abstract
+DBIx-Roles
 MooX-Types-MooseLike
 Email-Simple
 Email-Abstract
@@ -371,6 +372,7 @@ Sys-Hostname-Long
 String-Flogger
 Log-Dispatchouli
 Email-Sender
+Process-Status
 App-Cronjob
 DateTime-Format-ISO8601
 Exporter-Lite
@@ -436,7 +438,6 @@ Bot-BasicBot
 URI-Find
 Cache-Memcached-Fast
 Mojolicious
-Process-Status
 WWW-Salesforce
 HTTP-Lite
 Archive-Extract
