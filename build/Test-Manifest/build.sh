@@ -30,7 +30,7 @@
 AUTHORID=BDFOY
 PROG=Test-Manifest
 MODNAME=Test::Manifest
-VER=1.23
+VER=2.02
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="interact with a t/test_manifest file (Perl $DEPVER)"

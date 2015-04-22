@@ -30,7 +30,7 @@
 AUTHORID=SRI
 PROG=Mojolicious
 MODNAME=Mojo::Cache
-VER=5.50
+VER=6.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Real-time web framework (Perl $DEPVER)"

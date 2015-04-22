@@ -30,7 +30,7 @@
 AUTHORID=EBHANSSEN
 PROG=Test-Trap
 MODNAME=Test::Trap
-VER=v0.2.4
+VER=v0.3.2
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Trap exit codes, exception,output, etc."

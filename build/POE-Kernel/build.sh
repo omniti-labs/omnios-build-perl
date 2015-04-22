@@ -30,7 +30,7 @@
 AUTHORID=RCAPUTO
 PROG=POE
 MODNAME=POE::KERNEL
-VER=1.364
+VER=1.366
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="an event-based application kernel in Perl"

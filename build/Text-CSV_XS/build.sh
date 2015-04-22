@@ -30,7 +30,7 @@
 AUTHORID=HMBRAND
 PROG=Text-CSV_XS
 MODNAME=Text::CSV_XS
-VER=1.08
+VER=1.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Comma-Separated Values manipulation routines (Perl $DEPVER)"

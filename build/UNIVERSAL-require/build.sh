@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=UNIVERSAL-require
 MODNAME=UNIVERSAL::require
-VER=0.17
+VER=0.18
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="require() modules from a variable (Perl $DEPVER)"

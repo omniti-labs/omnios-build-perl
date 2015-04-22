@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Valid
 MODNAME=Email::Valid
-VER=1.193
+VER=1.196
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Check validity of Internet email addresses (Perl $DEPVER)"

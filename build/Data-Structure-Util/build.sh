@@ -30,7 +30,7 @@
 AUTHORID=ANDYA
 PROG=Data-Structure-Util
 MODNAME=Data::Structure::Util
-VER=0.15
+VER=0.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Change nature of data within a structure"

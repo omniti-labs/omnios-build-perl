@@ -30,13 +30,13 @@
 AUTHORID=MIKEM
 PROG=Net-SSLeay
 MODNAME=Net::SSLeay
-VER=1.58
+VER=1.68
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for using OpenSSL (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math library/security/openssl@1.0.1 system/library/gcc-4-runtime"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math library/security/openssl system/library/gcc-4-runtime"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

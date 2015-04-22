@@ -30,13 +30,13 @@
 AUTHORID=TOBYINK
 PROG=XML-LibXML-PrettyPrint
 MODNAME=XML::LibXML::PrettyPrint
-VER=0.004
+VER=0.006
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="add pleasant whitespace to a DOM tree"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense omniti/perl/test-warn"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense omniti/perl/test-warn omniti/perl/exporter-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense"
+DEPENDS_IPS="omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense omniti/perl/exporter-tiny"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Params-Validate
 MODNAME=Params::Validate
-VER=1.08
+VER=1.18
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Validate method/function parameters (Perl $DEPVER)"

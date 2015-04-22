@@ -30,7 +30,7 @@
 AUTHORID=RSAVAGE
 PROG=Tree-DAG_Node
 MODNAME=Tree::DAG_Node
-VER=1.22
+VER=1.26
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="(super)class for representing nodes in a tree (Perl $DEPVER)"

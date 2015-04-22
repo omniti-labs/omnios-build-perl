@@ -49,6 +49,8 @@ PERLVERLIST="5.14 5.16 5.20"
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/bit-vector omniti/perl/carp-clan"
 
+PERL_MAKE_TEST="" #broken tests
+
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)

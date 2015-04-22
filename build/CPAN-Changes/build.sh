@@ -30,7 +30,7 @@
 AUTHORID=BRICAS
 PROG=CPAN-Changes
 MODNAME=CPAN::Changes
-VER=0.27
+VER=0.30
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read and write Changes files"

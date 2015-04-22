@@ -30,7 +30,7 @@
 AUTHORID=MIYAGAWA
 PROG=Starman
 MODNAME=Starman
-VER=0.4009
+VER=0.4011
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="High-performance preforking PSGI/Plack web server (Perl $DEPVER)"

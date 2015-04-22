@@ -30,7 +30,7 @@
 AUTHORID=JETTERO
 PROG=Statistics-Basic
 MODNAME=Statistics::Basic
-VER=1.6607
+VER=1.6611
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A collection of very basic statistics modules (Perl $DEPVER)"

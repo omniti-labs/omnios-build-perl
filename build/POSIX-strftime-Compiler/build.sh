@@ -30,7 +30,7 @@
 AUTHORID=KAZEBURO
 PROG=POSIX-strftime-Compiler
 MODNAME=POSIX::strftime::Compiler
-VER=0.31
+VER=0.41
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="GNU C library compatible strftime for loggers and servers"

@@ -30,7 +30,7 @@
 AUTHORID=BDFOY
 PROG=Business-ISBN
 MODNAME=Business::ISBN
-VER=2.07
+VER=2.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="work with International Standard Book Numbers"

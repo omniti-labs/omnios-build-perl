@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=App-Cronjob
 MODNAME=App::Cronjob
-VER=1.200003
+VER=1.200004
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="wrap up programs to be run as cron jobs"

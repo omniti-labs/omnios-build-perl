@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=EV
 MODNAME=EV
-VER=4.17
+VER=4.18
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="perl interface to libev, a high performance full-featured event loop (Perl $DEPVER)"
