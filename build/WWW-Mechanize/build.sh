@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Handy web browsing in a Perl object (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/html-form omniti/perl/html-parser omniti/perl/html-tree omniti/perl/http-daemon omniti/perl/http-message omniti/perl/http-server-simple omniti/perl/test-warn omniti/perl/uri omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/html-form omniti/perl/html-parser omniti/perl/html-tree omniti/perl/http-daemon omniti/perl/http-message omniti/perl/http-server-simple omniti/perl/test-warn omniti/perl/uri omniti/perl/libwww-perl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

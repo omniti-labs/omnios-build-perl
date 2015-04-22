@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="TTF font support for Perl (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/io-string"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/io-string"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

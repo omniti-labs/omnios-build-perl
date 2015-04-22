@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="declare version conflicts for your dist (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/list-moreutils omniti/perl/sub-exporter omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/sub-exporter omniti/perl/test-fatal"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

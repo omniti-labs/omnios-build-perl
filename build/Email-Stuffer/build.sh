@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A more casual approach to creating and sending Email:: emails"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-mime omniti/perl/email-sender omniti/perl/test-most" 
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-mime omniti/perl/email-sender omniti/perl/test-most" 
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

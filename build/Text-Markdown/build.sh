@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Convert Markdown syntax to (X)HTML (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/list-moreutils omniti/perl/test-differences omniti/perl/test-exception"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/test-differences omniti/perl/test-exception"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

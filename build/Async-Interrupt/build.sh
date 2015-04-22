@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="allow C/XS libraries to interrupt perl asynchronously (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/common-sense"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/common-sense"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A POE component base class which implements the Observer pattern"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/object-pluggable omniti/perl/poe"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/object-pluggable omniti/perl/poe"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

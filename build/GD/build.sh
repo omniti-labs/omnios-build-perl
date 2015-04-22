@@ -38,7 +38,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Interface to Gd Graphics Library (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/library/gd omniti/library/libjpeg omniti/library/libpng"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/library/gd omniti/library/libjpeg omniti/library/libpng"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

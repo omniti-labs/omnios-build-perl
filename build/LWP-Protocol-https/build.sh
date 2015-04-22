@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Provide https support for LWP::UserAgent (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/io-socket-ssl omniti/perl/mozilla-ca omniti/perl/net-http omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/io-socket-ssl omniti/perl/mozilla-ca omniti/perl/net-http omniti/perl/libwww-perl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

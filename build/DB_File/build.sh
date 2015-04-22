@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl5 access to Berkeley DB version 1.x"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/database/bdb"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/database/bdb"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

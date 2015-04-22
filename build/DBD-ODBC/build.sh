@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="ODBC DBD for Perl DBI (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math library/unixodbc omniti/perl/dbi"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math library/unixodbc omniti/perl/dbi"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

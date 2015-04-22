@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Checks if the documentation of a module is comprehensive (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/devel-symdump"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/devel-symdump"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

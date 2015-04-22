@@ -35,7 +35,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
 SUMMARY="Makes the kstat(3KSTAT) facility available to Perl scripts."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math'
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 

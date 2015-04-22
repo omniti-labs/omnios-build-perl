@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Powerful fast feature-rich perl source code profiler"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/json-any omniti/perl/test-differences"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/json-any omniti/perl/test-differences"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

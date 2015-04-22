@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Advanced Message Queue Protocol (de)serialization and representation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-accessor omniti/perl/class-data-inheritable omniti/perl/xml-libxml"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-accessor omniti/perl/class-data-inheritable omniti/perl/xml-libxml"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

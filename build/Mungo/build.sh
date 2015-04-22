@@ -35,7 +35,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="an 'anti-framework' to make programming web pages under mod_perl as accessible as php."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/html-parser omniti/server/apache22 omniti/server/apache22/mod_perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/html-parser omniti/server/apache22 omniti/server/apache22/mod_perl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

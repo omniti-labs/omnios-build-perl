@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Find a minimum required version of perl for Perl code"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-find-rule omniti/perl/ppi omniti/perl/file-find-rule-perl omniti/perl/ppix-regexp omniti/perl/params-util omniti/perl/perl-critic omniti/perl/test-script"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-find-rule omniti/perl/ppi omniti/perl/file-find-rule-perl omniti/perl/ppix-regexp omniti/perl/params-util omniti/perl/perl-critic omniti/perl/test-script"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

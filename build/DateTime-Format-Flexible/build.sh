@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DateTime::Format::Flexible - Flexibly parse strings and turn them into DateTime objects. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-format-builder omniti/perl/datetime-timezone omniti/perl/list-moreutils omniti/perl/test-mocktime"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime omniti/perl/datetime-format-builder omniti/perl/datetime-timezone omniti/perl/list-moreutils omniti/perl/test-mocktime"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

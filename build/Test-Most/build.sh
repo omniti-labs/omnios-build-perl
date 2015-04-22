@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Most commonly needed test functions and features."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-exception omniti/perl/exception-class omniti/perl/test-differences omniti/perl/test-warn omniti/perl/test-deep omniti/perl/data-dumper-names"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-exception omniti/perl/exception-class omniti/perl/test-differences omniti/perl/test-warn omniti/perl/test-deep omniti/perl/data-dumper-names"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

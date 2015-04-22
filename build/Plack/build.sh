@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl Superglue for Web frameworks and Web Servers (PSGI toolkit) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/apache-logformat-compiler omniti/perl/devel-stacktrace omniti/perl/devel-stacktrace-ashtml omniti/perl/file-sharedir omniti/perl/file-sharedir-install omniti/perl/filesys-notify-simple omniti/perl/http-body omniti/perl/http-message omniti/perl/hash-multivalue omniti/perl/stream-buffered omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/try-tiny omniti/perl/uri omniti/perl/libwww-perl"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

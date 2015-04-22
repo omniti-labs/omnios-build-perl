@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Nonlinear Least Squares Fitting"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/math-symbolic omniti/perl/math-matrixreal omniti/perl/test-pod-coverage omniti/perl/test-pod"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/math-symbolic omniti/perl/math-matrixreal omniti/perl/test-pod-coverage omniti/perl/test-pod"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

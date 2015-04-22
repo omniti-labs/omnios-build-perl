@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse a domain down to root"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/data-validate-domain omniti/perl/class-accessor"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/data-validate-domain omniti/perl/class-accessor"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

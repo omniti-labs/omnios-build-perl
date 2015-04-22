@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format PostgreSQL dates and times (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-format-builder omniti/perl/datetime-timezone"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime omniti/perl/datetime-format-builder omniti/perl/datetime-timezone"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="wrap up programs to be run as cron jobs"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template omniti/perl/process-status"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-simple omniti/perl/email-sender omniti/perl/log-dispatchouli omniti/perl/ipc-run3 omniti/perl/getopt-long-descriptive omniti/perl/string-flogger omniti/perl/sys-hostname-long omniti/perl/text-template omniti/perl/process-status"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

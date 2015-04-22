@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse string that represents time duration"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/exporter-lite"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/exporter-lite"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

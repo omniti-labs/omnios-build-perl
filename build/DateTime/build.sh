@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A date and time object (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime-locale omniti/perl/datetime-timezone omniti/perl/math-round omniti/perl/params-validate omniti/perl/test-fatal omniti/perl/list-allutils"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime-locale omniti/perl/datetime-timezone omniti/perl/math-round omniti/perl/params-validate omniti/perl/test-fatal omniti/perl/list-allutils"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

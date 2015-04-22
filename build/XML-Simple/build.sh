@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Easily read/write XML (esp config files) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/xml-namespacesupport omniti/perl/xml-sax omniti/perl/xml-sax-expat"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/xml-namespacesupport omniti/perl/xml-sax omniti/perl/xml-sax-expat"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

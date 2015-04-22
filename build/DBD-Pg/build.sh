@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DBI PostgreSQL interface (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math/header-math omniti/library/libpq5 omniti/perl/dbi"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math omniti/library/libpq5 omniti/perl/dbi"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

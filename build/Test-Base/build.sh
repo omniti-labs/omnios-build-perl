@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A Data Driven Testing Framework (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/spiffy"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/spiffy"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

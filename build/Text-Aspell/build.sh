@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl interface to the GNU Aspell library (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/library/aspell omniti/library/aspell/aspell-en"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/library/aspell omniti/library/aspell/aspell-en"
 
 PREFIX=/opt/OMNIperl
 

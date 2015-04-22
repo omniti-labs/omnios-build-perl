@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTTP style messages (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri omniti/perl/io-html"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/encode-locale omniti/perl/html-parser omniti/perl/http-date omniti/perl/lwp-mediatypes omniti/perl/uri omniti/perl/io-html"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

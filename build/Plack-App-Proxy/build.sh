@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="proxy requests (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/http-message omniti/perl/plack omniti/perl/anyevent-http omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/http-message omniti/perl/plack omniti/perl/anyevent-http omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

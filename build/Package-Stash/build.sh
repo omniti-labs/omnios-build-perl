@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="routines for manipulating stashes (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/dist-checkconflicts omniti/perl/package-deprecationmanager omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/dist-checkconflicts omniti/perl/package-deprecationmanager omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

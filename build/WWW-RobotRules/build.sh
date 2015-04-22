@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="database of robots.txt-derived permissions"
 DESC="database of robots.txt-derived permissions"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/uri"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/uri"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 

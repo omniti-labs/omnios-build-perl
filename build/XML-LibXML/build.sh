@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Interface to Gnome libxml2 xml parsing and DOM library (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/xml-namespacesupport omniti/perl/xml-sax"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/xml-namespacesupport omniti/perl/xml-sax"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

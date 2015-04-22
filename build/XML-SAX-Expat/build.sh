@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SAX Driver for Expat (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/xml-namespacesupport omniti/perl/xml-parser omniti/perl/xml-sax omniti/perl/xml-sax-base"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/xml-namespacesupport omniti/perl/xml-parser omniti/perl/xml-sax omniti/perl/xml-sax-base"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="objected-oriented Perl interface to ImageMagick (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/image/imagemagick"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/image/imagemagick"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

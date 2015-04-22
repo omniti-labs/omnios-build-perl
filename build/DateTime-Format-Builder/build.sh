@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Create DateTime parser classes and objects. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-factory-util omniti/perl/datetime omniti/perl/datetime-format-strptime omniti/perl/params-validate omniti/perl/task-weaken"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-factory-util omniti/perl/datetime omniti/perl/datetime-format-strptime omniti/perl/params-validate omniti/perl/task-weaken"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl module of Thrift (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/io-string omniti/perl/bit-vector omniti/perl/http-message"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/io-string omniti/perl/bit-vector omniti/perl/http-message"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

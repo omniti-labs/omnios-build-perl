@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="High-performance preforking PSGI/Plack web server (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/data-dump omniti/perl/http-date omniti/perl/http-message omniti/perl/http-parser-xs omniti/perl/net-server omniti/perl/plack omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/module-build-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/data-dump omniti/perl/http-date omniti/perl/http-message omniti/perl/http-parser-xs omniti/perl/net-server omniti/perl/plack omniti/perl/test-requires omniti/perl/test-sharedfork omniti/perl/test-tcp omniti/perl/module-build-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

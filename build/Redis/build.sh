@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl binding for Redis database (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/digest-sha1 omniti/perl/io-string omniti/perl/test-deep omniti/perl/test-exception omniti/perl/test-fatal omniti/perl/try-tiny omniti/perl/io-socket-timeout"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/digest-sha1 omniti/perl/io-string omniti/perl/test-deep omniti/perl/test-exception omniti/perl/test-fatal omniti/perl/try-tiny omniti/perl/io-socket-timeout"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

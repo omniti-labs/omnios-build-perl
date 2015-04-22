@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="this class provides a simple abstraction layer between SOAP::Lite and Salesforce.com. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/soap-lite omniti/perl/crypt-ssleay"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/soap-lite omniti/perl/crypt-ssleay"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
