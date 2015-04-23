@@ -1,0 +1,27 @@
+--- PerlMagick-6.89/Makefile.PL.orig	Thu Apr 23 18:17:39 2015
++++ PerlMagick-6.89/Makefile.PL	Thu Apr 23 18:19:30 2015
+@@ -35,7 +35,7 @@
+   my @bindir = ();
+ 
+   #try to get configuration info via identify or convert utilities
+-  my $conf = `identify -list Configure 2>$devnull` || `convert -list Configure 2>$devnull`;
++  my $conf = `/opt/omni/bin/identify -list Configure 2>$devnull` || `/opt/omni/bin/convert -list Configure 2>$devnull`;
+   foreach my $line (split '\n', $conf) {
+     if ($line =~ /^Path:\s+(.*)/) {
+       my ($vol,$dir,$file) = splitpath($1);
+@@ -161,11 +161,11 @@
+ }
+ 
+ # defaults for LIBS & INC & CCFLAGS params that we later pass to Writemakefile
+-my $INC_magick = '-I/usr/local/include/ImageMagick-6 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/libxml2 -I"' . $Config{'usrinc'} . '/ImageMagick-6"';
+-my $LIBS_magick = '-L/usr/local/lib -lMagickCore-6.Q16 -lperl -lm';
++my $INC_magick = '-I../ -I.. -pthread -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -pthread -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/libxml2 -I/opt/omni/include -I/opt/omni/include/ImageMagick-6';
++my $LIBS_magick = '-L../magick/.libs -l/opt/omni/lib/libMagickCore-6.Q16.so -lperl -lm';
+ my $CCFLAGS_magick = "$Config{'ccflags'} -I/usr/include/freetype2 -g -O2 -Wall -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16";
+-my $LDFLAGS_magick   = "-L/usr/local/lib -lMagickCore-6.Q16 $Config{'ldflags'} ";
+-my $LDDLFLAGS_magick = "-L/usr/local/lib -lMagickCore-6.Q16 $Config{'lddlflags'} ";
++my $LDFLAGS_magick   = "$Config{'ldflags'} -L/usr/lib $ENV{'MAGICK_LDFLAGS'} -L/opt/omni/lib -lMagickCore-6.Q16";
++my $LDDLFLAGS_magick = "$Config{'lddlflags'} -L/usr/lib $ENV{'MAGICK_LDFLAGS'} -L/opt/omni/lib -lMagickCore-6.Q16";
+ 
+ if (($^O eq 'MSWin32') && ($Config{cc} =~ /gcc/)) {
+   my($Ipaths, $Lpaths) = AutodetectWin32gcc();

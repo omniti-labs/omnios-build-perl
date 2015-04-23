@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=CRISTY
+AUTHORID=JCRISTY
 PROG=PerlMagick
 MODNAME=Image::Magick
-VER="6.77"
+VER="6.89-1"
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="objected-oriented Perl interface to ImageMagick (Perl $DEPVER)"
@@ -42,6 +42,8 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+BUILDDIR=${PROG}-6.89     # Location of extracted source
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
@@ -75,13 +77,20 @@ unset PERL_MAKE_TEST
 
 init
 test_if_core
+
 # older PerlMagicks are no longer on CPAN, and we rsync with --delete for our mirror
 # so we need to force this to get the legacy PerlMagick dist
-MIRROR=www.imagemagick.org
-download_source download/perl/legacy $PROG $VER
+#MIRROR=www.imagemagick.org
+#download_source download/perl/legacy $PROG $VER
+
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
-buildperl
+buildperl32
+
+export MAGICK_LDFLAGS="$LDFLAGS -L/opt/omni/lib/amd64"
+buildperl64
+
 make_package
 clean_up
 
