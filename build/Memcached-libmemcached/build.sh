@@ -30,10 +30,10 @@
 PATH=/opt/OMNIperl/bin:/usr/gnu/bin:$PATH
 export PATH
 
-AUTHORID=WOLFSAGE
+AUTHORID=SEANBURKE
 PROG=Memcached-libmemcached
 MODNAME=Memcached::libmemcached
-VER=1.001702
+VER=1.001801
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Thin fast full interface to the libmemcached client API (Perl $DEPVER)"
@@ -76,7 +76,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER-TRIAL2
 patch_source
 prep_build
 
