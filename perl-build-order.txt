@@ -446,3 +446,8 @@ Archive-Extract
 Crypt-CBC
 Crypt-OpenSSL-AES
 Thrift
+Email-MessageID
+Email-MIME-Encodings
+Email-MIME-ContentType
+Email-MIME
+Email-Stuffer
