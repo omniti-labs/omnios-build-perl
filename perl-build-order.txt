@@ -446,3 +446,5 @@ Archive-Extract
 Crypt-CBC
 Crypt-OpenSSL-AES
 Thrift
+Crypt-OpenSSL-Random
+Crypt-OpenSSL-RSA
