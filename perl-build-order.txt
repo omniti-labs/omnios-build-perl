@@ -448,3 +448,12 @@ Crypt-OpenSSL-AES
 Thrift
 Crypt-OpenSSL-Random
 Crypt-OpenSSL-RSA
+Class-Std-Fast
+Log-Log4perl
+Config-Properites
+Data-Uniqid
+Math-Random
+Template
+SOAP-WSDL
+Math-Random-MT
+Google-Ads-AdWords-Client
