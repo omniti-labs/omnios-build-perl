@@ -462,3 +462,5 @@ Template
 SOAP-WSDL
 Google-Ads-AdWords-Client
 Net-Google-Storage
+Net-SFTP-Foreign
+String-Util
