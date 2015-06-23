@@ -29,7 +29,7 @@
 
 PROG=Mungo
 MODNAME=Mungo
-VER=1.1.122
+VER=1.1.124
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="an 'anti-framework' to make programming web pages under mod_perl as accessible as php."
