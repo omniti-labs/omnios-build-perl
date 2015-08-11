@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A dropbox API interface (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse omniti/perl/common-sense omniti/perl/net-oauth omniti/perl/json"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse"
+DEPENDS_IPS="omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse omniti/perl/common-sense omniti/perl/net-oauth omniti/perl/json"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
