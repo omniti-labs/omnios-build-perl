@@ -427,7 +427,7 @@ Test-Perl-Critic
 NetAddr-IP
 Data-Validate-IP
 Encoding-FixLatin
-Mail-Spam-Assassin
+Mail-SpamAssassin
 Term-Shell
 Object-Pluggable-Constants
 IO-Pipely
