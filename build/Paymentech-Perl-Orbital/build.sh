@@ -48,6 +48,8 @@ PERLVERLIST="5.14 5.16 5.20"
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/net-ssleay"
 
+export PAYMENTECH_HOME=$DESTDIR/opt/paymentech
+
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)
@@ -64,18 +66,14 @@ case $DEPVER in
         ;;
 esac
 
-buildperl32() {
+make_opt() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
-    logmsg "Building 32-bit"
+    logmsg "Making opt/paymentech"
     export ISALIST="$ISAPART"
-    sudo /opt/OMNIperl/bin/perl ./bin/install_sdk --sdk=perl --destination $DESTDIR/opt/OMNIperl
-    sudo mkdir -p $DESTDIR/opt/OMNIperl/lib/site_perl/$DEPVER/
-    sudo mv /opt/OMNIperl/lib/site_perl/*/Paymentech $DESTDIR/opt/OMNIperl/lib/site_perl/$DEPVER/
-    sudo chown -R root:bin $DESTDIR/opt
-    sudo chmod 644 $DESTDIR/opt/OMNIperl/paymentech/logs/trans.log
+    mv $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/paymentech
     popd > /dev/null
     unset ISALIST
-    export ISALIST 
+    export ISALIST
 }
 
 init
@@ -83,7 +81,8 @@ test_if_core
 download_source $PROG $PROG $VER
 patch_source
 prep_build
-buildperl32
+buildperl
+make_opt
 make_package
 clean_up
 
