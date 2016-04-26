@@ -70,10 +70,16 @@ make_opt() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
     logmsg "Making opt/paymentech"
     export ISALIST="$ISAPART"
-    mv $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/paymentech
+    sudo mv $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/paymentech
     popd > /dev/null
     unset ISALIST
     export ISALIST
+}
+
+# Uncomment and set PREFIX if any modules install site binaries
+save_function make_isa_stub make_isa_stub_orig
+make_isa_stub() {
+    PREFIX=/opt make_isa_stub_orig
 }
 
 init
