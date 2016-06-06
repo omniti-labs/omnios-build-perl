@@ -30,7 +30,7 @@
 AUTHORID=DANIEL
 PROG=Crypt-OpenSSL-X509
 MODNAME=${PROG//-/::}
-VER=1.804
+VER=1.806
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension to OpenSSL's X509 API."
