@@ -55,7 +55,7 @@ case $DEPVER in
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"

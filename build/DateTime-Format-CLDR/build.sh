@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format CLDR time patterns. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/test-nowarnings omniti/perl/test-exception omniti/perl/datetime-incomplete omniti/perl/test-warn"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/test-nowarnings omniti/perl/test-exception omniti/perl/datetime-incomplete omniti/perl/test-warn omniti/perl/datetime-event-recurrence"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/datetime-incomplete"
+DEPENDS_IPS="omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/datetime-incomplete omniti/perl/datetime-event-recurrence"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -55,7 +55,7 @@ case $DEPVER in
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
