@@ -460,6 +460,7 @@ Data-Uniqid
 Math-Random
 Template
 SOAP-WSDL
+JSON-Parse
 Google-Ads-AdWords-Client
 Net-Google-Storage
 Net-SFTP-Foreign

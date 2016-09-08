@@ -21,37 +21,39 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=SUNDQUIST
-PROG=Google-Ads-AdWords-Client
-MODNAME=Google::Ads::AdWords::Client
-VER=4.9.0
+AUTHORID=BKB
+PROG=JSON-Parse
+MODNAME=JSON::Parse
+VER=0.40
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="The main interface to the AdWords API (Perl $DEPVER)"
+SUMMARY="Read JSON into a Perl variable"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
-PERLVERLIST="5.16 5.20"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse"
-
-#BUILDDIR=GOOGLE-ADWORDS-PERL-CLIENT-$VER     # Location of extracted source
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
@@ -71,10 +73,7 @@ esac
 
 init
 test_if_core
-# Module release
 download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
-# Latest release
-#download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} GOOGLE-ADWORDS-PERL-CLIENT $VER
 patch_source
 prep_build
 buildperl
