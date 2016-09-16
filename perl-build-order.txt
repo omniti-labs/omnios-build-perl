@@ -465,3 +465,4 @@ Net-Dropbox-API
 Inline
 Inline-Python
 XML-Generator
+Image-ExifTool
