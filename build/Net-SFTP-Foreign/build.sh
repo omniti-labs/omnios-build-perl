@@ -21,7 +21,7 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2016-2017 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -30,7 +30,7 @@
 AUTHORID=SALVA
 PROG=Net-SFTP-Foreign
 MODNAME=Net::SFTP::Foreign
-VER=1.77
+VER=1.86
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SSH File Transfer Protocol client (Perl $DEPVER)"
