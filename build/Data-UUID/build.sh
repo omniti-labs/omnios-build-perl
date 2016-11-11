@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Data-UUID
 MODNAME=Data::UUID
-VER=1.220
+VER=1.221
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for generating Globally/Universally Unique Identifiers (GUIDs/UUIDs). (Perl $DEPVER)"
