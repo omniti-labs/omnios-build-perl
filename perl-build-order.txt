@@ -464,6 +464,7 @@ JSON-Parse
 Google-Ads-AdWords-Client
 Net-Google-Storage
 Net-SFTP-Foreign
+Net-SFTP-Foreign-Backend-Net_SSH2
 String-Util
 Data-Random
 Net-Dropbox-API
