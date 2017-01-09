@@ -30,13 +30,13 @@
 AUTHORID=DSKOLL
 PROG=MIME-tools
 MODNAME=MIME::Parser
-VER=5.505
+VER=5.503
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Tools to manipulate MIME messages (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/mailtools omniti/perl/test-deep"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/mailtools omniti/perl/test-deep"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

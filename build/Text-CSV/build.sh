@@ -30,13 +30,13 @@
 AUTHORID=MAKAMAKA
 PROG=Text-CSV
 MODNAME=Text::CSV
-VER=1.32
+VER=1.21
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="comma-separated values manipulator (using XS or PurePerl) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

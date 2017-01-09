@@ -30,13 +30,13 @@
 AUTHORID=SSIMMS
 PROG=PDF-API2
 MODNAME=PDF::API2
-VER=2.021
+VER=2.019
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Facilitates the creation and modification of PDF files (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/font-ttf"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/font-ttf"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

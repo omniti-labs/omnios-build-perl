@@ -30,13 +30,13 @@
 AUTHORID=RKITOVER
 PROG=Net-SSH2
 MODNAME=Net::SSH2
-VER=0.53
+VER=0.45
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Support for the SSH 2 protocol via libssh2. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/library/libssh2"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/library/libssh2"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An abstract Moose role for setting attributes from a configfile"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-types-path-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/moosex-types-path-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

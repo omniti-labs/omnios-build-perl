@@ -30,13 +30,13 @@
 AUTHORID=MRSAM
 PROG=Net-CIDR
 MODNAME=Net::CIDR
-VER=0.17
+VER=0.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manipulate IPv4/IPv6 netblocks in CIDR notation (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

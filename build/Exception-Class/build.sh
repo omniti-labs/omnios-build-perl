@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Exception-Class
 MODNAME=Exception::Class
-VER=1.37
+VER=1.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A module that allows you to declare real exception classes in Perl (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-data-inheritable omniti/perl/devel-stacktrace"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-data-inheritable omniti/perl/devel-stacktrace"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

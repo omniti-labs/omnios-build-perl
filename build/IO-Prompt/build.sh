@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Interactively prompt for user input (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/termreadkey omniti/perl/want"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/termreadkey omniti/perl/want"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

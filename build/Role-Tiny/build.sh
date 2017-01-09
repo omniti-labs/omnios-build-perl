@@ -30,13 +30,13 @@
 AUTHORID=HAARG
 PROG=Role-Tiny
 MODNAME=Role::Tiny
-VER=1.003003
+VER=1.2000
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Roles. Like a nouvelle cuisine portion size slice of Moose. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-method-modifiers omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-method-modifiers omniti/perl/test-fatal"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

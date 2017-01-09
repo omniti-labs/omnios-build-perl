@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a DDL generator for Oracle databases (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/dbi"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/dbi"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

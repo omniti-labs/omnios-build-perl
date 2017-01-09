@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Email::MIME - easy MIME message handling"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-address omniti/perl/mime-types omniti/perl/email-simple omniti/perl/email-messageid omniti/perl/email-mime-contenttype omniti/perl/email-mime-encodings" 
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-address omniti/perl/mime-types omniti/perl/email-simple omniti/perl/email-messageid omniti/perl/email-mime-contenttype omniti/perl/email-mime-encodings" 
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

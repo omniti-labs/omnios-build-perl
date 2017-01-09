@@ -30,13 +30,13 @@
 AUTHORID=MJD
 PROG=Text-Template
 MODNAME=Text::Template
-VER=1.46
+VER=1.45
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Expand template text with embedded Perl (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

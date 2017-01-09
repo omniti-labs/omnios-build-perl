@@ -36,7 +36,7 @@ PKG=omniti/perl/net-rabbitmq    # Hard coded to remove the extra '-'
 SUMMARY="interface with RabbitMQ over AMQP (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

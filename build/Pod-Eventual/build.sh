@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="read a POD document as a series of trivial events"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-pod omniti/perl/test-deep omniti/perl/mixin-linewise"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-pod omniti/perl/test-deep omniti/perl/mixin-linewise"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

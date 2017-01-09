@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a formatter for spellchecking Pod (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-most omniti/perl/file-sharedir-install omniti/perl/lingua-en-inflect omniti/perl/file-sharedir-projectdistdir"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-most omniti/perl/file-sharedir-install omniti/perl/lingua-en-inflect omniti/perl/file-sharedir-projectdistdir"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

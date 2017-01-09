@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Address
 MODNAME=Email::Address
-VER=1.907
+VER=1.896
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="RFC 2822 Address Parsing (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/capture-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/capture-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

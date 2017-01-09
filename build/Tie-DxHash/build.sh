@@ -30,13 +30,13 @@
 AUTHORID=KRUSCOE
 PROG=Tie-DxHash
 MODNAME=Tie::DxHash
-VER=1.05
+VER=1.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="keeps insertion order; allows duplicate keys (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

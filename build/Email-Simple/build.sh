@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Simple
 MODNAME=Email::Simple::Creator
-VER=2.203
+VER=2.102
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="simple parsing of RFC2822 message format and headers (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-date-format"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-date-format"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

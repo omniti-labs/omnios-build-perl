@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Abstract
 MODNAME=Email::Abstract
-VER=3.007
+VER=3.004
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="unified interface to mail representations (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/email-simple omniti/perl/mro-compat"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-simple omniti/perl/mro-compat"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

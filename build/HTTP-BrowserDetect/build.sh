@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Determine Web browser, version, and platform from an HTTP user agent string"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/cpan-changes omniti/perl/test-failwarnings omniti/perl/test-most omniti/perl/test-nowarnings omniti/perl/file-slurp"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/cpan-changes omniti/perl/test-failwarnings omniti/perl/test-most omniti/perl/test-nowarnings omniti/perl/file-slurp"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

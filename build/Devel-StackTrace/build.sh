@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Devel-StackTrace
 MODNAME=Devel::StackTrace
-VER=1.31
+VER=1.27
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An object representing a stack trace (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

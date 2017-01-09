@@ -39,7 +39,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A MySQL driver for the Perl5 Database Interface (DBI) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math system/library/gcc-4-runtime omniti/database/mysql-55/library omniti/perl/dbi"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math system/library/gcc-4-runtime omniti/database/mysql-55/library omniti/perl/dbi"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

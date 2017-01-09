@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for the Spread group communication system (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/network/spread"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/network/spread"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

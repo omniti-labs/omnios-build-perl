@@ -30,13 +30,13 @@
 AUTHORID=MAKAMAKA
 PROG=JSON
 MODNAME=JSON
-VER=2.90
+VER=2.53
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="JSON encoder/decoder (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math/header-math'
+BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math'
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 

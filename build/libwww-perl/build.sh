@@ -30,13 +30,13 @@
 AUTHORID=GAAS
 PROG=libwww-perl
 MODNAME=LWP
-VER=6.05
+VER=6.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="The World-Wide Web library for Perl (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/encode-locale omniti/perl/file-listing omniti/perl/html-parser omniti/perl/http-cookies omniti/perl/http-daemon omniti/perl/http-date omniti/perl/http-message omniti/perl/http-negotiate omniti/perl/lwp-mediatypes omniti/perl/net-http omniti/perl/uri omniti/perl/www-robotrules"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/encode-locale omniti/perl/file-listing omniti/perl/html-parser omniti/perl/http-cookies omniti/perl/http-daemon omniti/perl/http-date omniti/perl/http-message omniti/perl/http-negotiate omniti/perl/lwp-mediatypes omniti/perl/net-http omniti/perl/uri omniti/perl/www-robotrules"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

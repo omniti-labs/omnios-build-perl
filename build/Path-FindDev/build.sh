@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Find a development path somewhere in an upper hierarchy"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-tiny omniti/perl/path-tiny omniti/perl/path-isdev"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-tiny omniti/perl/path-tiny omniti/perl/path-isdev"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

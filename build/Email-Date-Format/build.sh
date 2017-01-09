@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Date-Format
 MODNAME=Email::Date::Format
-VER=1.004
+VER=1.002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="produce RFC 2822 date strings (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Sender
 MODNAME=Email::Sender::Simple
-VER=1.300016
+VER=0.120002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a library for sending email (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny omniti/perl/import-into omniti/perl/module-pluggable omniti/perl/sub-exporter-progressive"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/capture-tiny omniti/perl/email-abstract omniti/perl/email-address omniti/perl/email-simple omniti/perl/list-moreutils omniti/perl/moose omniti/perl/throwable omniti/perl/try-tiny omniti/perl/import-into omniti/perl/module-pluggable omniti/perl/sub-exporter-progressive"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

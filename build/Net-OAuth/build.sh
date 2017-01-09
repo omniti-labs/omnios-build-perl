@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An implementation of the OAuth protocol"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-data-inheritable omniti/perl/class-accessor omniti/perl/digest-sha1 omniti/perl/digest-hmac omniti/perl/test-warn omniti/perl/libwww-perl omniti/perl/uri"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-data-inheritable omniti/perl/class-accessor omniti/perl/digest-sha1 omniti/perl/digest-hmac omniti/perl/test-warn omniti/perl/libwww-perl omniti/perl/uri"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Critique Perl source code for best-practices. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/ppi omniti/perl/b-keywords omniti/perl/list-moreutils omniti/perl/ppix-utilities omniti/perl/pod-spell omniti/perl/perl-tidy omniti/perl/string-format omniti/perl/task-weaken omniti/perl/io-string omniti/perl/readonly omniti/perl/exception-class omniti/perl/ppix-regexp omniti/perl/config-tiny omniti/perl/email-address omniti/perl/file-homedir omniti/perl/file-which omniti/perl/readonly-xs omniti/perl/test-deep omniti/perl/module-pluggable"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/ppi omniti/perl/b-keywords omniti/perl/list-moreutils omniti/perl/ppix-utilities omniti/perl/pod-spell omniti/perl/perl-tidy omniti/perl/string-format omniti/perl/task-weaken omniti/perl/io-string omniti/perl/readonly omniti/perl/exception-class omniti/perl/ppix-regexp omniti/perl/config-tiny omniti/perl/email-address omniti/perl/file-homedir omniti/perl/file-which omniti/perl/readonly-xs omniti/perl/test-deep omniti/perl/module-pluggable"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

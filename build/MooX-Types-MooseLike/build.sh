@@ -30,13 +30,13 @@
 AUTHORID=MATEU
 PROG=MooX-Types-MooseLike
 MODNAME=MooX::Types::MooseLike::Base
-VER=0.25
+VER=0.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="some Moosish types and a type builder (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-runtime omniti/perl/moo omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/module-runtime omniti/perl/moo omniti/perl/test-fatal"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

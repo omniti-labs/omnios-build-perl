@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="OpenSSL support for LWP"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math library/security/openssl omniti/perl/try-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math library/security/openssl omniti/perl/try-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

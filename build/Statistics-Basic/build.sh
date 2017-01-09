@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A collection of very basic statistics modules (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/number-format"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/number-format"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

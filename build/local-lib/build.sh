@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="create and use a local lib/ for perl modules with PERL5LIB"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 #install gnu-tar
 
 PREFIX=/opt/OMNIperl

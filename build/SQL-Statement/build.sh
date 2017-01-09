@@ -30,13 +30,13 @@
 AUTHORID=REHSACK
 PROG=SQL-Statement
 MODNAME=SQL::Statement
-VER=1.405
+VER=1.33
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="SQL parsing and processing engine (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/clone omniti/perl/params-util"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/clone omniti/perl/params-util"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

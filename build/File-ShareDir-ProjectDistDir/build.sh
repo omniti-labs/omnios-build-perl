@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Simple set-and-forget using of a '/share' directory in your projects root"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/path-finddev"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/path-finddev"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

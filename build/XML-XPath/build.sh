@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a set of modules for parsing and evaluating XPath statements (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/xml-parser"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/xml-parser"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

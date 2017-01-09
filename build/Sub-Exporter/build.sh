@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Sub-Exporter
 MODNAME=Sub::Exporter
-VER=0.987
+VER=0.984
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a sophisticated exporter for custom-built routines (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/data-optlist omniti/perl/params-util omniti/perl/sub-install"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/data-optlist omniti/perl/params-util omniti/perl/sub-install"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

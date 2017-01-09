@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for the GNU Readline/History Library (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math library/readline system/library/gcc-4-runtime"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math library/readline system/library/gcc-4-runtime"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="add pleasant whitespace to a DOM tree"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense omniti/perl/test-warn omniti/perl/exporter-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/pragmatic omniti/perl/xml-libxml omniti/perl/common-sense omniti/perl/test-warn omniti/perl/exporter-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

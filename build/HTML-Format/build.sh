@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Base class for HTML formatters (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-slurp omniti/perl/font-afm omniti/perl/html-tree"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-slurp omniti/perl/font-afm omniti/perl/html-tree"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

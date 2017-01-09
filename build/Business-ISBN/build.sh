@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="work with International Standard Book Numbers"
 DESC="work with International Standard Book Numbers"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/business-isbn-data"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/business-isbn-data"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 

@@ -30,13 +30,13 @@
 AUTHORID=HAARG
 PROG=Devel-GlobalDestruction
 MODNAME=Devel::GlobalDestruction
-VER=0.12
+VER=0.7
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Expose the flag which marks global destruction. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/sub-exporter omniti/perl/sub-exporter-globexporter omniti/perl/sub-exporter-progressive"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-exporter omniti/perl/sub-exporter-globexporter omniti/perl/sub-exporter-progressive"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

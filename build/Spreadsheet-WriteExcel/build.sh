@@ -30,13 +30,13 @@
 AUTHORID=JMCNAMARA
 PROG=Spreadsheet-WriteExcel
 MODNAME=Spreadsheet::WriteExcel
-VER=2.40
+VER=2.37
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Write to a cross platform Excel binary file (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/parse-recdescent"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/parse-recdescent"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

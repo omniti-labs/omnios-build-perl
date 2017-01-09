@@ -30,13 +30,13 @@
 AUTHORID=DOY
 PROG=Package-Stash-XS
 MODNAME=Package::Stash::XS
-VER=0.28
+VER=0.25
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="faster and more correct implementation of the Package::Stash API (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-fatal"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

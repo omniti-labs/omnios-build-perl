@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="test XML with XML::Easy"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/xml-easy"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/xml-easy"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

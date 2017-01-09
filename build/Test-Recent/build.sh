@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="check a time is recent"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-format-iso8601 omniti/perl/time-duration-parse"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime omniti/perl/datetime-format-iso8601 omniti/perl/time-duration-parse"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

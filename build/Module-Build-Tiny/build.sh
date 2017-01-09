@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A tiny replacement for Module::Build"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/extutils-config omniti/perl/extutils-helpers omniti/perl/extutils-installpaths"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

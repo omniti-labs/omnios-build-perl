@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Sub-Exporter-GlobExporter
 MODNAME=Sub::Exporter::GlobExporter
-VER=0.004
+VER=0.002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="export shared globs with Sub::Exporter collectors (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/sub-exporter"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-exporter"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

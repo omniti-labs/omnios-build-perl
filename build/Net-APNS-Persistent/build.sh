@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Send Apple APNS notifications over a persistent connection"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/net-ssleay omniti/perl/test-exception omniti/perl/class-accessor omniti/perl/json-xs"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/net-ssleay omniti/perl/test-exception omniti/perl/class-accessor omniti/perl/json-xs"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

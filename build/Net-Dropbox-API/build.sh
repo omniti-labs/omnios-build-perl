@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A dropbox API interface (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse omniti/perl/common-sense omniti/perl/net-oauth omniti/perl/json"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/yaml-tiny omniti/perl/data-random omniti/perl/mouse omniti/perl/common-sense omniti/perl/net-oauth omniti/perl/json"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

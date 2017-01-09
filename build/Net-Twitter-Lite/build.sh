@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A perl API library for the Twitter API"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/net-http omniti/perl/uri omniti/perl/http-message omniti/perl/crypt-ssleay omniti/perl/net-oauth omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/net-http omniti/perl/uri omniti/perl/http-message omniti/perl/crypt-ssleay omniti/perl/net-oauth omniti/perl/test-fatal"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -30,13 +30,13 @@
 AUTHORID=GAAS
 PROG=HTML-Parser
 MODNAME=HTML::Parser
-VER=3.71
+VER=3.69
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="HTML parser class (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/html-tagset"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/html-tagset"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

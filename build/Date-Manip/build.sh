@@ -30,13 +30,13 @@
 AUTHORID=SBECK
 PROG=Date-Manip
 MODNAME=Date::Manip
-VER=6.49
+VER=6.32
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Date manipulation routines (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-inter omniti/perl/yaml-syck"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-inter omniti/perl/yaml-syck"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

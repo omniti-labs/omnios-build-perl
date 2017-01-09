@@ -30,13 +30,13 @@
 AUTHORID=ZOFFIX
 PROG=JavaScript-Minifier
 MODNAME=JavaScript::Minifier
-VER=1.13
+VER=1.05
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for minifying JavaScript code (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="does your code require newer perl than you think?"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/test-tester omniti/perl/yaml-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/test-tester omniti/perl/yaml-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A pragma to use the C3 method resolution order algortihm (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/algorithm-c3"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/algorithm-c3"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

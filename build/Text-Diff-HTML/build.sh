@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="XHTML format for Text::Diff::Unified"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/text-diff omniti/perl/html-parser omniti/perl/test-pod"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/text-diff omniti/perl/html-parser omniti/perl/test-pod"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

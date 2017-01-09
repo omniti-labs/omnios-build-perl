@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for formatting text with Trac Wiki Style. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-accessor omniti/perl/class-data-inheritable omniti/perl/html-parser omniti/perl/list-moreutils omniti/perl/test-base omniti/perl/tie-ixhash omniti/perl/universal-require"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-accessor omniti/perl/class-data-inheritable omniti/perl/html-parser omniti/perl/list-moreutils omniti/perl/test-base omniti/perl/tie-ixhash omniti/perl/universal-require"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Compile a log format string to perl-code "
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-cpan-meta omniti/perl/spellunker omniti/perl/test-minimumversion omniti/perl/test-pod omniti/perl/try-tiny omniti/perl/test-requires omniti/perl/uri omniti/perl/http-message omniti/perl/test-mocktime omniti/perl/posix-strftime-compiler"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-cpan-meta omniti/perl/spellunker omniti/perl/test-minimumversion omniti/perl/test-pod omniti/perl/try-tiny omniti/perl/test-requires omniti/perl/uri omniti/perl/http-message omniti/perl/test-mocktime omniti/perl/posix-strftime-compiler"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

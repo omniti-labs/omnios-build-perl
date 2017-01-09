@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Build.PL install path logic made easy"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/test-pod-coverage omniti/perl/pod-coverage-trustpod omniti/perl/test-pod omniti/perl/extutils-config"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-pod-coverage omniti/perl/pod-coverage-trustpod omniti/perl/test-pod omniti/perl/extutils-config"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

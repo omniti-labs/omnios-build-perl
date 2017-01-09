@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Determine if a given Path resembles a development source tree"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-tiny omniti/perl/path-tiny omniti/perl/role-tiny omniti/perl/file-homedir"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-tiny omniti/perl/path-tiny omniti/perl/role-tiny omniti/perl/file-homedir"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

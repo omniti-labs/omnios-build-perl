@@ -39,7 +39,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="wrapper for libapreq2's module/handle API. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/extutils-xsbuilder omniti/perl/parse-recdescent omniti/server/apache22 omniti/server/apache22/mod_perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/extutils-xsbuilder omniti/perl/parse-recdescent omniti/server/apache22 omniti/server/apache22/mod_perl"
 
 PREFIX=/opt/omni
 export PREFIX

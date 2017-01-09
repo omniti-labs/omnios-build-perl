@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Pure perl spelling checker implementation"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/file-sharedir omniti/perl/regexp-common"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-sharedir omniti/perl/regexp-common"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

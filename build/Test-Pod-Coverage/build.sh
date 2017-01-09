@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Check for pod coverage in your distribution. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/pod-coverage"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/pod-coverage"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

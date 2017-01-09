@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="allow a module's pod to contain Pod::Coverage hints"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/pod-coverage omniti/perl/pod-eventual"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/pod-coverage omniti/perl/pod-eventual"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

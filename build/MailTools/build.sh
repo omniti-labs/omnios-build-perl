@@ -30,13 +30,13 @@
 AUTHORID=MARKOV
 PROG=MailTools
 MODNAME=Mail::Internet
-VER=2.13
+VER=2.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Various e-mail related modules (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/timedate"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/timedate"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

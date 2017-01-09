@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Optional meta attribute for custom option names"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moosex-role-parameterized omniti/perl/test-trap omniti/perl/params-validate omniti/perl/getopt-long-descriptive omniti/perl/namespace-autoclean omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/moosex-role-parameterized omniti/perl/test-trap omniti/perl/params-validate omniti/perl/getopt-long-descriptive omniti/perl/namespace-autoclean omniti/perl/test-requires"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

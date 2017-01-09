@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A fully event-driven IRC client module with nickname and channel tracking"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/poe-filter-ircd omniti/perl/poe-component-syndicator omniti/perl/irc-utils"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/poe-filter-ircd omniti/perl/poe-component-syndicator omniti/perl/irc-utils"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

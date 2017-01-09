@@ -30,13 +30,13 @@
 AUTHORID=ABIGAIL
 PROG=Regexp-Common
 MODNAME=Regexp::Common
-VER=2013031301
+VER=2011121001
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Provide commonly requested regular expressions (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

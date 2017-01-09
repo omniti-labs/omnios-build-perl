@@ -30,13 +30,13 @@
 AUTHORID=HAARG
 PROG=Moo
 MODNAME=Moo
-VER=1.004002
+VER=1.005000
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Minimalist Object Orientation (with Moose compatiblity) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-method-modifiers omniti/perl/devel-globaldestruction omniti/perl/module-runtime omniti/perl/role-tiny omniti/perl/test-fatal omniti/perl/strictures omniti/perl/import-into"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-method-modifiers omniti/perl/devel-globaldestruction omniti/perl/module-runtime omniti/perl/role-tiny omniti/perl/test-fatal omniti/perl/strictures omniti/perl/import-into"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

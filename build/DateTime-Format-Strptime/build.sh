@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=DateTime-Format-Strptime
 MODNAME=DateTime::Format::Strptime
-VER=1.56
+VER=1.52
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format strp and strf time patterns (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-locale omniti/perl/datetime-timezone omniti/perl/params-validate"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime omniti/perl/datetime-locale omniti/perl/datetime-timezone omniti/perl/params-validate"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

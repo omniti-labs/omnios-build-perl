@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Log-Dispatch-Array
 MODNAME=Log::Dispatch::Array
-VER=1.003
+VER=1.001
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="log events to an array (reference) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/log-dispatch omniti/perl/test-deep"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/log-dispatch omniti/perl/test-deep"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

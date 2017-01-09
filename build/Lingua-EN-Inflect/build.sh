@@ -30,13 +30,13 @@
 AUTHORID=DCONWAY
 PROG=Lingua-EN-Inflect
 MODNAME=Lingua::EN::Inflect
-VER=1.895
+VER=1.894
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Convert singular to plural. Select 'a' or 'an'. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

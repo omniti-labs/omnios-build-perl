@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="(No summary available on CPAN) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="omniti/perl/convert-asn1 omniti/perl/authen-sasl omniti/perl/uri omniti/perl/io-socket-ssl omniti/perl/xml-sax-writer developer/build/gnu-make system/header system/library/math/header-math "
+BUILD_DEPENDS_IPS="omniti/perl/convert-asn1 omniti/perl/authen-sasl omniti/perl/uri omniti/perl/io-socket-ssl omniti/perl/xml-sax-writer developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

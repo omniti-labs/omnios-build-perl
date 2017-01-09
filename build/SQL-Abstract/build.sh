@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Generate SQL from Perl data structures (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/class-accessor-grouped omniti/perl/getopt-long-descriptive omniti/perl/hash-merge omniti/perl/test-exception omniti/perl/test-warn omniti/perl/moo"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-accessor-grouped omniti/perl/getopt-long-descriptive omniti/perl/hash-merge omniti/perl/test-exception omniti/perl/test-warn omniti/perl/moo"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

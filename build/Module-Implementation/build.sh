@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Module-Implementation
 MODNAME=Module::Implementation
-VER=0.07
+VER=0.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Loads one of several alternate underlying implementations for a module (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/module-runtime omniti/perl/test-fatal omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/module-runtime omniti/perl/test-fatal omniti/perl/test-requires"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

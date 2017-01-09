@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Getopt-Long-Descriptive
 MODNAME=Getopt::Long::Descriptive
-VER=0.097
+VER=0.092
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Getopt::Long, but simpler and more powerful (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/params-validate omniti/perl/sub-exporter omniti/perl/test-warnings"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/params-validate omniti/perl/sub-exporter omniti/perl/test-warnings"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

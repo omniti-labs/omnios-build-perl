@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=String-Flogger
 MODNAME=String::Flogger
-VER=1.101244
+VER=1.101242
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="string munging for loggers (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

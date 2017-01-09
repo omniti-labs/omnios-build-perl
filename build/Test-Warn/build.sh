@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension to test methods for warnings (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/sub-uplevel omniti/perl/tree-dag_node"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-uplevel omniti/perl/tree-dag_node"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

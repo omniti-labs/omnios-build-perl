@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Log-Dispatchouli
 MODNAME=Log::Dispatchouli
-VER=2.012
+VER=2.005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a simple wrapper around Log::Dispatch (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/log-dispatch omniti/perl/log-dispatch-array omniti/perl/params-util omniti/perl/string-flogger omniti/perl/sub-exporter omniti/perl/sub-exporter-globexporter omniti/perl/test-deep omniti/perl/test-fatal omniti/perl/try-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/log-dispatch omniti/perl/log-dispatch-array omniti/perl/params-util omniti/perl/string-flogger omniti/perl/sub-exporter omniti/perl/sub-exporter-globexporter omniti/perl/test-deep omniti/perl/test-fatal omniti/perl/try-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

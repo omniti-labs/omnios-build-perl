@@ -30,13 +30,13 @@
 AUTHORID=SULLR
 PROG=IO-Socket-SSL
 MODNAME=IO::Socket::SSL
-VER=1.981
+VER=1.760
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Nearly transparent SSL encapsulation for IO::Socket::INET. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/net-ssleay"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/net-ssleay"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
