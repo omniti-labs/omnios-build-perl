@@ -30,7 +30,7 @@
 AUTHORID=JMCNAMARA
 PROG=Spreadsheet-WriteExcel
 MODNAME=Spreadsheet::WriteExcel
-VER=2.37
+VER=2.40
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Write to a cross platform Excel binary file (Perl $DEPVER)"

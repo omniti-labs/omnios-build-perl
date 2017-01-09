@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Package-DeprecationManager
 MODNAME=Package::DeprecationManager
-VER=0.13
+VER=0.17
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manage deprecation warnings for your distribution (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/test-fatal omniti/perl/test-output omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/test-fatal omniti/perl/test-output omniti/perl/test-requires omniti/perl/test-warnings"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

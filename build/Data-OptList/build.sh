@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Data-OptList
 MODNAME=Data::OptList
-VER=0.107
+VER=0.110
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="parse and validate simple name/value option pairs (Perl $DEPVER)"

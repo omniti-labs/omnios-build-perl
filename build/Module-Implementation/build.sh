@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Module-Implementation
 MODNAME=Module::Implementation
-VER=0.06
+VER=0.09
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Loads one of several alternate underlying implementations for a module (Perl $DEPVER)"

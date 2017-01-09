@@ -30,7 +30,7 @@
 AUTHORID=DOY
 PROG=Dist-CheckConflicts
 MODNAME=Dist::CheckConflicts
-VER=0.02
+VER=0.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="declare version conflicts for your dist (Perl $DEPVER)"

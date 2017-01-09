@@ -30,13 +30,13 @@
 AUTHORID=MLEHMANN
 PROG=JSON-XS
 MODNAME=JSON::XS
-VER=2.32
+VER=3.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="JSON serialising/deserialising, done correctly and fast"
 DESC="JSON serialising/deserialising, done correctly and fast"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/common-sense omniti/perl/types-serialiser"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/common-sense omniti/perl/types-serialiser omniti/perl/canary-stability"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/common-sense"
+DEPENDS_IPS="omniti/perl/common-sense omniti/perl/canary-stability"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

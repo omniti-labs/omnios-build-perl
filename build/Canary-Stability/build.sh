@@ -27,17 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DAGOLDEN
-PROG=Capture-Tiny
-MODNAME=Capture::Tiny
-VER=0.44
+AUTHORID=MLEHMANN
+PROG=Canary-Stability
+MODNAME=Canary::Stability
+VER=2012
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Capture STDOUT and STDERR from Perl, XS or external programs (Perl $DEPVER)"
-DESC="$SUMMARY"
+SUMMARY="canary to check perl compatibility for schmorp's modules"
+DESC="canary to check perl compatibility for schmorp's modules"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
-
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -46,8 +45,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
-# Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+# Add any additional deps here; OMNIperl added below
+DEPENDS_IPS="omniti/perl/common-sense"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

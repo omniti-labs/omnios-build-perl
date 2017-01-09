@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Sub-Exporter
 MODNAME=Sub::Exporter
-VER=0.984
+VER=0.987
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a sophisticated exporter for custom-built routines (Perl $DEPVER)"
