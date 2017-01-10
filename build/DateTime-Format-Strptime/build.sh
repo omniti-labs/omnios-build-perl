@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=DateTime-Format-Strptime
 MODNAME=DateTime::Format::Strptime
-VER=1.52
+VER=1.70
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format strp and strf time patterns (Perl $DEPVER)"

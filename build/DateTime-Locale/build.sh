@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=DateTime-Locale
 MODNAME=DateTime::Locale
-VER=0.45
+VER=1.11
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Localization support for DateTime.pm (Perl $DEPVER)"

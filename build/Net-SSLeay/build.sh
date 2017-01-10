@@ -43,6 +43,9 @@ reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
+PERL_MAKE_TEST="" #broken tests
+
+
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 

@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=String-Flogger
 MODNAME=String::Flogger
-VER=1.101242
+VER=1.101245
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="string munging for loggers (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/json-maybexs"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter"
+DEPENDS_IPS="omniti/perl/json omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/json-maybexs"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

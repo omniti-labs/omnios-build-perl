@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Log-Dispatch
 MODNAME=Log::Dispatch::File
-VER=2.32
+VER=2.58
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Dispatches messages to one or more outputs (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-load omniti/perl/params-validate"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-load omniti/perl/params-validate omniti/perl/test-needs"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-load omniti/perl/params-validate"
+DEPENDS_IPS="omniti/perl/class-load omniti/perl/params-validate omniti/perl/test-needs"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

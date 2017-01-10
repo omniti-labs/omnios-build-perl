@@ -30,7 +30,7 @@
 AUTHORID=DOUGW
 PROG=Spreadsheet-ParseExcel
 MODNAME=Spreadsheet::ParseExcel
-VER=0.59
+VER=0.65
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read information from an Excel file. (Perl $DEPVER)"

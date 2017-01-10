@@ -30,7 +30,7 @@
 AUTHORID=SHLOMIF
 PROG=XML-LibXML
 MODNAME=XML::LibXML
-VER=2.0020
+VER=2.0128
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Interface to Gnome libxml2 xml parsing and DOM library (Perl $DEPVER)"

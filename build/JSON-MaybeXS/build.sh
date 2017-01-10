@@ -27,17 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FLORA
-PROG=MRO-Compat
-MODNAME=MRO::Compat
-VER=0.11
+AUTHORID=ETHER
+PROG=JSON-MaybeXS
+MODNAME=JSON::MaybeXS
+VER=1.003008
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="mro::* interface compatibility for Perls < 5.9.5 (Perl $DEPVER)"
-DESC="$SUMMARY"
+SUMMARY="Use Cpanel::JSON::XS with a fallback to JSON::XS and JSON::PP"
+DESC="Use Cpanel::JSON::XS with a fallback to JSON::XS and JSON::PP"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-c3"
-
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -46,8 +45,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
-# Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-c3"
+# Add any additional deps here; OMNIperl added below
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

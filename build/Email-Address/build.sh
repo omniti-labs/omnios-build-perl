@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Address
 MODNAME=Email::Address
-VER=1.896
+VER=1.908
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="RFC 2822 Address Parsing (Perl $DEPVER)"

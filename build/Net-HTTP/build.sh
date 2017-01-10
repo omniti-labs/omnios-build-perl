@@ -30,7 +30,7 @@
 AUTHORID=GAAS
 PROG=Net-HTTP
 MODNAME=Net::HTTP
-VER=6.03
+VER=6.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Low-level HTTP connection (client) (Perl $DEPVER)"

@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=GAAS
+AUTHORID=ETHER
 PROG=libwww-perl
 MODNAME=LWP
-VER=6.04
+VER=6.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="The World-Wide Web library for Perl (Perl $DEPVER)"

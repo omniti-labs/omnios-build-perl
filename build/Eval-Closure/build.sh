@@ -30,7 +30,7 @@
 AUTHORID=DOY
 PROG=Eval-Closure
 MODNAME=Eval::Closure
-VER=0.08
+VER=0.14
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="safely and cleanly create closures via string eval (Perl $DEPVER)"

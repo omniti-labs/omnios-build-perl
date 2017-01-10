@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=HAARG
+AUTHORID=FLORA
 PROG=Devel-GlobalDestruction
 MODNAME=Devel::GlobalDestruction
-VER=0.7
+VER=0.07
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Expose the flag which marks global destruction. (Perl $DEPVER)"

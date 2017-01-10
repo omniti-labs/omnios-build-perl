@@ -30,7 +30,7 @@
 AUTHORID=GRANTM
 PROG=XML-Simple
 MODNAME=XML::Simple
-VER=2.20
+VER=2.22
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Easily read/write XML (esp config files) (Perl $DEPVER)"

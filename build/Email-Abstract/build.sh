@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Abstract
 MODNAME=Email::Abstract
-VER=3.004
+VER=3.008
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="unified interface to mail representations (Perl $DEPVER)"

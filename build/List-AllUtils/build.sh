@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=List-AllUtils
 MODNAME=List-AllUtils
-VER=0.09
+VER=0.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Combines List::Util and List::MoreUtils in one bite-sized package (Perl $DEPVER)"
@@ -42,6 +42,9 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+PERL_MAKE_TEST="" #tests do not work for <=5.16
+
 
 # Only 5.14.2 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"

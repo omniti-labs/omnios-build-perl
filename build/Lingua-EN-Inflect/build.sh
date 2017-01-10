@@ -30,7 +30,7 @@
 AUTHORID=DCONWAY
 PROG=Lingua-EN-Inflect
 MODNAME=Lingua::EN::Inflect
-VER=1.894
+VER=1.901
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Convert singular to plural. Select 'a' or 'an'. (Perl $DEPVER)"

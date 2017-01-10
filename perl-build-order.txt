@@ -7,6 +7,7 @@ URI
 WWW-RobotRules
 common-sense
 Types-Serialiser
+Canary-Stability
 JSON-XS
 Crypt-OpenSSL-X509
 Tie-IxHash
@@ -38,6 +39,12 @@ Sub-Exporter
 Capture-Tiny
 Test-Output
 List-MoreUtils
+Test-NoWarnings
+File-Slurp-Tiny
+Test-Deep
+Tree-DAG_Node
+Sub-Uplevel
+Test-Warnings
 Package-DeprecationManager
 Dist-CheckConflicts
 Package-Stash
@@ -99,12 +106,6 @@ PDF-API2
 MIME-Base32
 Class-Accessor
 Test-Manifest
-Test-NoWarnings
-Test-Deep
-File-Slurp-Tiny
-Tree-DAG_Node
-Sub-Uplevel
-Test-Warnings
 List-AllUtils
 DateTime
 DateTime-Format-Mail
@@ -365,10 +366,12 @@ MooX-Types-MooseLike
 Email-Simple
 Email-Abstract
 Throwable
+Test-Needs
 Log-Dispatch
 Log-Dispatch-Array
 Text-Template
 Sys-Hostname-Long
+JSON-MaybeXS
 String-Flogger
 Log-Dispatchouli
 Email-Sender

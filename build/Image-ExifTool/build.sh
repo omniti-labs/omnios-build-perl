@@ -27,7 +27,7 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=PHILHA
+AUTHORID=EXIFTOOL
 PROG=Image-ExifTool
 MODNAME=Image::ExifTool
 VER=10.20

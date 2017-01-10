@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Date-Format
 MODNAME=Email::Date::Format
-VER=1.002
+VER=1.005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="produce RFC 2822 date strings (Perl $DEPVER)"

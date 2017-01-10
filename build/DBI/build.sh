@@ -30,7 +30,7 @@
 AUTHORID=TIMB
 PROG=DBI
 MODNAME=DBI
-VER=1.622
+VER=1.636
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Database independent interface for Perl (Perl $DEPVER)"

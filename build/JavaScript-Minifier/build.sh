@@ -30,7 +30,7 @@
 AUTHORID=ZOFFIX
 PROG=JavaScript-Minifier
 MODNAME=JavaScript::Minifier
-VER=1.05
+VER=1.14
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for minifying JavaScript code (Perl $DEPVER)"

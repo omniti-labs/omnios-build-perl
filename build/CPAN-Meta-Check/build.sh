@@ -30,7 +30,7 @@
 AUTHORID=LEONT
 PROG=CPAN-Meta-Check
 MODNAME=CPAN::Meta::Check
-VER=0.008
+VER=0.001
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Verify requirements in a CPAN::Meta object"

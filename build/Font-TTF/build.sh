@@ -30,7 +30,7 @@
 AUTHORID=MHOSKEN
 PROG=Font-TTF
 MODNAME=Font::TTF
-VER=0.48
+VER=1.05
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="TTF font support for Perl (Perl $DEPVER)"
