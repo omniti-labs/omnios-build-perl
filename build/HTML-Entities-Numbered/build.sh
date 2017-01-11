@@ -21,22 +21,22 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MMIMS
-PROG=Net-Twitter-Lite
-MODNAME=Net::Twitter::Lite
-VER=0.12004
+AUTHORID=TANIGUCHI
+PROG=HTML-Entities-Numbered
+MODNAME=HTML::Entities::Numbered
+VER=0.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="A perl API library for the Twitter API"
+SUMMARY="Conversion of numbered HTML entities (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/net-http omniti/perl/uri omniti/perl/http-message omniti/perl/crypt-ssleay omniti/perl/net-oauth omniti/perl/test-fatal"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/net-http omniti/perl/uri omniti/perl/http-message omniti/perl/crypt-ssleay omniti/perl/net-oauth"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
