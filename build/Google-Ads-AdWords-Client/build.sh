@@ -30,7 +30,7 @@
 AUTHORID=SUNDQUIST
 PROG=Google-Ads-AdWords-Client
 MODNAME=Google::Ads::AdWords::Client
-VER=4.11.0
+VER=4.13.0
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="The main interface to the AdWords API (Perl $DEPVER)"
