@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/common-sense omniti/perl/canary-stability"
+DEPENDS_IPS="omniti/perl/common-sense omniti/perl/types-serialiser omniti/perl/canary-stability"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
