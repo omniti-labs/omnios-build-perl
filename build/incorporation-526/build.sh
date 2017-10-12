@@ -21,18 +21,14 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2017-2018 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=perl-520-incorporation
-VER=5.20
-    5.26)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
-        ;;
-
+PROG=perl-526-incorporation
+VER=5.26
 VERHUMAN=$VER
 PKG=omniti/incorporation/$PROG
 SUMMARY="Constrains omniti/runtime/perl to version ${VER}.x"
