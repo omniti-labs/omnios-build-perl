@@ -30,7 +30,7 @@
 AUTHORID=ANDK
 PROG=Devel-Symdump
 MODNAME=Devel::Symdump
-VER=2.11
+VER=2.18
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="dump symbol names or the symbol table (Perl $DEPVER)"

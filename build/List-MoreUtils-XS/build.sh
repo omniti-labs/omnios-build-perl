@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FDALY
-PROG=Test-Tester
-MODNAME=Test::Tester
-VER=0.109
+AUTHORID=REHSACK
+PROG=List-MoreUtils-XS
+MODNAME=List::MoreUtils::XS
+VER=0.426
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Ease testing test modules built with Test::Builder (Perl $DEPVER)"
+SUMMARY="Provide compiled List::MoreUtils functions (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -61,7 +61,7 @@ case $DEPVER in
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
     5.26)
-        logerr "Module is in core for Perl 5.26."
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
         ;;
 
     "")

@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=YAML-Tiny
 MODNAME=YAML::Tiny
-VER=1.62
+VER=1.70
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read/Write YAML files with as little code as possible"

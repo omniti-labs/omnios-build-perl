@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Utilities to test STDOUT and STDERR messages. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-exporter omniti/perl/test-tester omniti/perl/capture-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-exporter omniti/perl/capture-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,18 +47,21 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/sub-exporter omniti/perl/test-tester"
+DEPENDS_IPS="omniti/perl/sub-exporter"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/test-tester"
+        BUILD_DEPENDS_IPS="omniti/perl/test-tester"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/test-tester"
+        BUILD_DEPENDS_IPS="omniti/perl/test-tester"
         ;;
     5.20)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation omniti/perl/test-tester"
+        BUILD_DEPENDS_IPS="omniti/perl/test-tester"
         ;;
     5.26)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"

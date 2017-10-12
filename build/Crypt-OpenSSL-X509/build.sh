@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension to OpenSSL's X509 API."
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/gcc-4-runtime system/library/math omniti/perl/module-install"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="system/library/gcc-4-runtime"
+DEPENDS_IPS="system/library/gcc-4-runtime omniti/perl/module-install"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

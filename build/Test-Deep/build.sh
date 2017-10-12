@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Test-Deep
 MODNAME=Test::Deep
-VER=0.115
+VER=1.127
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Extremely flexible deep comparison (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-nowarnings omniti/perl/test-tester"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-nowarnings"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -52,13 +52,13 @@ DEPENDS_IPS="omniti/perl/test-nowarnings omniti/perl/test-tester"
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/test-tester"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/test-tester"
         ;;
     5.20)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation omniti/perl/test-tester"
         ;;
     5.26)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"

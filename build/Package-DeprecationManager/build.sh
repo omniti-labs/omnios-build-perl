@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=Package-DeprecationManager
 MODNAME=Package::DeprecationManager
-VER=0.13
+VER=0.17
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Manage deprecation warnings for your distribution (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/test-fatal omniti/perl/test-output omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/test-fatal omniti/perl/test-output omniti/perl/test-requires omniti/perl/test-warnings"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/params-util omniti/perl/sub-install omniti/perl/list-moreutils"
+DEPENDS_IPS="omniti/perl/params-util omniti/perl/sub-install omniti/perl/list-moreutils omniti/perl/test-warnings"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

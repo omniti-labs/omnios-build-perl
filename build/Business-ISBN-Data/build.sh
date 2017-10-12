@@ -30,7 +30,7 @@
 AUTHORID=BDFOY
 PROG=Business-ISBN-Data
 MODNAME=Business::ISBN::Data
-VER=20140910.002
+VER=20140910.003
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="data pack for Business::ISBN"

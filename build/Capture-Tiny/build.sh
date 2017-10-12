@@ -30,7 +30,7 @@
 AUTHORID=DAGOLDEN
 PROG=Capture-Tiny
 MODNAME=Capture::Tiny
-VER=0.28
+VER=0.46
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Capture STDOUT and STDERR from Perl, XS or external programs (Perl $DEPVER)"
