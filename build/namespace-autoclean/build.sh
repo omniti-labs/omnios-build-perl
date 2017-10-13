@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=namespace-autoclean
 MODNAME=namespace-autoclean
-VER=0.15
+VER=0.28
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Keep imports out of your namespace"

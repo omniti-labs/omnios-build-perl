@@ -27,19 +27,22 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DROLSKY
-PROG=DateTime-Locale
-MODNAME=DateTime::Locale
-VER=1.16
+AUTHORID=DAGOLDEN
+PROG=File-pushd
+MODNAME=File::pushd
+VER=1.014
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Localization support for DateTime.pm (Perl $DEPVER)"
+SUMMARY="change directory temporarily for a limited scop (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/list-moreutils omniti/perl/params-validate omniti/perl/file-sharedir-install omniti/perl/cpan-meta-check omniti/perl/test-file-sharedir omniti/perl/file-sharedir omniti/perl/params-validationcompiler omniti/perl/namespace-autoclean"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
+
+# https://rt.cpan.org/Public/Bug/Display.html?id=121461
+export PERL_USE_UNSAFE_INC=1
 
 NO_PARALLEL_MAKE=1
 
@@ -47,7 +50,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/list-moreutils omniti/perl/params-validate omniti/perl/file-sharedir-install omniti/perl/cpan-meta-check omniti/perl/test-file-sharedir omniti/perl/file-sharedir omniti/perl/params-validationcompiler omniti/perl/namespace-autoclean"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
