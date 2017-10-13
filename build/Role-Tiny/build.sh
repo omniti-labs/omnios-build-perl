@@ -30,7 +30,7 @@
 AUTHORID=HAARG
 PROG=Role-Tiny
 MODNAME=Role::Tiny
-VER=1.003003
+VER=2.000005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Roles. Like a nouvelle cuisine portion size slice of Moose. (Perl $DEPVER)"

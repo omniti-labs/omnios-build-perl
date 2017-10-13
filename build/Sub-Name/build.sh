@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FLORA
+AUTHORID=ETHER
 PROG=Sub-Name
 MODNAME=Sub::Name
-VER=0.05
+VER=0.21
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="(re)name a sub (Perl $DEPVER)"

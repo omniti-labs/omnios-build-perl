@@ -30,7 +30,7 @@
 AUTHORID=DAGOLDEN
 PROG=Path-Tiny
 MODNAME=Path::Tiny
-VER=0.052
+VER=0.104
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="File path utility"

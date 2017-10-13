@@ -30,7 +30,7 @@
 AUTHORID=DAGOLDEN
 PROG=Class-Tiny
 MODNAME=Class::Tiny
-VER=0.014
+VER=1.006
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Minimalist class construction"

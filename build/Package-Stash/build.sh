@@ -36,7 +36,8 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="routines for manipulating stashes (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/dist-checkconflicts omniti/perl/package-deprecationmanager omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
+#BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/dist-checkconflicts omniti/perl/package-deprecationmanager omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/dist-checkconflicts omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +48,8 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/package-deprecationmanager omniti/perl/dist-checkconflicts omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
+#DEPENDS_IPS="omniti/perl/package-deprecationmanager omniti/perl/dist-checkconflicts omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
+DEPENDS_IPS="omniti/perl/dist-checkconflicts omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/module-implementation"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

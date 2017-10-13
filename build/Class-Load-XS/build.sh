@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=DROLSKY
+AUTHORID=ETHER
 PROG=Class-Load-XS
 MODNAME=Class::Load::XS
-VER=0.04
+VER=0.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="XS implementation of parts of Class::Load (Perl $DEPVER)"

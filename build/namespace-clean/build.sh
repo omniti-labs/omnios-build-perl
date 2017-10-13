@@ -30,7 +30,7 @@
 AUTHORID=RIBASUSHI
 PROG=namespace-clean
 MODNAME=namespace::clean
-VER=0.25
+VER=0.27
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Keep imports and functions out of your namespace"

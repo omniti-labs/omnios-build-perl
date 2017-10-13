@@ -51,13 +51,16 @@ File-Slurp-Tiny
 Tree-DAG_Node
 Sub-Uplevel
 Test-Warnings
+List-SomeUtils
+List-UtilsBy
 List-AllUtils
-Package-DeprecationManager
 Dist-CheckConflicts
 Package-Stash
+Package-DeprecationManager
 Class-Load
 Class-Singleton
 Params-Validate
+File-ShareDir-Install
 DateTime-Locale
 DateTime-TimeZone
 Math-Round
@@ -132,7 +135,6 @@ Data-Pond
 Devel-StackTrace
 Socket6
 B-CallChecker
-List-UtilsBy
 Array-Window
 Scope-Upper
 Error-Return
@@ -156,7 +158,6 @@ File-ShareDir
 Filesys-Notify-Simple
 HTTP-Body
 Hash-MultiValue
-File-ShareDir-Install
 Stream-Buffered
 Spellunker
 File-Find-Rule-Perl
