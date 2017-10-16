@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=CHORNY
+AUTHORID=ETHER
 PROG=Hook-LexWrap
 MODNAME=Hook::LexWrap
-VER=0.24
+VER=0.26
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Lexically scoped subroutine wrappers (Perl $DEPVER)"

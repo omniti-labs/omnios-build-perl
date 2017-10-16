@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=Async-Interrupt
 MODNAME=Async::Interrupt
-VER=1.2
+VER=1.21
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="allow C/XS libraries to interrupt perl asynchronously (Perl $DEPVER)"

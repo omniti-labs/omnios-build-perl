@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=MooseX-ConfigFromFile
 MODNAME=MooseX::ConfigFromFile
-VER=0.13
+VER=0.14
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An abstract Moose role for setting attributes from a configfile"

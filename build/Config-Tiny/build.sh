@@ -30,7 +30,7 @@
 AUTHORID=RSAVAGE
 PROG=Config-Tiny
 MODNAME=Config::Tiny
-VER=2.22
+VER=2.23
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read/Write .ini style files with as little code as possible (Perl $DEPVER)"

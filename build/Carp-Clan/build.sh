@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=STBEY
+AUTHORID=KENTNL
 PROG=Carp-Clan
 MODNAME=Carp::Clan
-VER=6.04
+VER=6.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Report errors from perspective of caller of a "clan" of modules (Perl $DEPVER)"

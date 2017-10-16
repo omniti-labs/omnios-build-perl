@@ -30,7 +30,7 @@
 AUTHORID=MIKEM
 PROG=Net-SSLeay
 MODNAME=Net::SSLeay
-VER=1.68
+VER=1.81
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for using OpenSSL (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=Guard
 MODNAME=Guard
-VER=1.022
+VER=1.023
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="safe cleanup blocks (Perl $DEPVER)"

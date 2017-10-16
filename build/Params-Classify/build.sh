@@ -30,7 +30,7 @@
 AUTHORID=ZEFRAM
 PROG=Params-Classify
 MODNAME=Params::Classify
-VER=0.013
+VER=0.015
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="argument type classification (Perl $DEPVER)"

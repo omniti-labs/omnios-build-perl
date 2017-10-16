@@ -42,7 +42,7 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
-
+PERL_MAKE_TEST="" #broken tests
 PERL_NONPURE_INSTALL=1
 
 # Only 5.14 and later will get individual module builds

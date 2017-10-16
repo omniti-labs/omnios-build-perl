@@ -21,22 +21,22 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=MLEHMANN
-PROG=AnyEvent
-MODNAME=AnyEvent::Log
-VER=7.14
+AUTHORID=INGY
+PROG=Test-YAML
+MODNAME=Test::YAML
+VER=1.06
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="the DBI of event loop programming (Perl $DEPVER)"
+SUMMARY="Testing Module for YAML Implementations (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/async-interrupt omniti/perl/ev"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/async-interrupt omniti/perl/ev omniti/perl/guard omniti/perl/json-xs omniti/perl/net-ssleay omniti/perl/task-weaken"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

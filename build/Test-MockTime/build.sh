@@ -30,7 +30,7 @@
 AUTHORID=DDICK
 PROG=Test-MockTime
 MODNAME=Test::MockTime
-VER=0.12
+VER=0.15
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="(No summary available on CPAN) (Perl $DEPVER)"

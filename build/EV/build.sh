@@ -30,13 +30,13 @@
 AUTHORID=MLEHMANN
 PROG=EV
 MODNAME=EV
-VER=4.18
+VER=4.22
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="perl interface to libev, a high performance full-featured event loop (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/common-sense"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/common-sense omniti/perl/canary-stability"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/common-sense"
+DEPENDS_IPS="omniti/perl/common-sense omniti/perl/canary-stability"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

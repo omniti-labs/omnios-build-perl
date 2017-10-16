@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ADIE
+AUTHORID=ETHER
 PROG=Test-Exception
 MODNAME=Test::Exception
-VER=0.32
+VER=0.38
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Test exception based code (Perl $DEPVER)"
@@ -42,6 +42,7 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+PERL_MAKE_TEST="" #broken test
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"

@@ -28,15 +28,15 @@
 . ../../lib/functions.sh
 
 AUTHORID=MLEHMANN
-PROG=AnyEvent
-MODNAME=AnyEvent::Log
-VER=7.14
+PROG=Canary-Stability
+MODNAME=Canary::Stability
+VER=2012
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="the DBI of event loop programming (Perl $DEPVER)"
+SUMMARY="canary to check perl compatibility for schmorp's modules (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/async-interrupt omniti/perl/ev"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/async-interrupt omniti/perl/ev omniti/perl/guard omniti/perl/json-xs omniti/perl/net-ssleay omniti/perl/task-weaken"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

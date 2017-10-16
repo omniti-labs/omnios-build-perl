@@ -116,6 +116,9 @@ XML-SAX-Base
 XML-NamespaceSupport
 XML-SAX
 XML-LibXML
+Test-YAML
+Spiffy
+Test-Base
 YAML
 Digest-HMAC
 MailTools
@@ -164,6 +167,7 @@ XML-RSS
 Digest-CRC
 Statistics-LineFit
 Mungo
+Canary-Stability
 EV
 Async-Interrupt
 AnyEvent
@@ -244,6 +248,7 @@ Getopt-Long-Descriptive
 MooseX-Getopt
 MooseX-App-Cmd
 Module-Build-XSUtil
+Test-LeakTrace
 Mouse
 MooseX-Types-Path-Tiny
 MooseX-ConfigFromFile
@@ -318,9 +323,7 @@ Text-MultiMarkdown
 Text-WikiFormat
 Class-Std
 IO-Tty
-Spiffy
 UNIVERSAL-require
-Test-Base
 Text-Trac
 JavaScript-Minifier
 Net-CIDR

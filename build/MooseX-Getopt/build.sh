@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=MooseX-Getopt
 MODNAME=MooseX::Getopt::Meta::Attribute
-VER=0.63
+VER=0.71
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Optional meta attribute for custom option names"

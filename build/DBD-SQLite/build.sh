@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ADAMK
+AUTHORID=ISHIGAKI
 PROG=DBD-SQLite
 MODNAME=DBD::SQLite
-VER=1.37
+VER=1.54
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Self Contained SQLite RDBMS in a DBI Driver (Perl $DEPVER)"

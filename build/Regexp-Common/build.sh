@@ -30,7 +30,7 @@
 AUTHORID=ABIGAIL
 PROG=Regexp-Common
 MODNAME=Regexp::Common
-VER=2013031301
+VER=2017060201
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Provide commonly requested regular expressions (Perl $DEPVER)"

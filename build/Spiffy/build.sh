@@ -30,7 +30,7 @@
 AUTHORID=INGY
 PROG=Spiffy
 MODNAME=Spiffy
-VER=0.31
+VER=0.46
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Spiffy Perl Interface Framework For You (Perl $DEPVER)"

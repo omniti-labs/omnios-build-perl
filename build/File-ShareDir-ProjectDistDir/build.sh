@@ -30,7 +30,7 @@
 AUTHORID=KENTNL
 PROG=File-ShareDir-ProjectDistDir
 MODNAME=File::ShareDir::ProjectDistDir
-VER=1.000005
+VER=1.000009
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Simple set-and-forget using of a '/share' directory in your projects root"

@@ -30,7 +30,7 @@
 AUTHORID=BOOK
 PROG=DateTime-Format-Mail
 MODNAME=DateTime::Format::Mail
-VER=0.400
+VER=0.403
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Convert between DateTime and RFC2822/822 formats (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=WYANT
 PROG=PPIx-Regexp
 MODNAME=PPIx::Regexp
-VER=0.036
+VER=0.052
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse regular expressions (Perl $DEPVER)"

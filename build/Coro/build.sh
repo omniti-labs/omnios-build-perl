@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=Coro
 MODNAME=Coro::Debug
-VER=6.42
+VER=6.513
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="the only real threads in perl (Perl $DEPVER)"

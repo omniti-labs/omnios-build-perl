@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=DateTime-TimeZone
 MODNAME=DateTime::TimeZone
-VER=1.86
+VER=2.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Time zone object base class and factory (Perl $DEPVER)"
