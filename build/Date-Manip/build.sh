@@ -30,7 +30,7 @@
 AUTHORID=SBECK
 PROG=Date-Manip
 MODNAME=Date::Manip
-VER=6.49
+VER=6.60
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Date manipulation routines (Perl $DEPVER)"

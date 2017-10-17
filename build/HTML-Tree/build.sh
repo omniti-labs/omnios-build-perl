@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=CJM
+AUTHORID=KENTNL
 PROG=HTML-Tree
 MODNAME=HTML::TreeBuilder
-VER=5.03
+VER=5.07
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Work with HTML in a DOM-like tree structure (Perl $DEPVER)"

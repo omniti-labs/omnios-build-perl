@@ -30,7 +30,7 @@
 AUTHORID=JHI
 PROG=BSD-Resource
 MODNAME=BSD::Resource
-VER=1.2904
+VER=1.2911
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="BSD process resource limit and priority functions (Perl $DEPVER)"

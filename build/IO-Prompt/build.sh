@@ -30,7 +30,7 @@
 AUTHORID=DCONWAY
 PROG=IO-Prompt
 MODNAME=IO::Prompt
-VER=0.997002
+VER=0.997004
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Interactively prompt for user input (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=JSTOWE
 PROG=TermReadKey
 MODNAME=Term::ReadKey
-VER=2.31
+VER=2.37
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A perl module for simple terminal control (Perl $DEPVER)"

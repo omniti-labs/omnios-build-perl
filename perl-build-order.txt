@@ -330,6 +330,7 @@ Net-CIDR
 Net-SSH2
 XML-XPath
 DBD-ODBC
+CGI
 HTML-FillInForm
 String-Truncate
 Text-Aligner

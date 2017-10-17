@@ -30,7 +30,7 @@
 AUTHORID=TODDR
 PROG=YAML-Syck
 MODNAME=YAML::Syck
-VER=1.27
+VER=1.30
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Fast, lightweight YAML loader and dumper (Perl $DEPVER)"

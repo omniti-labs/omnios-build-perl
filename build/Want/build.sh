@@ -30,7 +30,7 @@
 AUTHORID=ROBIN
 PROG=Want
 MODNAME=Want
-VER=0.23
+VER=0.29
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A generalisation of wantarray (Perl $DEPVER)"

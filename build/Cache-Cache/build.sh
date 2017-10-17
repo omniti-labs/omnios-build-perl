@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=JSWARTZ
+AUTHORID=RJBS
 PROG=Cache-Cache
 MODNAME=Cache::MemoryCache
-VER=1.06
+VER=1.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="implements the Cache interface. (Perl $DEPVER)"

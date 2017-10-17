@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=Lingua-EN-Numbers
 MODNAME=Lingua::EN::Numbers
-VER=2.02
+VER=2.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="turn '407' into 'four hundred and seven', etc. (Perl $DEPVER)"

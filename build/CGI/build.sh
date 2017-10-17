@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=EXODIST
-PROG=Test-SharedFork
-MODNAME=Test::SharedFork
-VER=0.35
+AUTHORID=LEEJO
+PROG=CGI
+MODNAME=CGI
+VER=4.36
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="fork test (Perl $DEPVER)"
+SUMMARY="Handle Common Gateway Interface requests and responses (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

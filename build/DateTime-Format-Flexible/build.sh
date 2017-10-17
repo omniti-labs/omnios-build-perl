@@ -30,7 +30,7 @@
 AUTHORID=THINC
 PROG=DateTime-Format-Flexible
 MODNAME=DateTime::Format::Flexible
-VER=0.25
+VER=0.28
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DateTime::Format::Flexible - Flexibly parse strings and turn them into DateTime objects. (Perl $DEPVER)"

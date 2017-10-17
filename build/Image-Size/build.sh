@@ -30,7 +30,7 @@
 AUTHORID=RJRAY
 PROG=Image-Size
 MODNAME=Image::Size
-VER=3.232
+VER=3.300
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A library to extract height/width from images (Perl $DEPVER)"
