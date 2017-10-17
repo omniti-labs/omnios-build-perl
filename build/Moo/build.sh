@@ -30,7 +30,7 @@
 AUTHORID=HAARG
 PROG=Moo
 MODNAME=Moo
-VER=1.004002
+VER=2.003002
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Minimalist Object Orientation (with Moose compatiblity) (Perl $DEPVER)"
