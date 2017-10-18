@@ -1,0 +1,20 @@
+--- Memcached-libmemcached-1.001801/Makefile.PL.orig	Wed Oct 18 20:35:08 2017
++++ Memcached-libmemcached-1.001801/Makefile.PL	Wed Oct 18 20:36:13 2017
+@@ -263,7 +263,7 @@
+     }
+ 
+     # write 
+-    my $func_pm = "lib/Memcached/libmemcached/func_hash.pl";
++    my $func_pm = "./lib/Memcached/libmemcached/func_hash.pl";
+     warn "Writing $func_pm\n";
+     open my $func_pm_fh, ">$func_pm" or die "Can't open $func_pm: $!";
+     local $\ = "\n";
+@@ -325,7 +325,7 @@
+     }
+ 
+     # write raw hash of const names
+-    my $const_pl = "lib/Memcached/libmemcached/const_hash.pl";
++    my $const_pl = "./lib/Memcached/libmemcached/const_hash.pl";
+     warn "Writing $const_pl\n";
+     open my $const_pl_fh, ">$const_pl" or die "Can't open $const_pl: $!";
+     local $\ = "\n";

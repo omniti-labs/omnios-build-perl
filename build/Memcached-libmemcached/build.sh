@@ -44,7 +44,8 @@ BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
-#export LDFLAGS='-lsocket -lnsl'
+export LDFLAGS='-lsocket -lnsl'
+#export LD_LIBRARY_PATH=/tmp/build_vagrant/Memcached-libmemcached-1.001801::$LD_LIBRARY_PATH
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
