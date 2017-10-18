@@ -30,13 +30,13 @@
 AUTHORID=SUNDQUIST
 PROG=Google-Ads-AdWords-Client
 MODNAME=Google::Ads::AdWords::Client
-VER=4.14.0
+VER=4.18.0
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="The main interface to the AdWords API (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse omniti/perl/test-exception"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse"
+DEPENDS_IPS="omniti/perl/class-std-fast omniti/perl/log-log4perl omniti/perl/crypt-openssl-rsa omniti/perl/config-properties omniti/perl/data-uniqid omniti/perl/math-random omniti/perl/soap-wsdl omniti/perl/math-random-mt omniti/perl/file-homedir omniti/perl/xml-xpath omniti/perl/xml-simple omniti/perl/test-deep omniti/perl/test-mockobject omniti/perl/lwp-protocol-https omniti/perl/json-parse omniti/perl/test-exception"
 
 #BUILDDIR=GOOGLE-ADWORDS-PERL-CLIENT-$VER     # Location of extracted source
 

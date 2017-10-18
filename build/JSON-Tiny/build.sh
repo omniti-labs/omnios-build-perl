@@ -30,7 +30,7 @@
 AUTHORID=DAVIDO
 PROG=JSON-Tiny
 MODNAME=JSON::Tiny
-VER=0.53
+VER=0.56
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Minimalistic JSON. No dependencies."

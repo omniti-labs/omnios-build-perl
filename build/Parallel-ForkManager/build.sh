@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=SZABGAB
+AUTHORID=YANICK
 PROG=Parallel-ForkManager
 MODNAME=Parallel::ForkManager
-VER=1.06
+VER=1.19
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A simple parallel processing fork manager (Perl $DEPVER)"

@@ -44,7 +44,7 @@ BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
-export LDFLAGS='-lsocket -lnsl'
+#export LDFLAGS='-lsocket -lnsl'
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"

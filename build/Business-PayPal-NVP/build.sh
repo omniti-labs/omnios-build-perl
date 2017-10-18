@@ -30,7 +30,7 @@
 AUTHORID=SCOTTW
 PROG=Business-PayPal-NVP
 MODNAME=Business::PayPal::NVP
-VER=1.08
+VER=1.10
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="PayPal NVP API"

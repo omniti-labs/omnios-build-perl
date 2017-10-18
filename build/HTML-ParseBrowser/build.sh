@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=HTML-ParseBrowser
 MODNAME=HTML::ParseBrowser
-VER=1.10
+VER=1.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Simple interface for User-Agent string parsing"

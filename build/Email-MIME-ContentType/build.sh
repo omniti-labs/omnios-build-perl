@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-MIME-ContentType
 MODNAME=Email::MIME::ContentType
-VER=1.017
+VER=1.022
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Email::MIME::ContentType - Parse a MIME Content-Type Header"

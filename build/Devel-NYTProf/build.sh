@@ -30,7 +30,7 @@
 AUTHORID=TIMB
 PROG=Devel-NYTProf
 MODNAME=Devel::NYTProf
-VER=5.06
+VER=6.04
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Powerful fast feature-rich perl source code profiler"

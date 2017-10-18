@@ -30,7 +30,7 @@
 AUTHORID=BKB
 PROG=JSON-Parse
 MODNAME=JSON::Parse
-VER=0.40
+VER=0.53
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Read JSON into a Perl variable"

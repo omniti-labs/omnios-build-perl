@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Access the Google Storage JSON API (currently experimental). (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/moose omniti/perl/sub-exporter-progressive omniti/perl/libwww-perl omniti/perl/json"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/moose omniti/perl/sub-exporter-progressive omniti/perl/libwww-perl omniti/perl/json"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

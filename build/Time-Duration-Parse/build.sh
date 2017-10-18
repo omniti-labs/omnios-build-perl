@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=Time-Duration-Parse
 MODNAME=Time::Duration::Parse
-VER=0.11
+VER=0.13
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse string that represents time duration"

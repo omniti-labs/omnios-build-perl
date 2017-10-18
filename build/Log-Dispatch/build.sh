@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Log-Dispatch
 MODNAME=Log::Dispatch::File
-VER=2.41
+VER=2.67
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Dispatches messages to one or more outputs (Perl $DEPVER)"

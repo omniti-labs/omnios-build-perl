@@ -30,7 +30,7 @@
 AUTHORID=MLEHMANN
 PROG=AnyEvent-HTTP
 MODNAME=AnyEvent::HTTP
-VER=2.21
+VER=2.23
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="simple but non-blocking HTTP/HTTPS client (Perl $DEPVER)"

@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Email-Simple
 MODNAME=Email::Simple::Creator
-VER=2.203
+VER=2.214
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="simple parsing of RFC2822 message format and headers (Perl $DEPVER)"

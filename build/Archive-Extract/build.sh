@@ -30,7 +30,7 @@
 AUTHORID=BINGOS
 PROG=Archive-Extract
 MODNAME=Archive::Extract
-VER=0.74
+VER=0.80
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A generic archive extracting mechanism. (Perl $DEPVER)"

@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ETHER
+AUTHORID=EXODIST
 PROG=Test-Exception
 MODNAME=Test::Exception
-VER=0.38
+VER=0.43
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Test exception based code (Perl $DEPVER)"

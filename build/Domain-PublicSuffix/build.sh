@@ -30,13 +30,13 @@
 AUTHORID=NMELNICK
 PROG=Domain-PublicSuffix
 MODNAME=Domain::PublicSuffix
-VER=0.09
+VER=0.14 #.1
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse a domain down to root"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/data-validate-domain omniti/perl/class-accessor"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/data-validate-domain omniti/perl/class-accessor omniti/perl/net-idn-encode"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/data-validate-domain omniti/perl/class-accessor"
+DEPENDS_IPS="omniti/perl/data-validate-domain omniti/perl/class-accessor omniti/perl/net-idn-encode"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -77,7 +77,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER.1
 patch_source
 prep_build
 buildperl

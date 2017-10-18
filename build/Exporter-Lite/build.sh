@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=Exporter-Lite
 MODNAME=Exporter::Lite
-VER=0.06
+VER=0.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="unknown"

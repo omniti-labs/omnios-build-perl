@@ -30,7 +30,7 @@
 AUTHORID=NEILB
 PROG=HTTP-Lite
 MODNAME=HTTP::Lite
-VER=2.43
+VER=2.44
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Lightweight HTTP implementation"

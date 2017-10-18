@@ -21,38 +21,39 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2013 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ABW
-PROG=Template
-MODNAME=Template::Toolkit
-VER=2.27
+AUTHORID=PALI
+PROG=Email-Address-XS
+MODNAME=Email::Address::XS
+VER=1.00
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Front-end module to the Template Toolkit (Perl $DEPVER)"
+SUMMARY="Parse and format RFC 2822 email addresses and groups (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
-export PERL_USE_UNSAFE_INC=1
 
-PERLVERLIST="5.16 5.20"
+# Only 5.14 and later will get individual module builds
+PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
 DEPENDS_IPS=""
 
-BUILDDIR=${PROG}-Toolkit-${VER}
-
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
+    5.14)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        ;;
     5.16)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
         ;;
@@ -76,7 +77,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG Toolkit-$VER
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
 buildperl

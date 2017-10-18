@@ -476,6 +476,7 @@ Thrift
 Email-MessageID
 Email-MIME-Encodings
 Email-MIME-ContentType
+Email-Address-XS
 Email-MIME
 Email-Stuffer
 Crypt-OpenSSL-Random
@@ -488,6 +489,7 @@ Math-Random
 Template
 SOAP-WSDL
 JSON-Parse
+Config-Properties
 Google-Ads-AdWords-Client
 Net-Google-Storage
 Net-SFTP-Foreign

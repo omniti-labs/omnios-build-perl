@@ -30,7 +30,7 @@
 AUTHORID=MATEU
 PROG=MooX-Types-MooseLike
 MODNAME=MooX::Types::MooseLike::Base
-VER=0.25
+VER=0.29
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="some Moosish types and a type builder (Perl $DEPVER)"

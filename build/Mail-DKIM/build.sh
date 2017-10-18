@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=JASLONG
+AUTHORID=MBRADSHAW
 PROG=Mail-DKIM
 MODNAME=Mail::DKIM
-VER=0.40
+VER=0.43
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Signs/verifies Internet mail with DKIM/DomainKey signatures"
