@@ -499,3 +499,12 @@ Data-Random
 Net-Dropbox-API
 GD-Text
 Mail-DKIM
+Clone-PP
+Sort-Natually
+Data-Printer
+MooX-StrictConstructor
+MaxMind-DB-Common
+Test-Bits
+Data-IEEE754
+MaxMind-DB-Reader
+GeoIP2
