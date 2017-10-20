@@ -64,7 +64,6 @@ case $DEPVER in
     5.26)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
         ;;
-
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;
