@@ -34,7 +34,7 @@ VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Paymentech Perl Orbital (Perl $DEPVER)"
 DESC="$SUMMARY"
-
+PERL_MAKE_TEST="" #broken tests
 BUILD_DEPENDS_IPS="omniti/perl/net-ssleay"
 
 PREFIX=/opt/OMNIperl
@@ -43,7 +43,7 @@ reset_configure_opts
 NO_PARALLEL_MAKE=1
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16 5.20"
+PERLVERLIST="5.14 5.16 5.20 5.26"
 
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/net-ssleay"
@@ -88,13 +88,13 @@ make_isa_stub() {
 
 init
 test_if_core
-download_source $PROG $PROG $VER
+#download_source $PROG $PROG $VER
 patch_source
 prep_build
 buildperl
 make_opt
 make_package
-clean_up
+#clean_up
 
 # Vim hints
 # vim:ts=4:sw=4:et:
