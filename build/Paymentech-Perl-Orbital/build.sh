@@ -34,7 +34,7 @@ VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Paymentech Perl Orbital (Perl $DEPVER)"
 DESC="$SUMMARY"
-PERL_MAKE_TEST="" #broken tests
+
 BUILD_DEPENDS_IPS="omniti/perl/net-ssleay"
 
 PREFIX=/opt/OMNIperl
@@ -87,13 +87,13 @@ make_isa_stub() {
 
 init
 test_if_core
-#download_source $PROG $PROG $VER
+download_source $PROG $PROG $VER
 patch_source
 prep_build
 buildperl
 make_opt
 make_package
-#clean_up
+clean_up
 
 # Vim hints
 # vim:ts=4:sw=4:et:
