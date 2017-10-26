@@ -34,9 +34,8 @@ VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Paymentech Perl Orbital (Perl $DEPVER)"
 DESC="$SUMMARY"
-PERL_MAKE_TEST="" #broken tests
+#PERL_MAKE_TEST="" #broken tests
 BUILD_DEPENDS_IPS="omniti/perl/net-ssleay"
-
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -69,11 +68,24 @@ case $DEPVER in
         ;;
 esac
 
+pre_copy() {
+    pushd $TMPDIR/$PROG-$VER > /dev/null
+    logmsg "PRE_COPY"
+    export ISALIST="$ISAPART"
+    #Paymentech-Perl-Orbital-7.4.0
+    logmsg "sudo cp -r $TMPDIR/$PROG-$VER/paymentech /opt/"
+    sudo cp -r $TMPDIR/$PROG-$VER/paymentech /opt/
+    popd > /dev/null
+    unset ISALIST
+    export ISALIST
+
+}
 make_opt() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
     logmsg "Making opt/paymentech"
     export ISALIST="$ISAPART"
-    sudo mv $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/paymentech
+    sudo mkdir $DESTDIR/opt/paymentech
+    sudo cp -r $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/
     popd > /dev/null
     unset ISALIST
     export ISALIST
@@ -85,15 +97,35 @@ make_isa_stub() {
     PREFIX=/opt make_isa_stub_orig
 }
 
+
+build() {
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logmsg "Building "
+    make_clean
+    logmsg "--- Makefile.PL"
+    logcmd /opt/OMNIperl/bin/perl Makefile.PL PREFIX=/opt/OMNIperl INSTALLDIRS=vendor MAKE=gmake || \
+        logerr "--- Makefile.PL failed"
+    patch_source
+    logmsg "--- make"
+    logcmd gmake || logerr "--- make failed"
+    logmsg "--- make test"
+    logcmd gmake test || logerr "--- gmake test filaed"
+    logmsg "--- make install"
+    logcmd gmake DESTDIR=${DESTDIR} install || logerr "--- make install failed"
+    popd > /dev/null
+}
+
+
 init
 test_if_core
-#download_source $PROG $PROG $VER
-patch_source
+download_source $PROG $PROG $VER
+#patch_source #moved to run after `perl Makefile.pl` to apply changes to Makefile
 prep_build
-buildperl
+pre_copy
+build
 make_opt
 make_package
-#clean_up
+clean_up
 
 # Vim hints
 # vim:ts=4:sw=4:et:
