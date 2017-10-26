@@ -34,7 +34,11 @@ VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Paymentech Perl Orbital (Perl $DEPVER)"
 DESC="$SUMMARY"
+<<<<<<< HEAD
 #PERL_MAKE_TEST="" #broken tests
+=======
+
+>>>>>>> c9262591408f87efeeedcc077f7954a6fbf79f14
 BUILD_DEPENDS_IPS="omniti/perl/net-ssleay"
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -119,7 +123,11 @@ build() {
 init
 test_if_core
 download_source $PROG $PROG $VER
+<<<<<<< HEAD
 #patch_source #moved to run after `perl Makefile.pl` to apply changes to Makefile
+=======
+patch_source
+>>>>>>> c9262591408f87efeeedcc077f7954a6fbf79f14
 prep_build
 pre_copy
 build
