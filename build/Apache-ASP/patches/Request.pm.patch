@@ -1,0 +1,11 @@
+--- Apache-ASP-2.62/lib/Apache/ASP/Request.pm.orig	Mon Oct 30 18:01:42 2017
++++ Apache-ASP-2.62/lib/Apache/ASP/Request.pm	Mon Oct 30 18:01:24 2017
+@@ -81,7 +81,7 @@
+ 		my $q = $self->{cgi} = new CGI;
+ 		$asp->Debug($q->param);
+ 		for(my @names = $q->param) {
+-		    my @params = $q->param($_);
++		    my @params = $q->multi_param($_);
+ 		    $form{$_} = @params > 1 ? [ @params ] : $params[0];
+ 		    if(ref($form{$_}) eq 'Fh') {
+ 			my $fh = $form{$_};
