@@ -1,0 +1,28 @@
+--- Class-ReluctantORM-0.52_0/lib/Class/ReluctantORM/FetchDeep/Results.pm.orig	Mon Nov 13 18:47:13 2017
++++ Class-ReluctantORM-0.52_0/lib/Class/ReluctantORM/FetchDeep/Results.pm	Mon Nov 13 18:50:05 2017
+@@ -107,9 +107,11 @@
+           map { [$_, $sort_rank_by_pk{__fd_stringify_key_from_obj($_)} ] }
+             @results;
+ 
+-    foreach my $obj (@results) {
+-        $obj->__run_triggers('after_retrieve');
+-    }
++    # DAVEHACK BEGIN
++    #foreach my $obj (@results) {
++    #    $obj->__run_triggers('after_retrieve');
++    #}
++    # DAVEHACK END 
+ 
+     if ($DEBUG > 2) { print STDERR __PACKAGE__ . ':' . __LINE__ . "- Final result:\n" . Dumper(\@results); }
+     return @results;
+@@ -271,6 +273,10 @@
+                 $new_args{$fields_by_col_alias{$field_name}} = $obj_ghost->{$field_name};
+             }
+         }
++        # DAVEHACK BEGIN
++        $obj->__run_triggers('after_retrieve');
++        # DAVEHACK END
++
+         my $obj = $class->new(%new_args);
+         $obj->_is_inserted(1);
+         $obj->_mark_all_clean();
