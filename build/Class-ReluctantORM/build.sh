@@ -85,7 +85,7 @@ buildperl
 VER=${VER//_/.}
 
 make_package
-clean_up
+#clean_up
 
 # Vim hints
 # vim:ts=4:sw=4:et:
