@@ -30,7 +30,7 @@
 AUTHORID=RIBASUSHI
 PROG=namespace-clean
 MODNAME=namespace::clean
-VER=0.25
+VER=0.27
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Keep imports and functions out of your namespace"
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omniti/perl/b-hooks-endofscope omniti/perl/package-stash"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -60,6 +60,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;

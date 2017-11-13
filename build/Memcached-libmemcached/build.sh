@@ -45,6 +45,7 @@ PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 export LDFLAGS='-lsocket -lnsl'
+#export LD_LIBRARY_PATH=/tmp/build_vagrant/Memcached-libmemcached-1.001801::$LD_LIBRARY_PATH
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
@@ -63,6 +64,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;
@@ -76,7 +81,7 @@ esac
 
 init
 test_if_core
-download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER-TRIAL2
+download_source CPAN/authors/id/${AUTHORID:0:1}/${AUTHORID:0:2}/${AUTHORID} $PROG $VER
 patch_source
 prep_build
 

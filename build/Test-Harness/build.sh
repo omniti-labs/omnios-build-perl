@@ -30,7 +30,7 @@
 AUTHORID=LEONT
 PROG=Test-Harness
 MODNAME=TAP::Harness
-VER=3.30
+VER=3.39
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Run Perl standard test scripts with statistics"

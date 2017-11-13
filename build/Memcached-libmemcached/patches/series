@@ -1,2 +1,3 @@
 mem_config.in.patch
 common.h.patch
+Makefile.PL.patch

@@ -1,0 +1,183 @@
+--- Paymentech-Perl-Orbital-7.4.0/Makefile.orig	Thu Oct 26 21:36:40 2017
++++ Paymentech-Perl-Orbital-7.4.0/Makefile	Thu Oct 26 21:55:20 2017
+@@ -6,7 +6,7 @@
+ #
+ #       ANY CHANGES MADE HERE WILL BE LOST!
+ #
+-#   MakeMaker ARGV: (q[PREFIX=/opt/OMNIperl], q[INSTALLDIRS=vendor], q[MAKE=gmake])
++#   MakeMaker ARGV: ()
+ #
+ 
+ #   MakeMaker Parameters:
+@@ -75,47 +75,47 @@
+ INST_MAN3DIR = blib/man3
+ MAN1EXT = 1
+ MAN3EXT = 3
+-INSTALLDIRS = vendor
++INSTALLDIRS = site
+ DESTDIR = 
+-PREFIX = /opt/OMNIperl
+-PERLPREFIX = $(PREFIX)
+-SITEPREFIX = $(PREFIX)
+-VENDORPREFIX = $(PREFIX)
+-INSTALLPRIVLIB = $(PERLPREFIX)/lib/5.26
++PREFIX = $(SITEPREFIX)
++PERLPREFIX = /opt/OMNIperl
++SITEPREFIX = /opt/OMNIperl
++VENDORPREFIX = /opt/OMNIperl
++INSTALLPRIVLIB = /opt/OMNIperl/lib/5.26
+ DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
+-INSTALLSITELIB = $(SITEPREFIX)/lib/site_perl/5.26.1
++INSTALLSITELIB = /opt/OMNIperl/lib/site_perl/5.26.1
+ DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
+-INSTALLVENDORLIB = $(VENDORPREFIX)/lib/vendor_perl/5.26
++INSTALLVENDORLIB = /opt/OMNIperl/lib/vendor_perl/5.26
+ DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
+-INSTALLARCHLIB = $(PERLPREFIX)/lib/5.26/i86pc-solaris-thread-multi-64
++INSTALLARCHLIB = /opt/OMNIperl/lib/5.26/i86pc-solaris-thread-multi-64
+ DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
+-INSTALLSITEARCH = $(SITEPREFIX)/lib/site_perl/5.26.1/i86pc-solaris-thread-multi-64
++INSTALLSITEARCH = /opt/OMNIperl/lib/site_perl/5.26.1/i86pc-solaris-thread-multi-64
+ DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
+-INSTALLVENDORARCH = $(VENDORPREFIX)/lib/vendor_perl/5.26/i86pc-solaris-thread-multi-64
++INSTALLVENDORARCH = /opt/OMNIperl/lib/vendor_perl/5.26/i86pc-solaris-thread-multi-64
+ DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
+-INSTALLBIN = $(PERLPREFIX)/bin/amd64
++INSTALLBIN = /opt/OMNIperl/bin/amd64
+ DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
+-INSTALLSITEBIN = $(SITEPREFIX)/bin/amd64
++INSTALLSITEBIN = /opt/OMNIperl/bin/amd64
+ DESTINSTALLSITEBIN = $(DESTDIR)$(INSTALLSITEBIN)
+-INSTALLVENDORBIN = $(VENDORPREFIX)/bin/amd64
++INSTALLVENDORBIN = /opt/OMNIperl/bin/amd64
+ DESTINSTALLVENDORBIN = $(DESTDIR)$(INSTALLVENDORBIN)
+-INSTALLSCRIPT = $(PERLPREFIX)/bin
++INSTALLSCRIPT = /opt/OMNIperl/bin
+ DESTINSTALLSCRIPT = $(DESTDIR)$(INSTALLSCRIPT)
+-INSTALLSITESCRIPT = $(SITEPREFIX)/bin
++INSTALLSITESCRIPT = /opt/OMNIperl/bin
+ DESTINSTALLSITESCRIPT = $(DESTDIR)$(INSTALLSITESCRIPT)
+-INSTALLVENDORSCRIPT = $(VENDORPREFIX)/bin
++INSTALLVENDORSCRIPT = /opt/OMNIperl/bin
+ DESTINSTALLVENDORSCRIPT = $(DESTDIR)$(INSTALLVENDORSCRIPT)
+-INSTALLMAN1DIR = $(PERLPREFIX)/man/man1
++INSTALLMAN1DIR = /opt/OMNIperl/man/man1
+ DESTINSTALLMAN1DIR = $(DESTDIR)$(INSTALLMAN1DIR)
+-INSTALLSITEMAN1DIR = $(SITEPREFIX)/man/man1
++INSTALLSITEMAN1DIR = /opt/OMNIperl/man/man1
+ DESTINSTALLSITEMAN1DIR = $(DESTDIR)$(INSTALLSITEMAN1DIR)
+-INSTALLVENDORMAN1DIR = $(VENDORPREFIX)/man/man1
++INSTALLVENDORMAN1DIR = /opt/OMNIperl/man/man1
+ DESTINSTALLVENDORMAN1DIR = $(DESTDIR)$(INSTALLVENDORMAN1DIR)
+-INSTALLMAN3DIR = $(PERLPREFIX)/man/man3
++INSTALLMAN3DIR = /opt/OMNIperl/man/man3
+ DESTINSTALLMAN3DIR = $(DESTDIR)$(INSTALLMAN3DIR)
+-INSTALLSITEMAN3DIR = $(SITEPREFIX)/man/man3
++INSTALLSITEMAN3DIR = /opt/OMNIperl/man/man3
+ DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
+-INSTALLVENDORMAN3DIR = $(VENDORPREFIX)/man/man3
++INSTALLVENDORMAN3DIR = /opt/OMNIperl/man/man3
+ DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
+ PERL_LIB = /opt/OMNIperl/lib/5.26
+ PERL_ARCHLIB = /opt/OMNIperl/lib/5.26/i86pc-solaris-thread-multi-64
+@@ -149,7 +149,7 @@
+ # BASEEXT = Basename part of FULLEXT. May be just equal FULLEXT. (eg Oracle)
+ # PARENT_NAME = NAME without BASEEXT and no trailing :: (eg Foo::Bar)
+ # DLBASE  = Basename part of dynamic library. May be just equal BASEEXT.
+-MAKE = gmake
++MAKE = make
+ FULLEXT = Paymentech
+ BASEEXT = Paymentech
+ PARENT_NAME = 
+@@ -719,7 +719,7 @@
+ 
+ # --- MakeMaker dist_test section:
+ disttest : distdir
+-	cd $(DISTVNAME) && $(ABSPERLRUN) Makefile.PL "PREFIX=/opt/OMNIperl" "INSTALLDIRS=vendor" "MAKE=gmake"
++	cd $(DISTVNAME) && $(ABSPERLRUN) Makefile.PL 
+ 	cd $(DISTVNAME) && $(MAKE) $(PASTHRU)
+ 	cd $(DISTVNAME) && $(MAKE) test $(PASTHRU)
+ 
+@@ -820,7 +820,7 @@
+ 
+ 
+ doc_perl_install :: all
+-	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/perllocal.pod"
++	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
+ 	-$(NOECHO) $(DOC_INSTALL) \
+ 		"Module" "$(NAME)" \
+@@ -828,10 +828,10 @@
+ 		LINKTYPE "$(LINKTYPE)" \
+ 		VERSION "$(VERSION)" \
+ 		EXE_FILES "$(EXE_FILES)" \
+-		>> "$(DESTINSTALLARCHLIB)/perllocal.pod"
++		>> "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 
+ doc_site_install :: all
+-	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/perllocal.pod"
++	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
+ 	-$(NOECHO) $(DOC_INSTALL) \
+ 		"Module" "$(NAME)" \
+@@ -839,10 +839,10 @@
+ 		LINKTYPE "$(LINKTYPE)" \
+ 		VERSION "$(VERSION)" \
+ 		EXE_FILES "$(EXE_FILES)" \
+-		>> "$(DESTINSTALLARCHLIB)/perllocal.pod"
++		>> "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 
+ doc_vendor_install :: all
+-	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/perllocal.pod"
++	$(NOECHO) $(ECHO) Appending installation info to "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
+ 	-$(NOECHO) $(DOC_INSTALL) \
+ 		"Module" "$(NAME)" \
+@@ -850,7 +850,7 @@
+ 		LINKTYPE "$(LINKTYPE)" \
+ 		VERSION "$(VERSION)" \
+ 		EXE_FILES "$(EXE_FILES)" \
+-		>> "$(DESTINSTALLARCHLIB)/perllocal.pod"
++		>> "$(DESTINSTALLARCHLIB)/payperllocal.pod"
+ 
+ 
+ uninstall :: uninstall_from_$(INSTALLDIRS)dirs
+@@ -884,7 +884,7 @@
+ 	-$(NOECHO) $(RM_F) $(MAKEFILE_OLD)
+ 	-$(NOECHO) $(MV)   $(FIRST_MAKEFILE) $(MAKEFILE_OLD)
+ 	- $(MAKE) $(USEMAKEFILE) $(MAKEFILE_OLD) clean $(DEV_NULL)
+-	$(PERLRUN) Makefile.PL "PREFIX=/opt/OMNIperl" "INSTALLDIRS=vendor" "MAKE=gmake"
++	$(PERLRUN) Makefile.PL 
+ 	$(NOECHO) $(ECHO) "==> Your Makefile has been rebuilt. <=="
+ 	$(NOECHO) $(ECHO) "==> Please rerun the $(MAKE) command.  <=="
+ 	$(FALSE)
+@@ -906,10 +906,7 @@
+ 	$(NOECHO) $(PERLRUNINST) \
+ 		Makefile.PL DIR="" \
+ 		MAKEFILE=$(MAKE_APERL_FILE) LINKTYPE=static \
+-		MAKEAPERL=1 NORECURS=1 CCCDLFLAGS= \
+-		PREFIX=/opt/OMNIperl \
+-		INSTALLDIRS=vendor \
+-		MAKE=gmake
++		MAKEAPERL=1 NORECURS=1 CCCDLFLAGS=
+ 
+ 
+ # --- MakeMaker test section:
+@@ -933,7 +930,7 @@
+ 
+ test_dynamic :: subdirs-test_dynamic
+ 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
+-	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
++#	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
+ 
+ testdb_dynamic :: dynamic pure_all
+ 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
+@@ -942,7 +939,7 @@
+ 
+ test_static :: subdirs-test_static
+ 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
+-	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
++#	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
+ 
+ testdb_static :: static pure_all
+ 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)

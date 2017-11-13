@@ -27,22 +27,24 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=ETHER
+AUTHORID=HAARG
 PROG=local-lib
 MODNAME=local::lib
-VER=2.000011
+VER=2.000024
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="create and use a local lib/ for perl modules with PERL5LIB"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omnios/archiver/gnu-tar"
 #install gnu-tar
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
+
+PERL_LL_TAR=/usr/gnu/bin/tar
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16"

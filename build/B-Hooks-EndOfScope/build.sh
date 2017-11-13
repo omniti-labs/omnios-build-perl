@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=B-Hooks-EndOfScope
 MODNAME=B::Hooks::EndOfScope
-VER=0.13
+VER=0.21
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Execute code after a scope finished compilation"
@@ -60,6 +60,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;

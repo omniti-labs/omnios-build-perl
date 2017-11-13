@@ -1,0 +1,1 @@
+MAKEFILE_OPTS="LIBS=-L/opt/omni/lib INC=-I/opt/omni/include"

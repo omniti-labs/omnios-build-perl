@@ -30,7 +30,7 @@
 AUTHORID=VPIT
 PROG=Variable-Magic
 MODNAME=Variable::Magic
-VER=0.57
+VER=0.61
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Associate user-defined magic to variables from Perl. (Perl $DEPVER)"
@@ -60,6 +60,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;

@@ -29,6 +29,10 @@
 
 PROG=perl-520-incorporation
 VER=5.20
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
 VERHUMAN=$VER
 PKG=omniti/incorporation/$PROG
 SUMMARY="Constrains omniti/runtime/perl to version ${VER}.x"

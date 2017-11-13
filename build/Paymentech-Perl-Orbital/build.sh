@@ -34,16 +34,19 @@ VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Paymentech Perl Orbital (Perl $DEPVER)"
 DESC="$SUMMARY"
+<<<<<<< HEAD
+#PERL_MAKE_TEST="" #broken tests
+=======
 
+>>>>>>> c9262591408f87efeeedcc077f7954a6fbf79f14
 BUILD_DEPENDS_IPS="omniti/perl/net-ssleay"
-
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
 # Only 5.14 and later will get individual module builds
-PERLVERLIST="5.14 5.16 5.20"
+PERLVERLIST="5.14 5.16 5.20 5.26"
 
 # Add any additional deps here; OMNIperl added below
 DEPENDS_IPS="omniti/perl/net-ssleay"
@@ -61,16 +64,32 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;
 esac
 
+pre_copy() {
+    pushd $TMPDIR/$PROG-$VER > /dev/null
+    logmsg "PRE_COPY"
+    export ISALIST="$ISAPART"
+    #Paymentech-Perl-Orbital-7.4.0
+    logmsg "sudo cp -r $TMPDIR/$PROG-$VER/paymentech /opt/"
+    sudo cp -r $TMPDIR/$PROG-$VER/paymentech /opt/
+    popd > /dev/null
+    unset ISALIST
+    export ISALIST
+
+}
 make_opt() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
     logmsg "Making opt/paymentech"
     export ISALIST="$ISAPART"
-    sudo mv $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/paymentech
+    sudo mkdir $DESTDIR/opt/paymentech
+    sudo cp -r $TMPDIR/$BUILDDIR/paymentech $DESTDIR/opt/
     popd > /dev/null
     unset ISALIST
     export ISALIST
@@ -82,12 +101,36 @@ make_isa_stub() {
     PREFIX=/opt make_isa_stub_orig
 }
 
+
+build() {
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logmsg "Building "
+    make_clean
+    logmsg "--- Makefile.PL"
+    logcmd /opt/OMNIperl/bin/perl Makefile.PL PREFIX=/opt/OMNIperl INSTALLDIRS=vendor MAKE=gmake || \
+        logerr "--- Makefile.PL failed"
+    patch_source
+    logmsg "--- make"
+    logcmd gmake || logerr "--- make failed"
+    logmsg "--- make test"
+    logcmd gmake test || logerr "--- gmake test filaed"
+    logmsg "--- make install"
+    logcmd gmake DESTDIR=${DESTDIR} install || logerr "--- make install failed"
+    popd > /dev/null
+}
+
+
 init
 test_if_core
 download_source $PROG $PROG $VER
+<<<<<<< HEAD
+#patch_source #moved to run after `perl Makefile.pl` to apply changes to Makefile
+=======
 patch_source
+>>>>>>> c9262591408f87efeeedcc077f7954a6fbf79f14
 prep_build
-buildperl
+pre_copy
+build
 make_opt
 make_package
 clean_up

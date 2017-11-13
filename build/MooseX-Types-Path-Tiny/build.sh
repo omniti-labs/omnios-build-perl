@@ -30,7 +30,7 @@
 AUTHORID=ETHER
 PROG=MooseX-Types-Path-Tiny
 MODNAME=MooseX::Types::Path::Tiny
-VER=0.010
+VER=0.012
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Path::Tiny types and coercions for Moose"

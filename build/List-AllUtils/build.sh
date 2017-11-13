@@ -30,13 +30,13 @@
 AUTHORID=DROLSKY
 PROG=List-AllUtils
 MODNAME=List-AllUtils
-VER=0.09
+VER=0.14
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Combines List::Util and List::MoreUtils in one bite-sized package (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-warnings"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-warnings omniti/perl/list-someutils omniti/perl/list-utilsby"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; OMNIperl added below
-DEPENDS_IPS="omniti/perl/test-warnings"
+DEPENDS_IPS="omniti/perl/test-warnings omniti/perl/list-someutils omniti/perl/list-utilsby"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -60,6 +60,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;

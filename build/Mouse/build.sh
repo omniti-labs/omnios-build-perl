@@ -30,24 +30,26 @@
 AUTHORID=GFUJI
 PROG=Mouse
 MODNAME=Mouse
-VER=2.2.0
+VER=2.4.2
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Moose minus the antlers"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/module-build-xsutil omniti/perl/test-exception omniti/perl/test-requires"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/module-build-xsutil omniti/perl/test-exception omniti/perl/test-requires omniti/perl/test-leaktrace"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 
+export PERL_USE_UNSAFE_INC=1
+
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+DEPENDS_IPS="omniti/perl/test-leaktrace"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
@@ -60,6 +62,10 @@ case $DEPVER in
     5.20)
         DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;

@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="does your code require newer perl than you think?"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/test-tester omniti/perl/yaml-tiny"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/yaml-tiny"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,19 +47,23 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/test-tester omniti/perl/yaml-tiny"
+DEPENDS_IPS="omniti/perl/file-find-rule omniti/perl/file-find-rule-perl omniti/perl/perl-minimumversion omniti/perl/yaml-tiny"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
     5.14)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-514-incorporation omniti/perl/test-tester"
         ;;
     5.16)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-516-incorporation omniti/perl/test-tester"
         ;;
     5.20)
-        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation"
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-520-incorporation omniti/perl/test-tester"
         ;;
+    5.26)
+        DEPENDS_IPS="$DEPENDS_IPS omniti/runtime/perl omniti/incorporation/perl-526-incorporation"
+        ;;
+
     "")
         logerr "You must specify a version with -d DEPVER. Valid versions: $PERLVERLIST"
         ;;
