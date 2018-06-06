@@ -510,3 +510,6 @@ MaxMind-DB-Reader
 GeoIP2
 Class-Mix
 Crypt-Eksblowfish
+Class-Loader
+Math-Pari
+Crypt-Random
