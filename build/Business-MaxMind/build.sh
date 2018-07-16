@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=BORISZ
+AUTHORID=MAXMIND
 PROG=Business-MaxMind
 MODNAME=Business::MaxMind::CreditCardFraudDetection
-VER=1.54
+VER=1.60
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Business::MaxMind - Access MaxMind minFraud, Telephone and Location verification services (Perl $DEPVER)"
