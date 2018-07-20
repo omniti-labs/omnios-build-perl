@@ -30,7 +30,7 @@
 AUTHORID=DROLSKY
 PROG=Devel-StackTrace
 MODNAME=Devel::StackTrace
-VER=2.02
+VER=2.03
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="An object representing a stack trace (Perl $DEPVER)"

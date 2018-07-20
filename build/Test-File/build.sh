@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=EXODIST
-PROG=Importer
-MODNAME=Importer
-VER=0.025
+AUTHORID=BDFOY
+PROG=Test-File
+MODNAME=Test::File
+VER=1.443
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="Alternative but compatible interface to modules that export symbols. (Perl $DEPVER)"
+SUMMARY="test file attributes (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/test-utf8"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
-# Add any additional deps here; omniti/runtime/perl added below
+# Add any additional deps here; OMNIperl added below
 DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default

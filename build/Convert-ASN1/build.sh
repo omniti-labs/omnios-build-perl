@@ -30,7 +30,7 @@
 AUTHORID=GBARR
 PROG=Convert-ASN1
 MODNAME=Convert::ASN1
-VER=0.26
+VER=0.27
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Convert between perl data structures and ASN.1 encoded packets (Perl $DEPVER)"

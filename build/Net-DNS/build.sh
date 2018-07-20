@@ -30,7 +30,7 @@
 AUTHORID=NLNETLABS
 PROG=Net-DNS
 MODNAME=Net::DNS
-VER=0.74
+VER=1.16
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl DNS resolver module (Perl $DEPVER)"

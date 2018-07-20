@@ -30,13 +30,13 @@
 AUTHORID=ETHER
 PROG=Moose
 MODNAME=Moose
-VER=2.2006
+VER=2.2011
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A postmodern object system for Perl 5 (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/try-tiny omniti/perl/cpan-meta-check omniti/perl/test-cleannamespaces omniti/perl/devel-overloadinfo omniti/perl/module-runtime-conflicts omniti/perl/sub-identify omniti/perl/sub-name"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/class-load omniti/perl/class-load-xs omniti/perl/data-optlist omniti/perl/devel-globaldestruction omniti/perl/dist-checkconflicts omniti/perl/eval-closure omniti/perl/list-moreutils omniti/perl/mro-compat omniti/perl/package-deprecationmanager omniti/perl/package-stash omniti/perl/package-stash-xs omniti/perl/params-util omniti/perl/sub-exporter omniti/perl/sub-name omniti/perl/task-weaken omniti/perl/test-fatal omniti/perl/test-requires omniti/perl/try-tiny omniti/perl/cpan-meta-check omniti/perl/test-cleannamespaces omniti/perl/devel-overloadinfo omniti/perl/module-runtime-conflicts omniti/perl/sub-identify omniti/perl/sub-name omniti/perl/devel-stacktrace"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

@@ -30,7 +30,7 @@
 AUTHORID=REHSACK
 PROG=List-MoreUtils-XS
 MODNAME=List::MoreUtils::XS
-VER=0.426
+VER=0.428
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Provide compiled List::MoreUtils functions (Perl $DEPVER)"

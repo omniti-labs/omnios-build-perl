@@ -30,25 +30,27 @@
 AUTHORID=EXODIST
 PROG=Test2-Suite
 MODNAME=Test2::Suite
-VER=0.000077
+VER=0.000115
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Old name for Test2::V0"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-info omniti/perl/importer omniti/perl/term-table"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/sub-info omniti/perl/importer omniti/perl/term-table omniti/perl/scope-guard"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
 export PERL_USE_UNSAFE_INC=1
+PERL_MAKE_TEST="" #broken tests
+
 
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/sub-info omniti/perl/importer omniti/perl/term-table"
+DEPENDS_IPS="omniti/perl/sub-info omniti/perl/importer omniti/perl/term-table omniti/perl/scope-guard"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

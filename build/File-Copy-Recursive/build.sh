@@ -30,13 +30,13 @@
 AUTHORID=DMUEY
 PROG=File-Copy-Recursive
 MODNAME=File::Copy::Recursive
-VER=0.38
+VER=0.44
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Perl extension for recursivelt copying files and directories"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/path-tiny omniti/perl/test-file"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

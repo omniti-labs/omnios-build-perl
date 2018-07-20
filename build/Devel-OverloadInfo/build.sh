@@ -30,7 +30,7 @@
 AUTHORID=ILMARI
 PROG=Devel-OverloadInfo
 MODNAME=Devel::OverloadInfo
-VER=0.004
+VER=0.005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="introspect overloaded operators (Perl $DEPVER)"
