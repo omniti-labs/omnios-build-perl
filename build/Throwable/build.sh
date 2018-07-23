@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Throwable
 MODNAME=Throwable::Error
-VER=0.200011
+VER=0.200013
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a role for classes that can be thrown (Perl $DEPVER)"

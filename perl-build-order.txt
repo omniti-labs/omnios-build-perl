@@ -286,6 +286,7 @@ BSD-Resource
 Apache-DBI
 MLDBM
 MLDBM-Sync
+CGI
 Apache-ASP
 Data-Diff
 Data-UUID
@@ -314,6 +315,9 @@ DateTime-Format-Builder
 DateTime-Format-MySQL
 Font-AFM
 HTML-Tree
+Test-EOL
+File-Slurper
+Test-NoTabs
 HTML-Format
 Crypt-RC4
 IO-stringy
@@ -331,7 +335,6 @@ Net-CIDR
 Net-SSH2
 XML-XPath
 DBD-ODBC
-CGI
 HTML-FillInForm
 String-Truncate
 Text-Aligner
@@ -367,9 +370,9 @@ Time-modules
 DDL-Oracle
 HTML-Tiny
 Captcha-reCAPTCHA
-Business-MaxMind
 Mozilla-CA
 LWP-Protocol-https
+Business-MaxMind
 MIME-tools
 UNIVERSAL-can
 UNIVERSAL-isa
@@ -418,6 +421,7 @@ HTML-Template
 Proc-Queue
 Net-Domain-TLD
 Data-Validate-Domain
+Net-IDN-Encode
 Domain-PublicSuffix
 IDNA-Punycode
 Text-Textile

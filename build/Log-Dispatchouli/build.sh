@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Log-Dispatchouli
 MODNAME=Log::Dispatchouli
-VER=2.012
+VER=2.016
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="a simple wrapper around Log::Dispatch (Perl $DEPVER)"

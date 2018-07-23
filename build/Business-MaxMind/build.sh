@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Business::MaxMind - Access MaxMind minFraud, Telephone and Location verification services (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/uri omniti/perl/libwww-perl"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/uri omniti/perl/libwww-perl omniti/perl/lwp-protocol-https"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/uri omniti/perl/libwww-perl"
+DEPENDS_IPS="omniti/perl/uri omniti/perl/libwww-perl omniti/perl/lwp-protocol-https"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

@@ -30,13 +30,13 @@
 AUTHORID=NIGELM
 PROG=HTML-Format
 MODNAME=HTML::FormatText
-VER=2.11
+VER=2.12
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Base class for HTML formatters (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-slurp omniti/perl/font-afm omniti/perl/html-tree"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/file-slurp omniti/perl/font-afm omniti/perl/html-tree omniti/perl/file-slurper omniti/perl/test-eol omniti/perl/test-notabs"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

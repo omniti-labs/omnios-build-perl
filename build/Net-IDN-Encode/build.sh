@@ -27,13 +27,13 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=RJBS
-PROG=Process-Status
-MODNAME=Process::Status
-VER=0.007
+AUTHORID=CFAERBER
+PROG=Net-IDN-Encode
+MODNAME=Net::IDN::Encode
+VER=2.400
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a handle on process termination, like $?"
+SUMMARY="Internationalizing Domain Names in Applications (IDNA) (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
@@ -46,7 +46,7 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
-# Add any additional deps here; omniti/runtime/perl added below
+# Add any additional deps here; OMNIperl added below
 DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default

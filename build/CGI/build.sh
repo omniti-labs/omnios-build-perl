@@ -30,7 +30,7 @@
 AUTHORID=LEEJO
 PROG=CGI
 MODNAME=CGI
-VER=4.36
+VER=4.38
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Handle Common Gateway Interface requests and responses (Perl $DEPVER)"

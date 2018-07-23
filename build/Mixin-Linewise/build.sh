@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Mixin-Linewise
 MODNAME=Mixin::Linewise
-VER=0.106
+VER=0.108
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="write your linewise code for handles; this does the rest"

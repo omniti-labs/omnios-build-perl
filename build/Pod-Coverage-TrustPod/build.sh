@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Pod-Coverage-TrustPod
 MODNAME=Pod::Coverage::TrustPod
-VER=0.100003
+VER=0.100005
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="allow a module's pod to contain Pod::Coverage hints"

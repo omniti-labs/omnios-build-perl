@@ -27,13 +27,13 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=RJBS
-PROG=Process-Status
-MODNAME=Process::Status
-VER=0.007
+AUTHORID=ETHER
+PROG=Test-EOL
+MODNAME=Test::EOL
+VER=2.00
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a handle on process termination, like $?"
+SUMMARY="Check the correct line endings in your project (Perl $DEPVER)"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "

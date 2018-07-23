@@ -27,17 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=RJBS
-PROG=Process-Status
-MODNAME=Process::Status
-VER=0.007
-VERHUMAN=$VER
-PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="a handle on process termination, like $?"
+AUTHORID=LEONT
+PROG=File-Slurper
+MODNAME=File::Slurper
+VER=0.012
+VERHUMAN=$VER                # Human-readable version
+PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')  # Module name, lowercased
+SUMMARY="A simple, sane and efficient module to slurp a file (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
-
+BUILD_DEPENDS_IPS='developer/build/gnu-make system/header system/library/math'
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
@@ -46,8 +45,8 @@ NO_PARALLEL_MAKE=1
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
-# Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS=""
+# Add any additional deps here; OMNIperl added below
+#DEPENDS_IPS=
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

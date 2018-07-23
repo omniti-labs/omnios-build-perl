@@ -30,7 +30,7 @@
 AUTHORID=RJBS
 PROG=Getopt-Long-Descriptive
 MODNAME=Getopt::Long::Descriptive
-VER=0.097
+VER=0.102
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Getopt::Long, but simpler and more powerful (Perl $DEPVER)"
