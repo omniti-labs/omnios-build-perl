@@ -27,10 +27,10 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=SUNDQUIST
+AUTHORID=JRADCLIFF
 PROG=Google-Ads-AdWords-Client
 MODNAME=Google::Ads::AdWords::Client
-VER=5.2.0
+VER=5.4.0
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="The main interface to the AdWords API (Perl $DEPVER)"

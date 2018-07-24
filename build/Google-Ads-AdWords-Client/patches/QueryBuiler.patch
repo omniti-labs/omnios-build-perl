@@ -1,0 +1,11 @@
+--- Google-Ads-AdWords-Client-5.2.0/lib/Google/Ads/AdWords/Utilities/QueryBuilder.pm.orig	Mon Mar  5 21:21:56 2018
++++ Google-Ads-AdWords-Client-5.2.0/lib/Google/Ads/AdWords/Utilities/QueryBuilder.pm	Mon Mar  5 21:38:08 2018
+@@ -45,7 +45,7 @@
+ 
+   if ($self->get_query_builder()) {
+     push(
+-      $self->get_where_builders(),
++      @{$self->get_where_builders()},
+       @{$self->get_query_builder()->get_where_builders()});
+   }
+   return $self;
