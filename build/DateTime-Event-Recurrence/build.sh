@@ -36,7 +36,7 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="DateTime::Set extension for create basic recurrence sets (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime-set omniti/perl/datetime" 
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime-set omniti/perl/datetime"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts

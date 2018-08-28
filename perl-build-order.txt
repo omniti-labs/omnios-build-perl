@@ -518,3 +518,9 @@ Crypt-Eksblowfish
 Class-Loader
 Math-Pari
 Crypt-Random
+Set-Infinite
+DateTime-Set
+DateTime-Event-Recurrence
+DateTime-Incomplete
+DateTime-Format-CLDR
+HTML-Entities-Numbered
