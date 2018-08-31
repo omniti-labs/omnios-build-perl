@@ -27,16 +27,16 @@
 # Load support functions
 . ../../lib/functions.sh
 
-AUTHORID=FGLOCK
-PROG=DateTime-Event-Recurrence
-MODNAME=DateTime::Event::Recurrence
-VER=0.18
+AUTHORID=DMUEY
+PROG=Digest-MD5-File
+MODNAME=Digest::MD5::File
+VER=0.08
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
-SUMMARY="DateTime::Set extension for create basic recurrence sets (Perl $DEPVER)"
+SUMMARY="Perl extension for getting MD5 sums for files and urls (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime-set omniti/perl/datetime"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math "
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/datetime-set omniti/perl/datetime"
+DEPENDS_IPS=""
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in

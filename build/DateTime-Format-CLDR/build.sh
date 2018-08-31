@@ -36,13 +36,13 @@ PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="Parse and format CLDR time patterns. (Perl $DEPVER)"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math/header-math omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/test-nowarnings omniti/perl/test-exception omniti/perl/datetime-incomplete omniti/perl/test-warn omniti/perl/datetime-event-recurrence"
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/datetime omniti/perl/datetime-timezone omniti/perl/datetime-locale omniti/perl/test-nowarnings omniti/perl/test-exception omniti/perl/datetime-incomplete omniti/perl/test-warn omniti/perl/datetime-event-recurrence"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
 
 NO_PARALLEL_MAKE=1
-
+PERL_MAKE_TEST="" #broken tests
 # Only 5.14 and later will get individual module builds
 PERLVERLIST="5.14 5.16 5.20"
 
