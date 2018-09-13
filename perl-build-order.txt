@@ -524,3 +524,6 @@ DateTime-Event-Recurrence
 DateTime-Incomplete
 DateTime-Format-CLDR
 HTML-Entities-Numbered
+Log-Message
+Log-Message-Simple
+Term-UI
