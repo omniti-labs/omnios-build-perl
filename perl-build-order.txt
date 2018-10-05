@@ -527,3 +527,4 @@ HTML-Entities-Numbered
 Log-Message
 Log-Message-Simple
 Term-UI
+Email-SendGrid-V3
