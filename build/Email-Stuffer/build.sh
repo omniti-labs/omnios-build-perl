@@ -30,13 +30,13 @@
 AUTHORID=RJBS
 PROG=Email-Stuffer
 MODNAME=Email::Stuffer
-VER=0.012
+VER=0.017
 VERHUMAN=$VER
 PKG=omniti/perl/$(echo $PROG | tr '[A-Z]' '[a-z]')
 SUMMARY="A more casual approach to creating and sending Email:: emails"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-mime omniti/perl/email-sender omniti/perl/test-most" 
+BUILD_DEPENDS_IPS="developer/build/gnu-make system/header system/library/math omniti/perl/email-mime omniti/perl/email-sender omniti/perl/test-most omniti/perl/sub-quote"
 
 PREFIX=/opt/OMNIperl
 reset_configure_opts
@@ -47,7 +47,7 @@ NO_PARALLEL_MAKE=1
 PERLVERLIST="5.14 5.16 5.20"
 
 # Add any additional deps here; omniti/runtime/perl added below
-DEPENDS_IPS="omniti/perl/email-mime omniti/perl/email-sender"
+DEPENDS_IPS="omniti/perl/email-mime omniti/perl/email-sender omniti/perl/sub-quote"
 
 # We require a Perl version to use for this build and there is no default
 case $DEPVER in
