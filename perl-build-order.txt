@@ -528,3 +528,5 @@ Log-Message
 Log-Message-Simple
 Term-UI
 Email-SendGrid-V3
+AWS-Signature4
+Amazon-S3-Thin
